@@ -24,8 +24,9 @@ puts "do you want to play? yes/no"
 answer = gets.chomp
 while answer == 'yes'
 	if answer == 'yes'
-	else 
+	else
 		puts "====>bye!"
 	end
 end
-end
+end ############## This results in a forever loop
+    ############## How can you fix this?
