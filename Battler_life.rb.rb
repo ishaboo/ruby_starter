@@ -26,7 +26,8 @@ answer2 = gets.chomp
 if answer2 == 'y'
 	while answer == 'y'
 		puts "okay."
+		answer == 'y'
 		anything = gets.chomp			
 
-		puts "====>bye!"
+		print "====>bye!"
 	end	end 
