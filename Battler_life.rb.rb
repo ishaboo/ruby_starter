@@ -14,19 +14,19 @@ while answer == 'no'
 		your_spell = gets.chomp
 		puts "Enter your spell"
 	end
+end
 your_inventory = {:bronze_sword => 1, :bucks => 56}
 puts your_inventory
-answer = gets.chomp
-if answer == 'inv'
+answer1 = gets.chomp
+if answer1 == 'inv'
 		puts your_inventory
 end
-puts "do you want to play? yes/no"
-answer = gets.chomp
-while answer == 'yes'
-	if answer == 'yes'
-	else
+puts "do you want to play? y/n"
+answer2 = gets.chomp
+if answer2 == 'y'
+	while answer == 'y'
+		puts "okay."
+		anything = gets.chomp			
+
 		puts "====>bye!"
-	end
-end
-end ############## This results in a forever loop
-    ############## How can you fix this?
+	end	end 
