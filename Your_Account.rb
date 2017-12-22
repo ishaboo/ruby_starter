@@ -1,3 +1,4 @@
+require './Shop.rb'
 puts "Welcome to Battler_life."
 puts "What is your Name?"
 your_name = gets.chomp
@@ -30,4 +31,4 @@ if answer2 == 'y'
 		anything = gets.chomp			
 
 		print "====>bye!"
-	end	end 
+end
