@@ -1,3 +1,3 @@
 # My first repo
 
-This is ro practice ruby and learn programming.
+This is to practice ruby and learn programming.

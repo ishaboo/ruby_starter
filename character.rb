@@ -14,6 +14,7 @@ class Character
   def initialize(attributes={})
     @name = attributes[:name]
     @race = attributes[:race]
+    @skills = attributes[:skills]
   end
 
   def change_name(name)
