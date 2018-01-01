@@ -44,7 +44,7 @@ if wake == 'wake' or wake == 'w'
 	puts "You wake up"
 else 
 	while wake != 'wake' or wake != 'w'
-		puts "Huh?"
+		puts "You are tooo SLEEPY to do that."
 		wake = gets.chomp
 	end
 end
