@@ -28,6 +28,8 @@ class Map
   end
 
   def locate_character(coords)
+    ## Does not work yet, as there is no DB to retrieve Data From
+    # Should look something more like --> info = Map.where(:coords = coords)
     if coords[:x] && coords[:y]
       puts @info
     end
