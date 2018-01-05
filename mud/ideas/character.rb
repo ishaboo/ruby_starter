@@ -30,9 +30,9 @@ class Map
   def locate_character(coords)
     ## Does not work yet, as there is no DB to retrieve Data From
     # Should look something more like --> info = Map.where(:coords = coords)
-    if coords[:x] && coords[:y]
-      puts @info
-    end
+    # if coords[:x] && coords[:y]
+    #   puts @info
+    # end
   end
 end
 
@@ -41,15 +41,18 @@ require 'csv'
 
 class MapTile
   attr_reader :map_tiles
+  attr_writer :csv_file
 
-  def initialize(csv_file)
+  def initialize(attributes={})
     # where to store my values
     # @map_tiles = []
-    @csv_file = csv_file
+    @csv_file = attributes[:csv_file]
+    @coords = attributes[:coords]
+    @info = attributes[:info]
     # Brain twister ****
-    @map_tiles = CSV.read(@csv_file).map do |tile|
-      Map.new({tile[0], tile[1]})
-    end
+    # @map_tiles = CSV.read(@csv_file).map do |tile|
+    #   Map.new({:coords => {:x=>tile[0], :y=>tile[1]}})
+    # end
   end
 
   def add_tile(new_tile)
@@ -72,7 +75,7 @@ class MapTile
     CSV.open(@csv_file, "wb") do |csv|
       map_tiles.each do |tile|
         # Here, row is an array of columns
-        csv << [tile.name, tile.description]
+        csv << [tile]
       end
     end
   end
