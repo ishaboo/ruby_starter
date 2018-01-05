@@ -23,8 +23,7 @@ class Map
   attr_writer :info
 
   def initialize(attributes={})
-    @coords = attributes[:coords]
-    @info = attributes[:info]
+    @map_tiles = attributes[:map_csv]
   end
 
   def locate_character(coords)
