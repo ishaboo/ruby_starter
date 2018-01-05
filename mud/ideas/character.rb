@@ -75,7 +75,7 @@ class MapTile
     CSV.open(@csv_file, "wb") do |csv|
       map_tiles.each do |tile|
         # Here, row is an array of columns
-        csv << [tile]
+        csv << tile[0] + tile[1]
       end
     end
   end
@@ -88,3 +88,10 @@ a = Map.new({:coords => {:x=>3, :y=>5}})
 b = Character.new
 a.info = "Success"
 a.locate_character(b.coords)
+tiles = [
+  [["0 0"],["town center"]],
+  [["0 1"],["temple"]],
+  [["1 1"],["market"]],
+  [["1 2"],["tavern"]]
+]
+a.write_to_csv(tiles)
