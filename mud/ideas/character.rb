@@ -14,7 +14,7 @@ class Character
   def move(x, y)
     @coords[:x] += x
     @coords[:y] += y
-    read_map_info(coords)
+    read_map_info(@coords)
   end
 
   def read_map_info(coords)
@@ -50,7 +50,7 @@ class MapTile
 
   def initialize(attributes={})
     # where to store my values
-    # @map_tiles = []
+    @map_tiles = read_from_csv
     @csv_file = attributes[:csv_file]
     @coords = attributes[:coords]
     @info = attributes[:info]
@@ -72,6 +72,12 @@ class MapTile
     write_to_csv(@map_tiles)
   end
 
+  def read_from_csv
+    tiles = CSV.read(@csv_file).map do |tile|
+      Recipe.new(tile[0], tile[1])
+    end
+  end
+
   def all
     @map_tiles
   end
@@ -89,14 +95,14 @@ end
 
 
 # Seed?
-a = Map.new({:coords => {:x=>3, :y=>5}})
-b = Character.new
-a.info = "Success"
-a.locate_character(b.coords)
-tiles = [
-  [["0 0"],["town center"]],
-  [["0 1"],["temple"]],
-  [["1 1"],["market"]],
-  [["1 2"],["tavern"]]
-]
-a.write_to_csv(tiles)
+# a = Map.new({:coords => {:x=>3, :y=>5}})
+# b = Character.new
+# a.info = "Success"
+# a.locate_character(b.coords)
+# tiles = [
+#   [["0 0"],["town center"]],
+#   [["0 1"],["temple"]],
+#   [["1 1"],["market"]],
+#   [["1 2"],["tavern"]]
+# ]
+# a.write_to_csv(tiles)
