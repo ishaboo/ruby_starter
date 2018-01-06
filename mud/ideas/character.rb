@@ -8,12 +8,18 @@ class Character
   end
 
   def default_coords
-    @coords = { :x => 1, :y => 1 }
+    @coords = { :x => 0, :y => 0 }
   end
 
   def move(x, y)
     @coords[:x] += x
     @coords[:y] += y
+    read_map_info(coords)
+  end
+
+  def read_map_info(coords)
+    map = MapTile.all
+    info = map.info(where: map[0] == coords)
   end
 end
 
@@ -28,7 +34,7 @@ class Map
 
   def locate_character(coords)
     ## Does not work yet, as there is no DB to retrieve Data From
-    # Should look something more like --> info = Map.where(:coords = coords)
+    # Should look something more like ––> info = Map.where(:coords = coords)
     # if coords[:x] && coords[:y]
     #   puts @info
     # end
@@ -60,7 +66,7 @@ class MapTile
     write_to_csv(@map_tiles)
   end
 
-  def remove_recipe(tile_id)
+  def remove_tile(tile_id)
     # this removes a tile from the map.
     @map_tiles.delete_at(tile_id)
     write_to_csv(@map_tiles)
