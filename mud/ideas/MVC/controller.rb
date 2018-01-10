@@ -9,11 +9,11 @@ class Controller
     @view = View.new
   end
 
-  def list
-
+  def show
+    @view.print_maptile(@map.show_tile)
   end
 
   def create
-
+    # Need to get some params to create a new MapTile
   end
 end
