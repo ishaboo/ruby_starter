@@ -18,7 +18,10 @@ class Map
   end
 
   def remove_tile
-    # Not in use yet
+  #   Not in use yet
+  #   this removes a tile from the map.
+  #   @map_tiles.delete_at(tile_id)
+  #   write_to_csv(@map_tiles)
   end
 
   def write_to_csv(map_tiles)
