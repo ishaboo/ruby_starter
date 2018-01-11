@@ -17,12 +17,8 @@ class Map
     write_to_csv(@map_tiles)
   end
 
-  def locate_character(coords)
-    ## Does not work yet, as there is no DB to retrieve Data From
-    # Should look something more like ––> info = Map.where(:coords = coords)
-    # if coords[:x] && coords[:y]
-    #   puts @info
-    # end
+  def remove_tile
+    # Not in use yet
   end
 
   def write_to_csv(map_tiles)
