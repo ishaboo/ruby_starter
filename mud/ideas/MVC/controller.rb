@@ -18,6 +18,19 @@ class Controller
     # Need to get some params to create a new MapTile
   end
 
+  def move_char(direction)
+    case
+    when direction == 'n'
+      @character.coords[:y] += 1
+    when direction == 's'
+      @character.coords[:y] -= 1
+    when direction == 'e'
+      @character.coords[:x] += 1
+    when direction == 'w'
+      @character.coords[:x] -= 1
+    end
+  end
+
   def locate_character(coords)
     ## Does not work yet, as there is no DB to retrieve Data From
     # Should look something more like ––> info = Map.where(:coords = coords)
