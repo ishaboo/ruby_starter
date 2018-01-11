@@ -20,10 +20,10 @@ class Router
 
   def route(action)
     case
-    when action == 'n' then puts "north"
-    when action == 's' then puts "south"
-    when action == 'e' then puts "east"
-    when action == 'w' then puts "west"
+    when action == 'n' then puts @controller.move_char(action)
+    when action == 's' then puts @controller.move_char(action)
+    when action == 'e' then puts @controller.move_char(action)
+    when action == 'w' then puts @controller.move_char(action)
     when action == 'look'
       puts "You look around..."
     when action == 'stop' then stop
