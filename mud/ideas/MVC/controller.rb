@@ -7,6 +7,7 @@ class Controller
   def initialize(map)
     @map = map
     @view = View.new
+    @character = Character.new
   end
 
   def show
