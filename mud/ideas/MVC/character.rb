@@ -2,7 +2,7 @@ require_relative 'view'
 # require_relative 'maptile'
 
 class Character
-  attr_reader :coords
+  attr_reader :coords, :name, :race
   attr_writer :coords
 
   def initialize(attributes={})
