@@ -7,13 +7,13 @@ class Map
 
   def initialize(csv_file)
     @csv_file = csv_file
-    @map_tiles = CSV.read(@csv_file).map do |map|
+    @maptiles = CSV.read(@csv_file).map do |map|
       MapTile.new(map[0], map[1])
     end
   end
 
   def add_tile(new_tile)
-    @map_tiles << new_tile
+    @maptiles << new_tile
     write_to_csv(@map_tiles)
   end
 
