@@ -1,8 +1,6 @@
 class View
-  def show_map(map_tile)
-    # map_tile is an array
-    map_tile.each do |tile|
-      puts "#{tile[1]}"
-    end
+  def show_map(map_tile_info)
+    # map_tile_info could be an array
+    puts map_tile_info
   end
 end
