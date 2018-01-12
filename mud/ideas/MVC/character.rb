@@ -23,8 +23,8 @@ class Character
         info = tile.info
       end
     end
-    # @view.show_map(info)
-    puts info
+    puts @view.show_map(info)
+    # puts info
   end
 end
 
