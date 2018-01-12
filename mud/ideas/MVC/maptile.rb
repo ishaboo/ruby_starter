@@ -1,5 +1,5 @@
 class MapTile
-  attr_reader :coords :info
+  attr_reader :coords, :info
 
   def initialize(coords, info)
     @coords = coords
@@ -12,7 +12,7 @@ class MapTile
   #   end
   # end
 
-  # def all
-  #   @map_tiles
-  # end
+  def all
+
+  end
 end
