@@ -37,6 +37,11 @@ class Controller
     @character.read_map_info(@character.coords.values, @map)
   end
 
+  def show_char_stats
+    # could be moved to View like @view.show_char_stats
+    puts @character.coords.to_s + ' ' + @character.name + ' ' + @character.race
+  end
+
   def locate_character(coords)
     ## Does not work yet, as there is no DB to retrieve Data From
     # Should look something more like ––> info = Map.where(:coords = coords)
