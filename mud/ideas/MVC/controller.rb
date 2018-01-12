@@ -7,7 +7,8 @@ class Controller
   def initialize(map)
     @map = map
     @view = View.new
-    @character = Character.new
+    @character = Character.new({:name => "Jow", :race => "Dwarf"})
+    init_char
   end
 
   def show
@@ -16,6 +17,10 @@ class Controller
 
   def create
     # Need to get some params to create a new MapTile
+  end
+
+  def init_char
+    @character.default_coords
   end
 
   def move_char(direction)
@@ -29,6 +34,7 @@ class Controller
     when direction == 'w'
       @character.coords[:x] -= 1
     end
+    @character.read_map_info(@character.coords.values, @map)
   end
 
   def locate_character(coords)
