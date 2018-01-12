@@ -1,5 +1,5 @@
 require_relative 'view'
-require_relative 'maptile'
+# require_relative 'maptile'
 
 class Character
   attr_reader :coords
