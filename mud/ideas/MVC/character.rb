@@ -1,25 +1,30 @@
+require_relative 'view'
+require_relative 'maptile'
+
 class Character
   attr_reader :coords
+  attr_writer :coords
 
   def initialize(attributes={})
     @name = attributes[:name]
     @race = attributes[:race]
     @coords = attributes[:coords]
+    @view = View.new
   end
 
   def default_coords
     @coords = { :x => 0, :y => 0 }
   end
 
-  def move(x, y)
-    @coords[:x] += x
-    @coords[:y] += y
-    read_map_info(@coords)
-  end
-
-  def read_map_info(coords)
-    map = MapTile.all
-    info = map.info(where: map[0] == coords)
+  def read_map_info(coord_given, map)
+    info = ''
+    map.maptiles.each do |tile|
+      if tile.coords == "#{coord_given[0]} #{coord_given[1]}"
+        info = tile.info
+      end
+    end
+    # @view.show_map(info)
+    puts info
   end
 end
 
