@@ -1,6 +1,6 @@
 require_relative 'character'
-require_relative 'map'
-require_relative 'maptile'
+# require_relative 'map'
+# require_relative 'maptile'
 require_relative 'view'
 
 class Controller
