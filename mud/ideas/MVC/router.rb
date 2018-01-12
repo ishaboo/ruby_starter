@@ -1,4 +1,4 @@
-require_relative 'controller'
+# require_relative 'controller'
 
 class Router
   def initialize(controller)
@@ -21,6 +21,7 @@ class Router
   def route(action)
     case
     when action.length == 1 then @controller.move_char(action)
+    when action == "stats" then @controller.show_char_stats
     when action == 'look'
       puts "You look around..."
     when action == 'stop' then stop
@@ -34,7 +35,7 @@ class Router
   end
 
   def display_tasks
-    puts "buncha stuff..."
+    puts "\nbuncha stuff..."
     puts "Which direction are you going?"
   end
 end
