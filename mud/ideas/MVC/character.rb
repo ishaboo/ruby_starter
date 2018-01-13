@@ -1,19 +1,42 @@
 require_relative 'view'
 # require_relative 'maptile'
+require 'csv'
 
 class Character
   attr_reader :coords, :name, :race
   attr_writer :coords
 
-  def initialize(attributes={})
-    @name = attributes[:name]
-    @race = attributes[:race]
-    @coords = attributes[:coords]
+  # def initialize(attributes={})
+  def initialize(csv_file)
+    @csv_file = csv_file
+    @name = CSV.read(@csv_file).map do |attr|
+      attr[1]
+    end
+    # attributes[:name]
+    @race = CSV.read(@csv_file).map do |attr|
+      attr[2]
+    end
+    # attributes[:race]
+    @coords = CSV.read(@csv_file).map do |attr|
+      attr[0]
+    end
+    # attributes[:coords]
     @view = View.new
   end
 
   def default_coords
-    @coords = { :x => 0, :y => 0 }
+    # @coords = { :x => 0, :y => 0 }
+    @coords = {
+      :x => self.coords[0].split(' ')[0].to_i,
+      :y => self.coords[0].split(' ')[1].to_i
+    }
+  end
+
+  def save(char)
+    coords = "#{char.coords[:x]} #{char.coords[:y]}"
+    CSV.open(@csv_file, "wb") do |csv|
+      csv << [coords] + char.name + char.race
+    end
   end
 
   def read_map_info(coord_given, map)
@@ -23,7 +46,7 @@ class Character
         info = tile.info
       end
     end
-    puts @view.show_map(info)
+    @view.show_map(info)
     # puts info
   end
 end
