@@ -7,7 +7,7 @@ class Router
   end
 
   def run
-    puts "Welcome to this MUD\n Type 'look' to see where you are on the map: "
+    puts " Welcome to this MUD\n Type 'look' to see where you are on the map: "
 
     while @running
       display_tasks
