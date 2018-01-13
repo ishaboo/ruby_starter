@@ -6,12 +6,6 @@ class MapTile
     @info = info
   end
 
-  # def read_from_csv
-  #   tiles = CSV.read(@csv_file).map do |tile|
-  #     self.new(tile[0], tile[1])
-  #   end
-  # end
-
   def all
 
   end
