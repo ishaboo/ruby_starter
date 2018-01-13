@@ -4,10 +4,11 @@ require_relative 'character'
 require_relative 'view'
 
 class Controller
-  def initialize(map)
+  def initialize(map, character)
     @map = map
     @view = View.new
-    @character = Character.new({:name => "Jow", :race => "Dwarf"})
+    @character = character
+    # Character.new({:name => "Jow", :race => "Dwarf"})
     init_char
   end
 
@@ -39,7 +40,12 @@ class Controller
 
   def show_char_stats
     # could be moved to View like @view.show_char_stats
-    puts @character.coords.to_s + ' ' + @character.name + ' ' + @character.race
+    puts @character.coords.to_s + ' ' + @character.name.join + ' ' + @character.race.join
+    # @character.coords.to_s
+  end
+
+  def save_char_stats
+    @character.save(@character)
   end
 
   def locate_character(coords)
