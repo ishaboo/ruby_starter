@@ -8,12 +8,8 @@ class Controller
     @map = map
     @view = View.new
     @character = character
-    # Character.new({:name => "Jow", :race => "Dwarf"})
+    # Need to come up with a condition to either create a new or load an existing character
     init_char
-  end
-
-  def show
-    @view.print_maptile(@map.show_tile)
   end
 
   def create
@@ -39,20 +35,10 @@ class Controller
   end
 
   def show_char_stats
-    # could be moved to View like @view.show_char_stats
-    puts @character.coords.to_s + ' ' + @character.name.join + ' ' + @character.race.join
-    # @character.coords.to_s
+    @view.view_stats(@character)
   end
 
   def save_char_stats
     @character.save(@character)
-  end
-
-  def locate_character(coords)
-    ## Does not work yet, as there is no DB to retrieve Data From
-    # Should look something more like ––> info = Map.where(:coords = coords)
-    # if coords[:x] && coords[:y]
-    #   puts @info
-    # end
   end
 end
