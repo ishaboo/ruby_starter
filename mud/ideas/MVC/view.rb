@@ -16,5 +16,11 @@ class View
 
   def view_stats(char_stats)
     # just an idea to display some info about the character
+    puts char_stats.coords.to_s + ' ' + char_stats.name.join + ' ' + char_stats.race.join
+  end
+
+  def display_tasks
+    puts "\n"
+    puts "Which direction are you going?"
   end
 end
