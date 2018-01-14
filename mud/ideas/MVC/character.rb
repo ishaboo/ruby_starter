@@ -12,14 +12,14 @@ class Character
     @name = CSV.read(@csv_file).map do |attr|
       attr[1]
     end
-    # attributes[:name]
     @race = CSV.read(@csv_file).map do |attr|
       attr[2]
     end
-    # attributes[:race]
     @coords = CSV.read(@csv_file).map do |attr|
       attr[0]
     end
+    # attributes[:race]
+    # attributes[:name]
     # attributes[:coords]
     @view = View.new
   end
@@ -47,19 +47,5 @@ class Character
       end
     end
     @view.show_map(info)
-    # puts info
   end
 end
-
-# Seed?
-# a = Map.new({:coords => {:x=>3, :y=>5}})
-# b = Character.new
-# a.info = "Success"
-# a.locate_character(b.coords)
-# tiles = [
-#   [["0 0"],["town center"]],
-#   [["0 1"],["temple"]],
-#   [["1 1"],["market"]],
-#   [["1 2"],["tavern"]]
-# ]
-# a.write_to_csv(tiles)
