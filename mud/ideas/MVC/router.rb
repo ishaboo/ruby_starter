@@ -23,8 +23,7 @@ class Router
     case
     when action.length == 1 then @controller.move_char(action)
     when action == "stats" then @controller.show_char_stats
-    when action == 'look'
-      puts "You look around..."
+    when action == 'look' then @controller.read_map_info
     when action == 'inv' then @controller.show_inventory
     when action == "save" then @controller.save_char_stats
     when action == 'stop' then stop
