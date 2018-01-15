@@ -1,13 +1,13 @@
 require_relative 'view'
-# require_relative 'maptile'
+require_relative 'inventory'
 require 'csv'
 
 class Character
-  attr_reader :coords, :name, :race
+  attr_reader :coords, :name, :race, :inventory
   attr_writer :coords
 
   # def initialize(attributes={})
-  def initialize(csv_file)
+  def initialize(csv_file, inventory)
     @csv_file = csv_file
     @name = CSV.read(@csv_file).map do |attr|
       attr[1]
@@ -22,6 +22,11 @@ class Character
     # attributes[:name]
     # attributes[:coords]
     @view = View.new
+    @inventory = inventory
+  end
+
+  def add_to_inventory
+
   end
 
   def default_coords
