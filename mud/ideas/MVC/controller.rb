@@ -1,12 +1,10 @@
 require_relative 'character'
-# require_relative 'map'
-# require_relative 'maptile'
 require_relative 'view'
 
 class Controller
   def initialize(map, character)
-    @map = map
     @view = View.new
+    @map = map
     @character = character
     # Need to come up with a condition to either create a new or load an existing character
     init_char
@@ -14,6 +12,10 @@ class Controller
 
   def create
     # Need to get some params to create a new MapTile
+  end
+
+  def show_inventory
+    @view.view_inventory(@character)
   end
 
   def init_char
