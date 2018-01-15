@@ -1,8 +1,8 @@
 class InventoryItem
-  attr_reader :items, :amount
+  attr_reader :name, :amount
 
-  def initialize(items, amount)
-    @items = items
+  def initialize(name, amount)
+    @name = name
     @amount = amount
   end
 end
