@@ -25,6 +25,7 @@ class Router
     when action == "stats" then @controller.show_char_stats
     when action == 'look'
       puts "You look around..."
+    when action == 'inv' then @controller.show_inventory
     when action == "save" then @controller.save_char_stats
     when action == 'stop' then stop
     else
