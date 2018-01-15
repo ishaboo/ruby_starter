@@ -22,7 +22,7 @@ class View
 
   def view_inventory(char)
     char.inventory.items.each do |item|
-      puts item.items + " amount: " + item.amount.to_s
+      puts item.name + " amount: " + item.amount.to_s
     end
   end
 
