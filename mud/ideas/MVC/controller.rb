@@ -33,7 +33,7 @@ class Controller
     when direction == 'w'
       @character.coords[:x] -= 1
     end
-    @character.read_map_info(@character.coords.values, @map)
+    read_map_info
   end
 
   def show_char_stats
@@ -42,5 +42,9 @@ class Controller
 
   def save_char_stats
     @character.save(@character)
+  end
+
+  def read_map_info
+    @character.read_map_info(@character.coords.values, @map)
   end
 end
