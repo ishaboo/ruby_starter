@@ -19,6 +19,12 @@ class View
     puts char_stats.coords.to_s + ' ' + char_stats.name.join + ' ' + char_stats.race.join
   end
 
+  def view_inventory(char)
+    char.inventory.items.each do |item|
+      puts item.items + " amount: " + item.amount.to_s
+    end
+  end
+
   def display_tasks
     puts "\n"
     puts "Which direction are you going?"
