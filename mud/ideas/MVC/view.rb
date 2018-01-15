@@ -11,7 +11,7 @@ class View
   end
 
   def show_map(map_tile_info)
-    # map_tile_info could be an array
+    # map_tile_info could be an array with more values
     puts map_tile_info
   end
 
