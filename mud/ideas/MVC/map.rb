@@ -3,7 +3,6 @@ require_relative 'maptile'
 
 class Map
   attr_reader :maptiles
-  attr_writer :info
 
   def initialize(csv_file)
     @csv_file = csv_file
