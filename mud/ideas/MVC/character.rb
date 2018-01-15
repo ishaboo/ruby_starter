@@ -31,6 +31,7 @@ class Character
 
   def default_coords
     # @coords = { :x => 0, :y => 0 }
+    # This is why we need to move to Active Record
     @coords = {
       :x => self.coords[0].split(' ')[0].to_i,
       :y => self.coords[0].split(' ')[1].to_i
