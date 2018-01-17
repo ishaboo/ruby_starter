@@ -4,6 +4,7 @@ class MapTile
   def initialize(coords, info)
     @coords = coords
     @info = info
+    @items = Hash.new(0)
   end
 
   def all
