@@ -1,0 +1,562 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"se",
+				"secret_war"
+			],
+			[
+				"c",
+				"chomp"
+			],
+			[
+				"si",
+				"size"
+			],
+			[
+				"i",
+				"if	if … end"
+			],
+			[
+				"in",
+				"inv"
+			],
+			[
+				"g",
+				"game"
+			],
+			[
+				"Co",
+				"Color"
+			],
+			[
+				"d",
+				"defs	def self .. end"
+			],
+			[
+				"C",
+				"Comp	include Comparable .."
+			],
+			[
+				"Fi",
+				"–Figure"
+			],
+			[
+				"m",
+				"minecraft"
+			],
+			[
+				"mi",
+				"Minecraft"
+			],
+			[
+				"an",
+				"answer"
+			],
+			[
+				"o",
+				"optp	option_parse { .. }"
+			],
+			[
+				"n",
+				"helpers_name"
+			],
+			[
+				"cl",
+				"cla	class .. initialize .. end"
+			],
+			[
+				"N",
+				"Name"
+			],
+			[
+				"at",
+				"attack_one"
+			],
+			[
+				"un",
+				"until	until ... end"
+			],
+			[
+				"u",
+				"unif	unix_filter { .. }"
+			],
+			[
+				"s",
+				"smalls"
+			],
+			[
+				"P",
+				"Pn-	PStore.new( .. )"
+			],
+			[
+				"D",
+				"Dog"
+			],
+			[
+				"sma",
+				"smalls"
+			],
+			[
+				"Y",
+				"You"
+			],
+			[
+				"sm",
+				"smalls"
+			],
+			[
+				"Map",
+				"MapTile"
+			],
+			[
+				"h",
+				"hit_points"
+			],
+			[
+				"l",
+				"look"
+			],
+			[
+				"w",
+				"walk"
+			],
+			[
+				"ti",
+				"titles"
+			],
+			[
+				"x",
+				"xml-	xmlread(..)"
+			],
+			[
+				"T",
+				"There"
+			],
+			[
+				"t",
+				"there"
+			],
+			[
+				"Cy",
+				"Cylads"
+			],
+			[
+				"Hu",
+				"Human"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"ther",
+				"There"
+			],
+			[
+				"map",
+				"map1"
+			],
+			[
+				"yo",
+				"you"
+			],
+			[
+				"do",
+				"down"
+			],
+			[
+				"Slee",
+				"SLEEPY"
+			],
+			[
+				"y",
+				"you"
+			],
+			[
+				"p",
+				"puts"
+			],
+			[
+				"H",
+				"Human"
+			],
+			[
+				"A",
+				"Alien"
+			],
+			[
+				"ra",
+				"races"
+			],
+			[
+				"nam",
+				"name"
+			],
+			[
+				"rev",
+				"reverse"
+			],
+			[
+				"no",
+				"nod"
+			],
+			[
+				"Ha",
+				"Haker"
+			],
+			[
+				"ma",
+				"map3"
+			],
+			[
+				"fi",
+				"fight"
+			],
+			[
+				"There",
+				"Theres"
+			],
+			[
+				"be",
+				"beatyful"
+			],
+			[
+				"wakl",
+				"walking"
+			],
+			[
+				"th",
+				"Theres"
+			],
+			[
+				"a",
+				"an"
+			],
+			[
+				"sp",
+				"speer"
+			],
+			[
+				"E",
+				"Exits"
+			],
+			[
+				"po",
+				"position1"
+			],
+			[
+				"S",
+				"SMASH"
+			],
+			[
+				"G",
+				"ghoul"
+			],
+			[
+				"pu",
+				"put"
+			],
+			[
+				"mash",
+				"mashapp"
+			],
+			[
+				"B",
+				"Bag"
+			],
+			[
+				"e",
+				"elsif	elsif ..."
+			],
+			[
+				"b",
+				"brobble"
+			],
+			[
+				"co",
+				"conditions"
+			],
+			[
+				"get",
+				"gets"
+			],
+			[
+				"W",
+				"weapons"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"whil",
+				"while	while ... end"
+			],
+			[
+				"st",
+				"stuff"
+			],
+			[
+				"pa",
+				"partner"
+			],
+			[
+				"par",
+				"Partner"
+			],
+			[
+				"put",
+				"put_into_satchel"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"app",
+				"apples"
+			],
+			[
+				"you",
+				"your_inventory"
+			],
+			[
+				"ap",
+				"Apples"
+			],
+			[
+				"BU",
+				"Bucks"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/crazecraft/secret_war.rb",
+		"/home/shnaps/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/shnaps/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/oltimate.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/character.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/map.csv",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/Real_Game.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/ruby.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/moldcrate.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/crazecraft/final_craze.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/minecraft/minecraft.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/ideas/rubystar.rb",
+		"/home/shnaps/master/the_boss.rb",
+		"/home/shnaps/code/louis/ruby/challenges/01_Beginnings/dicesimulator.rb",
+		"/home/shnaps/code/louis/ruby/challenges/03_Ruby_Loops/onceMore/example.rb",
+		"/home/shnaps/code/ruby/ruby_starter/mud/FutureFight.rb",
+		"/home/shnaps/code/ruby/ruby_starter/challenges/challenge0.rb",
+		"/home/shnaps/code/ruby/ruby_starter/gasu Orig.rb",
+		"/home/shnaps/code/louis/ruby/challenges/01_Beginnings/README.md",
+		"/home/shnaps/code/ruby/ruby_starter/challenges/challenge0",
+		"/home/shnaps/code/ruby/wizardry/untitled",
+		"/home/shnaps/Gasu/Gasu.rb ",
+		"/home/shnaps/master Games/Gasu the Oral of gods.rb ",
+		"/home/shnaps/.cache/gegl-0.2/swap/fallone.rb",
+		"/home/shnaps/code/ruby/wizardry/Gasu.rb",
+		"/home/shnaps/code/ruby/gosu-examples-master/examples/media/cptn_ruby_map.txt",
+		"/home/shnaps/code/ruby/gosu-examples-master/examples/media/landscape.svg",
+		"/home/shnaps/code/ruby/gosu-examples-master/examples/3p.rb",
+		"/home/shnaps/code/ruby/ruby_starter/2.rb",
+		"/home/shnaps/python games/untitled.py",
+		"/home/shnaps/code/ruby/ruby_starter/Red_Game_Original.rb",
+		"/home/shnaps/code/ruby/wizardry/battlerlife.rb",
+		"/home/shnaps/code/ruby/wizardry/battl8in.rb",
+		"/home/shnaps/code/ruby/wizardry/red_game.rb",
+		"/home/shnaps/code/ruby/ruby_starter/battle_life.rb",
+		"/home/shnaps/code/ruby/ruby_starter/character.rb",
+		"/home/shnaps/code/ruby/ruby_starter/README.md",
+		"/home/shnaps/code/ruby/ruby_starter/Your_Account.rb",
+		"/home/shnaps/code/ruby/wizardry/battl8in",
+		"/home/shnaps/code/ruby/ruby_starter/damage.rb",
+		"/home/shnaps/code/ruby/ruby_starter/Shop.rb",
+		"/home/shnaps/index.png",
+		"/home/shnaps/player.rb",
+		"/home/shnaps/gosu.rb",
+		"/home/shnaps/gosu",
+		"/home/shnaps/code/ruby/gosu/test.rb"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"end",
+			"ans",
+			"end",
+			"order_one",
+			"  ",
+			" '",
+			"inititialize",
+			"&",
+			"=>",
+			"class",
+			"\n	puts \"Screams of TERROR soround you!\"\n	puts \"	––––––––––––––------––––––––––––––\"\n	puts \"	||            | || |			 			 ||\"\n	puts \"	|–––––––––––––––––––––––––––––––––|\"\n	puts \"/––––––––––––––––––––––––––––––––––––\\ \"\n	puts \"| < /					| || || |		  			\\ >	|\"\n	puts \"The Terror_Boss  | |	 \\ 			   			|\"\n	puts \"––––––––––------ / \\ ------––––––––––\"\n	puts \"~~~~~~|		' 		/   \\ '’ ’ |~~~~~~~~~~\"\n	puts \"presentated by: Ismael * ’'' \"\n",
+			"class",
+			"\n	  ",
+			"map",
+			"class Game\n	puts \"Welcome Human, please wait.\"\n	puts \"Loading... Figure!\"\n	puts \"You need a name, what is it?\"\n	name = gets.chomp\n	puts \"Welcome #{name}\"\n	puts \"Loading World...\"\n	print name.strip\n	puts \"Where do you want to go west, east, north, south ?\"\n	ans = gets.chomp\n	while ans != 'quit' or ans != 'q'\n		ans = gets.chomp\n		if ans == 'west' or ans == 'w'\n			@y += 1\n			@x += 0\n		elsif ans == 'east' or ans == 'e'\n			@y -= 1\n			@x = 0\n		elsif ans == 'north' or ans == 'n'\n			@y = 0\n			@x += 1\n		elsif ans == 'south' or ans == 's'\n			@y = 0\n			@x -= 2\n		end\n		titles = [\n		  [[\"0 0\"],[name]],\n		  [[\"0 1\"],[\"battlant\"]],\n		  [[\"1 0\"],[\"market\"]],\n		  [[\"1 1\"],[\"Fire mantis\"]]\n		]\n		def map(x, y)\n			@x = 0\n			@y = 0\n	  end\n	end\nend",
+			"put",
+			"titles",
+			"down",
+			"Cylads",
+			"chomp",
+			"valley",
+			"RUBY",
+			"all",
+			"end",
+			"conditions",
+			"end",
+			"]+=",
+			"buy",
+			"	\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "gasu Orig.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"ruby.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

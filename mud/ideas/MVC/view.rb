@@ -22,12 +22,13 @@ class View
 
   def view_inventory(char)
     char.inventory.items.each do |item|
-      puts item.name + " amount: " + item.amount.to_s
+      puts item.name + " =>: " + item.amount.to_s
     end
   end
 
   def display_tasks
+    possibilities = ["Which direction are you going?", "What do you want to do?", "Please enter a command..."]
     puts "\n"
-    puts "Which direction are you going?"
+    puts possibilities.sample
   end
 end
