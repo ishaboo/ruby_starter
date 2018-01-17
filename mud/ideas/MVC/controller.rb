@@ -44,6 +44,10 @@ class Controller
     @character.save(@character)
   end
 
+  def drop_item
+    @character.drop_item
+  end
+
   def read_map_info
     @character.read_map_info(@character.coords.values, @map)
   end

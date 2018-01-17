@@ -5,6 +5,7 @@ class View
     puts "The following commands will also work:"
     puts "stats to see your character info"
     puts "inv to see your inventory"
+    puts "drop to drop an item"
     puts "save to save your location for next time"
     puts "n for north, s for south and so on"
     puts "stop to stop the program"

@@ -29,6 +29,17 @@ class Character
 
   end
 
+  def drop_item # Would be cool to drop on map => (map)
+    puts "Which item do you want to drop?"
+    item_name = gets.chomp
+    self.inventory.items.each_with_index do |item, index|
+      if item.name == item_name
+        self.inventory.items.delete_at(index)
+      end
+    end
+
+  end
+
   def default_coords
     # @coords = { :x => 0, :y => 0 }
     # This is why we need to move to Active Record
