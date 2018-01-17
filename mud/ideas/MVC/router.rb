@@ -26,6 +26,7 @@ class Router
     when action == 'look' then @controller.read_map_info
     when action == 'inv' then @controller.show_inventory
     when action == "save" then @controller.save_char_stats
+    when action == "drop" then @controller.drop_item
     when action == 'stop' then stop
     else
       puts "Please enter a valid command"
