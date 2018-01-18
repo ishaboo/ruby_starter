@@ -6,3 +6,4 @@ In order to test it just run:
 ```ruby
 ruby run.rb
 ```
+It seems that storing items on a csv based map model sux, so it might be time to move on to active record.
