@@ -13,7 +13,7 @@ class Map
 
   def add_tile(new_tile)
     @maptiles << new_tile
-    write_to_csv(@map_tiles)
+    write_to_csv(@maptiles)
   end
 
   def remove_tile
@@ -27,7 +27,11 @@ class Map
     CSV.open(@csv_file, "wb") do |csv|
       map_tiles.each do |tile|
         # Here, row is an array of columns
-        csv << tile[0] + tile[1]
+        if tile.items == {}
+          csv << [tile.coords] + [tile.info]
+        else
+          csv << [tile.coords] + [tile.info] + [tile.items]
+        end
       end
     end
   end
