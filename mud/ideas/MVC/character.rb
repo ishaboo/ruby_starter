@@ -29,15 +29,34 @@ class Character
 
   end
 
-  def drop_item # Would be cool to drop on map => (map)
+  def drop_item(map, coords) # Would be cool to drop on map => (map)
     puts "Which item do you want to drop?"
     item_name = gets.chomp
+
+    info = get_info(map, coords)
+
     self.inventory.items.each_with_index do |item, index|
       if item.name == item_name
+        map.create_tile(coords, info, item)
         self.inventory.items.delete_at(index)
       end
     end
+  end
 
+  def get_info(map, coords)
+    if map.maptiles.any? {|tile| tile.coords == "#{coords[0]} #{coords[1]}"}
+      map.maptiles.each do |tile|
+        if tile.coords == "#{coords[0]} #{coords[1]}"
+          if tile.items != {}
+            return info = tile.info + " " + tile.items
+          else
+            return info = tile.info
+          end
+        end
+      end
+    else
+      return info = "no map yet"
+    end
   end
 
   def default_coords
@@ -56,13 +75,8 @@ class Character
     end
   end
 
-  def read_map_info(coord_given, map)
-    info = ''
-    map.maptiles.each do |tile|
-      if tile.coords == "#{coord_given[0]} #{coord_given[1]}"
-        info = tile.info
-      end
-    end
+  def read_map_info(coords, map)
+    info = get_info(map, coords)
     @view.show_map(info)
   end
 end
