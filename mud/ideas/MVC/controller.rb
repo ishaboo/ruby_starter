@@ -10,10 +10,6 @@ class Controller
     init_char
   end
 
-  def create
-    # Need to get some params to create a new MapTile
-  end
-
   def show_inventory
     @view.view_inventory(@character)
   end
