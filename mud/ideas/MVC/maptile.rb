@@ -2,10 +2,10 @@ class MapTile
   attr_reader :coords, :info, :items
   attr_writer :items
 
-  def initialize(coords, info)
+  def initialize(coords, info, items={})
     @coords = coords
     @info = info
-    @items = Hash.new(0)
+    @items = items
   end
 
   def all
