@@ -45,7 +45,7 @@ class Controller
   end
 
   def drop_item
-    @character.drop_item
+    @character.drop_item(@map, @character.coords.values)
   end
 
   def read_map_info
