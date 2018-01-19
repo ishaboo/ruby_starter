@@ -6,7 +6,6 @@ class Character
   attr_reader :coords, :name, :race, :inventory
   attr_writer :coords
 
-  # def initialize(attributes={})
   def initialize(csv_file, inventory)
     @csv_file = csv_file
     @name = CSV.read(@csv_file).map do |attr|
@@ -18,9 +17,6 @@ class Character
     @coords = CSV.read(@csv_file).map do |attr|
       attr[0]
     end
-    # attributes[:race]
-    # attributes[:name]
-    # attributes[:coords]
     @view = View.new
     @inventory = inventory
   end
@@ -60,7 +56,6 @@ class Character
   end
 
   def default_coords
-    # @coords = { :x => 0, :y => 0 }
     # This is why we need to move to Active Record
     @coords = {
       :x => self.coords[0].split(' ')[0].to_i,
