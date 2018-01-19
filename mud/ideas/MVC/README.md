@@ -7,3 +7,7 @@ In order to test it just run:
 ruby run.rb
 ```
 It seems that storing items on a csv based map model sux, so it might be time to move on to active record.
+
+Most basic settings to connect db to ruby with active record and without rails [link](https://til.codes/connecting-a-ruby-app-to-active-record-without-rails/).
+
+A longer, more detailed version [link](https://snippets.aktagon.com/snippets/257-How-to-use-ActiveRecord-without-Rails).
