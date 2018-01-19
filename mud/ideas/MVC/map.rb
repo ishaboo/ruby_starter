@@ -7,8 +7,20 @@ class Map
   def initialize(csv_file)
     @csv_file = csv_file
     @maptiles = CSV.read(@csv_file).map do |map|
-      MapTile.new(map[0], map[1])
+      if map[2]
+        MapTile.new(map[0], map[1], map[2])
+      else
+        MapTile.new(map[0], map[1])
+      end
     end
+  end
+
+  def create_tile(coords, info, item)
+    coords = "#{coords[0]} #{coords[1]}"
+    item = "#{item.name} #{item.amount}"
+    tile = MapTile.new(coords, info, item)
+    remove_tile(info)
+    add_tile(tile)
   end
 
   def add_tile(new_tile)
@@ -16,11 +28,17 @@ class Map
     write_to_csv(@maptiles)
   end
 
-  def remove_tile
+  def remove_tile(info)
   #   Not in use yet
   #   this removes a tile from the map.
-  #   @map_tiles.delete_at(tile_id)
+  #   @maptiles.delete_at(tile_id)
   #   write_to_csv(@map_tiles)
+    tile_id = maptiles.each_with_index do |tile, index|
+      if tile.info == info
+        index
+      end
+    end
+    @maptiles.delete_at(tile_id.join.to_i)
   end
 
   def write_to_csv(map_tiles)
