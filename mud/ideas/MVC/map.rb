@@ -19,8 +19,7 @@ class Map
     coords = "#{coords[0]} #{coords[1]}"
     item = "#{item.name} #{item.amount}"
     tile = MapTile.new(coords, info, item)
-    remove_tile(info)
-    add_tile(tile)
+    remove_tile(info, tile)
   end
 
   def add_tile(new_tile)
@@ -28,17 +27,14 @@ class Map
     write_to_csv(@maptiles)
   end
 
-  def remove_tile(info)
-  #   Not in use yet
-  #   this removes a tile from the map.
-  #   @maptiles.delete_at(tile_id)
-  #   write_to_csv(@map_tiles)
+  def remove_tile(info, tile)
     tile_id = maptiles.each_with_index do |tile, index|
       if tile.info == info
         index
       end
     end
     @maptiles.delete_at(tile_id.join.to_i)
+    add_tile(tile)
   end
 
   def write_to_csv(map_tiles)
