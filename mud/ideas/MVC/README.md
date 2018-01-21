@@ -12,3 +12,5 @@ Most basic settings to connect db to ruby with active record and without rails [
 
 A longer, more detailed version [link](https://snippets.aktagon.com/snippets/257-How-to-use-ActiveRecord-without-Rails).
 
+There is also a way to just create a DB in sqlite3 and use that.
+
