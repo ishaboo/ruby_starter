@@ -1,4 +1,4 @@
-class Controller
+class CharactersController
   def initialize
 
   end
