@@ -1,5 +1,5 @@
-require_relative '../models/character'
-require_relative '../views/character_view'
+# require_relative '../models/character'
+# require_relative '../views/character_view'
 
 class CharactersController
   def initialize
@@ -15,11 +15,25 @@ class CharactersController
   end
 
   def view_char
-    @view.view_char(@character)
+    @view.view_char
   end
 
   def load_char
     char_id = @view.find_char
-    @character = Character.find(char_id)
+    character = Character.find(char_id)
+  end
+
+  def update_char
+    char_id = @view.find_char
+    character = Character.find(char_id)
+    character.name = @view.new_char("name")
+    character.race = @view.new_char("race")
+    character.save
+  end
+
+  def delete_char
+    char_id = @view.find_char
+    character = Character.find(char_id)
+    character.destroy
   end
 end
