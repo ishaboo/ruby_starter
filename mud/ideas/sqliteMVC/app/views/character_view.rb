@@ -4,7 +4,9 @@ class CharactersView
     answer = gets.chomp
   end
 
-  def view_char(char)
+  def view_char
+    id = find_char
+    char = Character.find(id)
     puts "name: #{char.name} race: #{char.race}"
   end
 
