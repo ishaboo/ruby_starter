@@ -1,6 +1,8 @@
 class Character
+  # These need to be fixed
   attr_reader :id, :name, :race, :coords, :inventory
   attr_writer :id, :name, :race, :coords, :inventory
+
   def initialize(attributes={})
     @id = attributes[:id]
     @name = attributes[:name]
