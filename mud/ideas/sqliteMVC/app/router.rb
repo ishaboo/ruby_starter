@@ -1,5 +1,3 @@
-require_relative 'banner'
-
 class Router
   def initialize
     @controller = CharactersController.new
@@ -11,7 +9,7 @@ class Router
     @banner.greeting
     while @running
       print_menu
-      action = gets.chomp.to_i
+      action = gets.chomp
       route(action)
     end
   end
@@ -25,11 +23,11 @@ class Router
   def route(action)
     case
       when action.length == 1 then @controller.move_char(action)
-      when action == 'stats' then @controller.show_char_stats
-      when action == 'look' then @controller.read_map_info
-      when action == 'inv' then @controller.show_inventory
-      when action == 'save' then @controller.save_char_stats
-      when action == 'drop' then @controller.drop_item
+      when action == "new" then @controller.create
+      when action == "view" then @controller.view_char
+      when action == 'load' then @controller.load_char
+      when action == 'edit' then @controller.update_char
+      when action == 'delete' then @controller.delete_char
       when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
