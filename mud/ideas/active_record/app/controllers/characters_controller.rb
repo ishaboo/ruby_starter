@@ -14,7 +14,7 @@ class CharactersController
   def create
     name = @view.ask_for("name")
     race = @view.ask_for("race")
-    character = Character.new(title: title, url: url, votes: votes)
+    character = Character.new(name: name, race: race)
     character.save
   end
 
@@ -34,11 +34,13 @@ class CharactersController
     @view.give_msg("You just destroyed that ID!!!")
   end
 
-  def move_char
+  def move_char(direction)
     # Need a way to move the char on the map
     id = @view.ask_for_coords
     character = Character.find(id)
     character.coord_x # need some logic in here
     character.save
   end
+
+  # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
 end
