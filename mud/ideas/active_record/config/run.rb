@@ -17,3 +17,13 @@ ActiveRecord::Base.logger = logger
 
 # Load models
 Dir["#{__dir__}/../app/models/*.rb"].each { |file| require file }
+
+# Load controllers and router
+Dir["#{__dir__}/../app/controllers/*.rb"].each { |file| require file }
+
+# Load views
+Dir["#{__dir__}/../app/views/*.rb"].each { |file| require file }
+
+router = Router.new
+router.run
+
