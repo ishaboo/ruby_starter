@@ -21,6 +21,7 @@ class Router
     case
     when action.length == 1 then @controller.move_char(action)
     when action == 'new' then @controller.create
+    when action == 'delete' then @controller.destroy
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
