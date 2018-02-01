@@ -1,6 +1,7 @@
 class Router
   def initialize
-    @controller = CharactersController.new
+    @char_controller = CharactersController.new
+    @inv_controller = InventoryController.new
     @running = true
     @view = CharactersView.new
   end
@@ -19,9 +20,10 @@ class Router
 
   def route(action)
     case
-    when action.length == 1 then @controller.move_char(action)
-    when action == 'new' then @controller.create
-    when action == 'delete' then @controller.destroy
+    when action.length == 1 then @char_controller.move_char(action)
+    when action == 'new' then @char_controller.create
+    when action == 'delete' then @char_controller.destroy
+    when action == 'inv' then @inv_controller.show_inventory
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
