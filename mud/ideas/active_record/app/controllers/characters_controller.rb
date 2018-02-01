@@ -1,4 +1,4 @@
-require_relative "../views/characters_view"
+# require_relative "../views/characters_view" --> already requiered in the run .rb file
 
 class CharactersController
   def initialize
@@ -40,6 +40,10 @@ class CharactersController
     character = Character.find(id)
     character.coord_x # need some logic in here
     character.save
+  end
+
+  def show_inventory
+    # should be done in the inventory_controller.rb
   end
 
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
