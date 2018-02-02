@@ -11,6 +11,11 @@ class CharactersController
     @view.list_all(list)
   end
 
+  def load
+    id = @view.ask_for("your character's id:")
+    character = Charcter.find(id)
+  end
+
   def create
     name = @view.ask_for("name")
     race = @view.ask_for("race")
