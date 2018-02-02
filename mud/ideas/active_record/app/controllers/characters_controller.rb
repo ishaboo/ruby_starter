@@ -13,7 +13,7 @@ class CharactersController
 
   def load
     id = @view.ask_for("your character's id:")
-    character = Charcter.find(id)
+    character = Character.find(id)
   end
 
   def create
