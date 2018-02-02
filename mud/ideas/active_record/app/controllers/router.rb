@@ -2,8 +2,9 @@ class Router
   def initialize
     @char_controller = CharactersController.new
     @inv_controller = InventoryController.new
-    @running = true
     @view = CharactersView.new
+    @character = 0
+    @running = true
   end
 
   def run
@@ -22,6 +23,7 @@ class Router
     case
     when action.length == 1 then @char_controller.move_char(action)
     when action == 'new' then @char_controller.create
+    when action == 'load' then @character = @char_controller.load
     when action == 'delete' then @char_controller.destroy
     when action == 'inv' then @inv_controller.show_inventory
     when action == 'stop' || action == 'exit' then stop
