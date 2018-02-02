@@ -5,7 +5,7 @@ class CreateInventoryItems < ActiveRecord::Migration[5.0]
       t.integer :amount
       t.timestamps
 
-      t.references  :characters, index: true, foreign_key: true
+      t.references  :character, index: true, foreign_key: true
     end
   end
 end
