@@ -21,9 +21,8 @@ class CharactersController
     character.save
   end
 
-  def update
-    id = @view.ask_for("id").to_i
-    character = Character.find(id)
+  def update(character)
+    puts "Change your character's name and race"
     character.name = @view.ask_for(:name)
     character.race = @view.ask_for(:race)
     character.save
@@ -54,6 +53,5 @@ class CharactersController
   def show_pos(char)
     puts "You are at: #{char.x_coord} and #{char.y_coord}"
   end
-
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
 end
