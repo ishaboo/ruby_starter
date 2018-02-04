@@ -1,12 +1,12 @@
 a = Character.new(name: "Mygdin", race: "Elf", x_coord: 0, y_coord: 0)
 a.save
-b = Character.new(name: "Govin", race: "Elf")
+b = Character.new(name: "Govin", race: "Elf", x_coord: 0, y_coord: 0)
 b.save
-c = Character.new(name: "Donder", race: "Human")
+c = Character.new(name: "Donder", race: "Human", x_coord: 0, y_coord: 0)
 c.save
-d = Character.new(name: "Glimli", race: "Dwarf")
+d = Character.new(name: "Glimli", race: "Dwarf", x_coord: 0, y_coord: 0)
 d.save
-e = Character.new(name: "Ormir", race: "Orc")
+e = Character.new(name: "Ormir", race: "Orc", x_coord: 0, y_coord: 0)
 e.save
 
 one = InventoryItem.new(name: "Dagger", amount: 1)
