@@ -17,4 +17,11 @@ class CharactersView
   def give_msg(message)
     puts message
   end
+
+  def list_all(list)
+    list.each_with_index do |char, i|
+      i += 1
+      puts "#{i}: #{char.name}, #{char.race}"
+    end
+  end
 end
