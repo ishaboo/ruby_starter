@@ -24,12 +24,14 @@ class Router
     case
     when action.length == 1 then @char_controller.move_char(@character, action)
     when action == 'new' then @char_controller.create
+    when action == 'update' then @char_controller.update(@character)
     when action == 'load' then @character = @char_controller.load
     when action == 'delete' then @char_controller.destroy
     when action == 'inv' then @inv_controller.show_inventory(@character)
     when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
+    when action == 'save' then @character.save
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
