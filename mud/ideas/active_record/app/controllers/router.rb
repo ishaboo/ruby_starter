@@ -32,7 +32,7 @@ class Router
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
     when action == 'save' then @character.save
-    when actiop == 'help' then @view.commands
+    when action == 'help' then @view.commands
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
