@@ -29,6 +29,7 @@ class Router
     when action == 'inv' then @inv_controller.show_inventory(@character)
     when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
     when action == 'pos' then @char_controller.show_pos(@character)
+    when action == 'list' then @char_controller.index
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command"
