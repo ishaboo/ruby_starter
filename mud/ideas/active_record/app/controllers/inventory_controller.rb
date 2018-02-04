@@ -1,6 +1,6 @@
 class InventoryController
   def initialize
-    setup
+    # setup
   end
 
   def setup
@@ -18,7 +18,9 @@ class InventoryController
     inventory.save
   end
 
-  def show_inventory
-
+  def show_inventory(character)
+    character.inventory_items.each do |item|
+      puts "You have #{item.amount} #{item.name}"
+    end
   end
 end
