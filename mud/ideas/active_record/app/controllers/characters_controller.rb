@@ -1,5 +1,3 @@
-# require_relative "../views/characters_view" --> already requiered in the run .rb file
-
 class CharactersController
   def initialize
     @view = CharactersView.new
@@ -39,16 +37,22 @@ class CharactersController
     @view.give_msg("You just destroyed that ID!!!")
   end
 
-  def move_char(direction)
-    # Need a way to move the char on the map
-    id = @view.ask_for_coords
-    character = Character.find(id)
-    character.coord_x # need some logic in here
-    character.save
+  def move_char(char, direction)
+    case
+    when direction == 'n'
+      char.y_coord += 1
+    when direction == 's'
+      char.y_coord -= 1
+    when direction == 'e'
+      char.x_coord += 1
+    when direction == 'w'
+      char.x_coord -= 1
+    end
+    # Need a method to do 'look'
   end
 
-  def show_inventory
-    # should be done in the inventory_controller.rb
+  def show_pos(char)
+    puts "You are at: #{char.x_coord} and #{char.y_coord}"
   end
 
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
