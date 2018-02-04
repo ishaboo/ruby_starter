@@ -15,6 +15,7 @@ logger.formatter = proc do |_severity, _datetime, _progname, msg|
 end
 ActiveRecord::Base.logger = logger
 
+# Doing the requires seperately only to be able to manipulate them better if needed
 # Load models
 Dir["#{__dir__}/../app/models/*.rb"].each { |file| require file }
 
@@ -23,6 +24,9 @@ Dir["#{__dir__}/../app/controllers/*.rb"].each { |file| require file }
 
 # Load views
 Dir["#{__dir__}/../app/views/*.rb"].each { |file| require file }
+
+# Disable/SQL logging
+ActiveRecord::Base.logger = nil
 
 router = Router.new
 router.run
