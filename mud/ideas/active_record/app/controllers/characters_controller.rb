@@ -17,7 +17,7 @@ class CharactersController
   def create
     name = @view.ask_for("name")
     race = @view.ask_for("race")
-    character = Character.new(name: name, race: race)
+    character = Character.new(name: name, race: race, y_coord: 0, x_coord: 0)
     character.save
   end
 
