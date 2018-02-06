@@ -20,9 +20,8 @@ class CharactersView
   end
 
   def list_all(list)
-    list.each_with_index do |char, i|
-      i += 1
-      puts "#{i}: #{char.name}, #{char.race}"
+    list.each do |char|
+      puts "#{char.id}: #{char.name}, #{char.race}"
     end
   end
 
