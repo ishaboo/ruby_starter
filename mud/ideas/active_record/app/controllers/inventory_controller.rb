@@ -1,3 +1,5 @@
+# require "pry-byebug"
+
 class InventoryController
   def initialize
     # setup
@@ -21,6 +23,34 @@ class InventoryController
   def show_inventory(character)
     character.inventory_items.each do |item|
       puts "You have #{item.amount} #{item.name}"
+    end
+  end
+
+  def drop_item(character)
+    print "Which item do you want to drop?\n> "
+    item_name = gets.chomp
+    character.inventory_items.each do |item|
+      if item.name == item_name
+        tile = find_tile(character)
+        tile.inventory_items << item
+        item.character_id = nil
+        item.map_tile_id = tile.id
+        item.save
+      end
+    end
+    character.save
+    puts "Your position has been saved!"
+    character.reload
+  end
+
+  private
+
+  def find_tile(char)
+    tiles = MapTile.all
+    tiles.each do |tile|
+      if tile.x_coord == char.x_coord && tile.y_coord == char.y_coord
+        return tile
+      end
     end
   end
 end
