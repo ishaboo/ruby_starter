@@ -32,6 +32,8 @@ class CharactersView
     puts "load to load a character,"
     puts "delete to delete a character,"
     puts "inv to show you characters inventory,"
+    puts "drop to drop an inventoy item,"
+    puts "inspect to search for items on the map,"
     puts "look to read the map tile's name"
     puts "pos to show your characters coordinates,"
     puts "list to view all characters,"
