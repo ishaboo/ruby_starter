@@ -42,7 +42,7 @@ r = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 1, y_co
 r.save
 s = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 1, y_coord: 1)
 s.save
-t = MapTile.new(name: "Town Center", description: "The busy town's center", x_coord: 1, y_coord: -1)
+t = MapTile.new(name: "Town Square", description: "The town's shitty square", x_coord: 1, y_coord: -1)
 t.save
 u = MapTile.new(name: "Bar and Tavern", description: "Rusty's bar and tavern", x_coord: 1, y_coord: 2)
 u.save
