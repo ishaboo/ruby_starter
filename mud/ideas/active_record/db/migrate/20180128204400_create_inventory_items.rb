@@ -6,6 +6,7 @@ class CreateInventoryItems < ActiveRecord::Migration[5.0]
       t.timestamps
 
       t.references  :character, index: true, foreign_key: true
+      t.references  :map_tile, index: true, foreign_key: true
     end
   end
 end
