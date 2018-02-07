@@ -43,6 +43,23 @@ class InventoryController
     character.reload
   end
 
+  def grab_item(character)
+    print "Which item do you want to grab?\n> "
+    item_name = gets.chomp
+    tile = find_tile(character)
+    tile.inventory_items.each do |item|
+      if item.name == item_name
+        character.inventory_items << item
+        item.character_id = character.id
+        item.map_tile_id = nil
+        item.save
+      end
+    end
+    character.save
+    puts "Your position has been saved!"
+    character.reload
+  end
+
   private
 
   def find_tile(char)
