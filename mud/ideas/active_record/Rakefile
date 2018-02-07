@@ -8,6 +8,10 @@ namespace :db do
     touch db_path
   end
 
+  task :default do
+    ruby "config/run.rb"
+  end
+
   desc 'drop the database'
   task :drop do
     puts "Deleting #{db_path}..."
