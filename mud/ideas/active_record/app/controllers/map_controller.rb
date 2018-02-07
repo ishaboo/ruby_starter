@@ -13,6 +13,14 @@ class MapController
     end
   end
 
+  def read_description(x, y)
+    @tiles.each do |tile|
+      if tile.x_coord == x && tile.y_coord == y
+        puts tile.description
+      end
+    end
+  end
+
   def search_tile(x, y)
     @tiles.each do |tile|
       tile.reload
