@@ -29,7 +29,9 @@ class Router
     when action == 'delete' then @char_controller.destroy
     when action == 'inv' then @inv_controller.show_inventory(@character)
     when action == 'drop' then @inv_controller.drop_item(@character)
+    when action == 'grab' then @inv_controller.grab_item(@character)
     when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
+    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord)
     when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
