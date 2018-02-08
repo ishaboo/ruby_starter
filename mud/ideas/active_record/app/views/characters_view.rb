@@ -38,6 +38,7 @@ class CharactersView
     puts "look to read the map tile's name,"
     puts "look more or again to read the tile's description,"
     puts "pos to show your characters coordinates,"
+    puts "shop to check if you are in a shop,"
     puts "list to view all characters,"
     puts "save to save your coordinates,"
     puts "help to view this list,"
