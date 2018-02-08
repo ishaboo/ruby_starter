@@ -54,7 +54,10 @@ m = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_co
 m.save
 n = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_coord: -1)
 n.save
+xy = Shop.new(name: "Dusty Shop", description: "Get your gear here")
+xy.save
 k = MapTile.new(name: "General Store", description: "Dusty's Shoppe", x_coord: 2, y_coord: 2)
+k.shop = Shop.find(1)
 k.save
 l = MapTile.new(name: "Fighting Arena", description: "Molnir's Arena", x_coord: 2, y_coord: -2)
 l.save
@@ -68,6 +71,4 @@ h = MapTile.new(name: "Bookstore", description: "Logolas bookstore", x_coord: 3,
 h.save
 f = MapTile.new(name: "Library", description: "The town's public library", x_coord: 3, y_coord: -2)
 f.save
-
-
 
