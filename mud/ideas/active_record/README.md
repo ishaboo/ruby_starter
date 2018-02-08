@@ -10,3 +10,6 @@ This is a database backed MVC based small MUD that needs needs a lot of work.
 * [ ] A store to buy items
 * [ ] A bot to interact with
 * [ ] Fighting stats and capabilities
+
+
+### Deal with adding a shop and shopkeepers
