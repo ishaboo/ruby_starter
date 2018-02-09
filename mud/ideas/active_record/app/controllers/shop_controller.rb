@@ -18,6 +18,8 @@ class ShopController
         tile.shop.inventory_items.each do |item|
           puts "#{item.name} price: #{item.value} coins"
         end
+      else
+        puts "...nothing at the moment"
       end
     else
       puts "There is no shop here..."
