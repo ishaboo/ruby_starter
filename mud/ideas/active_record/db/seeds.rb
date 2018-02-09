@@ -1,4 +1,4 @@
-a = Character.new(name: "Mygdin", race: "Elf", x_coord: 0, y_coord: 0)
+a = Character.new(name: "Mygdin", race: "Elf", x_coord: 2, y_coord: 2)
 a.save
 b = Character.new(name: "Govin", race: "Elf", x_coord: 0, y_coord: 0)
 b.save
@@ -56,6 +56,18 @@ n = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_co
 n.save
 xy = Shop.new(name: "Dusty Shop", description: "Get your gear here")
 xy.save
+stuff = InventoryItem.new(name: "Bread", amount: 3, value: 5)
+stuff.shop = Shop.find(1)
+stuff.save
+some = InventoryItem.new(name: "Staff", amount: 1, value: 25)
+some.shop = Shop.find(1)
+some.save
+more = InventoryItem.new(name: "Bow", amount: 1, value: 35)
+more.shop = Shop.find(1)
+more.save
+things = InventoryItem.new(name: "Arrows", amount: 23, value: 5)
+things.shop = Shop.find(1)
+things.save
 k = MapTile.new(name: "General Store", description: "Dusty's Shoppe", x_coord: 2, y_coord: 2)
 k.shop = Shop.find(1)
 k.save
