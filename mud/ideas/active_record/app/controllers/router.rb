@@ -35,6 +35,7 @@ class Router
     when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord)
     when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
     when action == 'shop' then @shop_controller.check(@character)
+    when action == 'list items' then @shop_controller.list_items(@character)
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
     when action == 'save' then @character.save
