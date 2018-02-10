@@ -1,4 +1,4 @@
-# require "pry-byebug"
+require "pry-byebug"
 
 class ShopController
   def check(char)
@@ -23,6 +23,36 @@ class ShopController
       end
     else
       puts "There is no shop here..."
+    end
+  end
+
+  def buy(char)
+    tile = find_tile(char)
+    mon = 0
+    char.inventory_items.each do |item|
+      if item.name == "Coins"
+        mon = item.amount
+      end
+    end
+    if tile.shop
+      print "What would you like to buy?\n> "
+      wants = gets.chomp
+      if tile.shop.inventory_items
+        tile.shop.inventory_items.each do |item|
+          if item.name == wants
+            # binding.pry
+            print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
+            # need to catch some input here
+            if item.value <= mon
+              puts "You could buy #{item.name}"
+            else
+              puts "You don't have enough money to buy #{item.name}"
+            end
+          end
+        end
+      end
+    else
+      puts "You cannot buy anything here..."
     end
   end
 
