@@ -56,6 +56,9 @@ n = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_co
 n.save
 xy = Shop.new(name: "Dusty Shop", description: "Get your gear here")
 xy.save
+money = two = InventoryItem.new(name: "Coins", amount: 0)
+money.shop = Shop.find(1)
+money.save
 stuff = InventoryItem.new(name: "Bread", amount: 3, value: 5)
 stuff.shop = Shop.find(1)
 stuff.save
