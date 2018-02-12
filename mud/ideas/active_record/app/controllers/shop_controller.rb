@@ -40,13 +40,25 @@ class ShopController
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
           if item.name == wants
-            # binding.pry
+            binding.pry
             print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
-            # need to catch some input here
-            if item.value <= mon
-              puts "You could buy #{item.name}"
+            ans = gets.chomp
+            if ans[0].downcase == 'y'
+              if item.value <= mon
+                # binding.pry
+                coins = char.inventory_items.find_by(name: "Coins")
+                coins.update(amount: coins.amount - item.value)
+                register = tile.shop.inventory_items.find_by(name: "Coins")
+                register.update(amount: register.amount + item.value)
+                item.update(amount: item.amount - 1)
+                x = InventoryItem.new(name: item.name, amount: 1, value: item.value)
+                char.inventory_items << x # we could move line 54 here and drop x
+                # puts "You could buy #{item.name}"
+              else
+                puts "You don't have enough money to buy #{item.name}"
+              end
             else
-              puts "You don't have enough money to buy #{item.name}"
+              puts "...bye"
             end
           end
         end
