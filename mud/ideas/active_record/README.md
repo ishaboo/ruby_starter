@@ -15,3 +15,5 @@ This is a database backed MVC based small MUD that needs needs a lot of work.
 ### Deal with adding a shop and shopkeepers
 
 Check out some other MUDs to see how shops and NPCs are handled there.
+
+Adding shop worked, now working on buying method...
