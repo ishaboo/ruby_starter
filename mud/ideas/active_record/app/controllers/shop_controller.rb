@@ -40,7 +40,7 @@ class ShopController
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
           if item.name == wants
-            binding.pry
+            # binding.pry
             print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
             ans = gets.chomp
             if ans[0].downcase == 'y'
