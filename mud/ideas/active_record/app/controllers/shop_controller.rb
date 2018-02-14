@@ -16,7 +16,9 @@ class ShopController
       puts "This shop has the following items:"
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
-          puts "#{item.name} price: #{item.value} coins"
+          unless item.name == "Coins"
+            puts "#{item.name} price: #{item.value} coins"
+          end
         end
       else
         puts "...nothing at the moment"
