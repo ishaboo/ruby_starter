@@ -13,10 +13,11 @@ class ShopController
   def list_items(char)
     tile = find_tile(char)
      if tile.shop
+      binding.pry
       puts "This shop has the following items:"
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
-          unless item.name == "Coins"
+          unless item.name == "Coins" || item.amount <= 0
             puts "#{item.name} price: #{item.value} coins"
           end
         end
@@ -40,29 +41,32 @@ class ShopController
       print "What would you like to buy?\n> "
       wants = gets.chomp
       if tile.shop.inventory_items
-        tile.shop.inventory_items.each do |item|
-          if item.name == wants
-            # binding.pry
-            print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
-            ans = gets.chomp
-            if ans[0].downcase == 'y'
-              if item.value <= mon
-                # binding.pry
-                coins = char.inventory_items.find_by(name: "Coins")
-                coins.update(amount: coins.amount - item.value)
-                register = tile.shop.inventory_items.find_by(name: "Coins")
-                register.update(amount: register.amount + item.value)
-                item.update(amount: item.amount - 1)
-                x = InventoryItem.new(name: item.name, amount: 1, value: item.value)
-                char.inventory_items << x # we could move line 54 here and drop x
-                # puts "You could buy #{item.name}"
+        if tile.shop.inventory_items.exists?(name: wants)
+          tile.shop.inventory_items.each do |item|
+            if item.name == wants && item.amount > 0
+              print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
+              ans = gets.chomp
+              if ans[0].downcase == 'y'
+                if item.value <= mon
+                  coins = char.inventory_items.find_by(name: "Coins")
+                  coins.update(amount: coins.amount - item.value)
+                  register = tile.shop.inventory_items.find_by(name: "Coins")
+                  register.update(amount: register.amount + item.value)
+                  item.update(amount: item.amount - 1)
+                  x = InventoryItem.new(name: item.name, amount: 1, value: item.value)
+                  char.inventory_items << x # we could move line 54 here and drop x
+                else
+                  puts "You don't have enough money to buy #{item.name}"
+                end
               else
-                puts "You don't have enough money to buy #{item.name}"
+                puts "...bye"
               end
-            else
-              puts "...bye"
+            elsif item.name == wants && item.amount <= 0
+              puts "Sorry, no more #{wants}"
             end
           end
+        else
+          puts "This item is not available."
         end
       end
     else
