@@ -16,4 +16,6 @@ This is a database backed MVC based small MUD that needs needs a lot of work.
 
 Check out some other MUDs to see how shops and NPCs are handled there.
 
-Adding shop worked, now working on buying method...
+Buying method is sorta working, needs adjustments.
+
+The commands help list is growing too large, it would be good to break up.
