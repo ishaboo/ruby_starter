@@ -19,3 +19,4 @@ Check out some other MUDs to see how shops and NPCs are handled there.
 Buying method is sorta working, needs adjustments.
 
 The commands help list is growing too large, it would be good to break up.
+Also gonna add a shopkeeper...
