@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 class Router
   def initialize
     @char_controller = CharactersController.new
@@ -13,9 +15,13 @@ class Router
     @view.start_game
 
     while @running
-      display_tasks
-      action = gets.chomp
-      route(action)
+      if @character == 0 || @character.nil?
+        start_with_character
+      else
+        display_tasks
+        action = gets.chomp
+        route(action)
+      end
     end
   end
 
@@ -43,7 +49,7 @@ class Router
     when action == 'help' then @view.commands
     when action == 'stop' || action == 'exit' then stop
     else
-      puts "Please enter a valid command"
+      puts "Please enter a valid command (you can enter 'help' for a list of commands)"
     end
   end
 
@@ -53,5 +59,19 @@ class Router
 
   def display_tasks
     @view.display_tasks
+  end
+
+  def start_with_character
+    puts "You must load a Character first:"
+    puts "Do you want a list of characters?[Y/n]"
+    ans = gets.chomp
+    if ans == ""
+      puts "please answer 'y' or 'n'"
+    elsif ans[0].downcase == 'y'
+      route("list")
+      route("load")
+    else
+      route("load")
+    end
   end
 end
