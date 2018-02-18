@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 class CharactersController
   def initialize
     @view = CharactersView.new
@@ -11,7 +13,11 @@ class CharactersController
 
   def load
     id = @view.ask_for("your character's id:")
-    character = Character.find(id)
+    begin
+      character = Character.find(id)
+    rescue
+      puts "Sorry, we cannot find that Character"
+    end
   end
 
   def create
