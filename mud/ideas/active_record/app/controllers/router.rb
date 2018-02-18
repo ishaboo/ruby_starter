@@ -65,13 +65,17 @@ class Router
     puts "You must load a Character first:"
     puts "Do you want a list of characters?[Y/n]"
     ans = gets.chomp
-    if ans == ""
-      puts "please answer 'y' or 'n'"
-    elsif ans[0].downcase == 'y'
+
+    case
+    when ans == ''
+      puts "...please enter something"
+    when ans[0].downcase == 'y'
       route("list")
       route("load")
-    else
+    when ans[0].downcase == 'n'
       route("load")
+    else
+      puts "please answer 'y' or 'n'"
     end
   end
 end
