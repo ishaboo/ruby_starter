@@ -1,15 +1,15 @@
 require 'rspec/core/rake_task'
 require_relative 'config/run'
 
+task :default do
+  ruby "config/run.rb"
+end
+
 namespace :db do
   desc 'create the database'
   task :create do
     puts "Creating #{db_path}..."
     touch db_path
-  end
-
-  task :default do
-    ruby "config/run.rb"
   end
 
   desc 'drop the database'
