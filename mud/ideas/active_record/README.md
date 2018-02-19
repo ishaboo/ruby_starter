@@ -20,3 +20,23 @@ Buying method is sorta working, needs adjustments.
 
 The commands help list is growing too large, it would be good to break up.
 Also gonna add a shopkeeper...
+
+### Ideas for the Help menu
+
+character help options:
+
+- character:
+
+new, load, update, delete, inv, drop, grab, list, save
+
+- map:
+
+look, inspect, look more, pos, shop
+
+- shop:
+
+shop, list items, buy
+
+- general:
+
+help, stop
