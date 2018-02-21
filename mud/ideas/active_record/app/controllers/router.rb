@@ -6,6 +6,7 @@ class Router
     @inv_controller = InventoryController.new
     @map_controller = MapController.new
     @shop_controller = ShopController.new
+    @pet_controller = PetController.new
     @view = CharactersView.new
     @character = 0
     @running = true
@@ -47,6 +48,8 @@ class Router
     when action == 'list' then @char_controller.index
     when action == 'save' then @character.save
     when action == 'help' then @view.commands
+      # FOR DEBUGGING PURPOSES:
+    when action == 'pry' then binding.pry
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command (you can enter 'help' for a list of commands)"
