@@ -28,6 +28,8 @@ six = InventoryItem.new(name: "Axe", amount: 2)
 six.character = Character.find(5)
 six.save
 
+Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0)
+
 x = MapTile.new(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 x.save
 y = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
