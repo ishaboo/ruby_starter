@@ -6,7 +6,7 @@ class PetController
 
   def moves
     # some random motion to make pet move around
-    runs = (1..4).to_a.sample
+    runs = (0..4).to_a.sample
     offset = (1..2).to_a.sample
     if runs.even?
       @pet.y_coord += runs
