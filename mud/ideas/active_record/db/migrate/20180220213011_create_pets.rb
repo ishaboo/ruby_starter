@@ -3,6 +3,7 @@ class CreatePets < ActiveRecord::Migration[5.0]
     create_table :pets do |t|
       t.string :name
       t.string :kind
+      t.string :description
       t.integer :x_coord
       t.integer :y_coord
       t.timestamps
