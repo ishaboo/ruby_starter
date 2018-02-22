@@ -70,9 +70,7 @@ class Router
     ans = gets.chomp
 
     case
-    when ans == ''
-      puts "...please enter something"
-    when ans[0].downcase == 'y'
+    when ans == '' || ans[0].downcase == 'y'
       route("list")
       route("load")
     when ans[0].downcase == 'n'
