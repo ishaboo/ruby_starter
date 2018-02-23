@@ -18,6 +18,12 @@ class PetController
     @pet.save
   end
 
+  def announce(character)
+    if @pet.x_coord == character.x_coord && @pet.y_coord ==character.y_coord
+      puts "You see... #{@pet.description}"
+    end
+  end
+
   def returns_home
     @pet.update_attributes(y_coord: 0, x_coord: 0)
   end
