@@ -1,5 +1,3 @@
-
-
 class InventoryController
   def initialize
     # setup
