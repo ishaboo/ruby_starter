@@ -15,19 +15,15 @@ describe "CharacterController" do
   after(:each) { drop_db }
 
   let(:char_controller) { CharactersController.new }
+  let(:char) { Character.new(name: "Jo", race: "Elf", y_coord: 0) }
 
   it "list should return all characters" do
     # binding.pry
     expect(char_controller.index).to eq(Character.all)
   end
 
-  it "should allow to retrieve all characters from the database" do
-    if defined?(Character)
-      characters = nil
-      expect { characters = Character.all }.not_to raise_error, "Missing something in your class declaration maybe? Hint: inheritance"
-      expect(characters).to eq []
-    else
-      raise "Fix the first test before paying attention to this one"
-    end
+  it "should allow to move an existing character" do
+    # binding.pry
+    expect(char_controller.move_char(char, "n")).to eq(1)
   end
 end
