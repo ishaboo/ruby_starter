@@ -25,5 +25,6 @@ describe "CharacterController" do
   it "should allow to move an existing character" do
     # binding.pry
     expect(char_controller.move_char(char, "n")).to eq(1)
+    expect(char_controller.move_char(char, "s")).to eq(0)
   end
 end
