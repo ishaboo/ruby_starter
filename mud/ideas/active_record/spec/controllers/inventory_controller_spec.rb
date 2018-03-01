@@ -25,6 +25,6 @@ describe "InventoryController" do
   end
 
   it "should allow to look at an inventory item" do
-    # binding.pry
+    # Needs another test?
   end
 end
