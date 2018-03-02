@@ -1,0 +1,3 @@
+class BotsController
+
+end
