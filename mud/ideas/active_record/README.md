@@ -44,3 +44,7 @@ help, stop
 ### RSpecs
 
 RSpecs as of now do not really make that much sense, how and when could they be helpful for this project?
+
+### Bots
+
+Ideas to build bots...
