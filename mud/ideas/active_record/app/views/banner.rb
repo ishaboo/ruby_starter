@@ -1,6 +1,7 @@
 class Banner
   def greeting
-    puts Rainbow("
+    colors = Range.new(0,7).to_a
+    puts "
                                                             ?=:,....,:=I
                                                      7,.......................I
                                                  ?......................=7
@@ -55,7 +56,7 @@ class Banner
                            .
                             ~
                              :
-                                                                          ").blue.bright
+                                                                          ".chars.map { |char| Rainbow(char).color(colors.sample) }.join
     puts Rainbow("
           oooo     oooo ooooo  oooo ooooooooo      oo        ooooooo
            8888o   888   888    88   888    88o  o888      o888  o888o

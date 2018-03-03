@@ -15,7 +15,7 @@ class CharView
   end
 
   def view
-    puts "Your character can do the following things:\n
+    puts Rainbow("Your character can do the following things:\n
     list    --> gives you a list of all the available characters,\n
     stats   --> gives you your stats,\n
     new     --> will create a character,\n
@@ -25,6 +25,6 @@ class CharView
     delete  --> will delete an existing character,\n
     inv     --> will show you the current character's inventory,\n
     drop    --> will drop an inventory item,\n
-    grab    --> will let you pick up an item"
+    grab    --> will let you pick up an item").silver
   end
 end

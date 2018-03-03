@@ -19,10 +19,10 @@ class CharactersController
       if character.alive
         character
       else
-        puts Rainbow("Sorry,").blue.underline.bright + Rainbow(" but thet Character is").green + Rainbow(" Dead").red     
+        puts Rainbow("Sorry,").blue.underline.bright + Rainbow(" but that Character is").green.underline + Rainbow(" Dead").red     
       end
     rescue
-      puts "Sorry, we cannot find that Character"
+      puts Rainbow("Sorry, we cannot find that Character").cyan
     end
   end
 
@@ -63,7 +63,7 @@ class CharactersController
   end
 
   def show_pos(char)
-    puts Rainbow("You are at: #{char.x_coord} and #{char.y_coord}").yellow.bright
+    puts "You are at: #{char.x_coord} and #{char.y_coord}"
   end
 
   def show_stats(char)

@@ -1,23 +1,27 @@
 puts `clear`
-inventory = {
-	sword:	1,
-	fries:	2,
-	wallet:	1,
-	chicken: 4
-}
 puts "Please press Enter."
 quick_enter = gets.chomp
 puts `clear`
-inventory.keys.each do |item, amount|
-	puts "You have: #{item}"
-	puts "C-o-o-l."
+
+class Item
+
+	def initialize(item_name:)
+		item_name = item_name
+	end
+
+	def inventory
+		inventory.keys.each do |item|
+			puts "You have: #{item}."
+		end
+		inventory.each do |item, amount|
+			puts "You have #{item}: #{amount}."
+		end
 end
-inventory.each do |item, amount|
-	puts "You have #{item} :#{amount}."
-	puts "G-o-o-d"
-end
-puts "\nWell, I guess you need al look around.\ntype: look"
-ans = gets.chomp
+
+	puts "\nWell, I guess you need al look around.\ntype: look"
+	ans = gets.chomp
+
+	
 until ans == 'look'
 	puts "You first need to look around."
 	ans = gets.chomp
@@ -52,24 +56,22 @@ if ans == 'rub eyes'
 	puts people.sample
 	puts weather.sample
 end
-class Fight
-	@@your_hitpoints = 99
-	def initialize(monster_name, power='Flight')
-		@monster_name = monster_name.sample
+module Fight
+	def create_monster(monster_name)
+		@monster_name = monster_name
 		@power = "Poisin"
 		@hitpoints = 50
+		@damage = rand(@hitpoints)
 	end
-	def hiting(monster_name)
+
+	def fight(monster_name)
 		if @hitpoints > 0
-			damage = [4, 10, 31, 6, 93]
-			puts "a #{monster_name.sample} hits you for #{damage.sample}"
-			@@your_hitpoints -= damage.sample
+			puts "a #{monster_name} hits you for #{rand(hitpoints)}"
+			@@your_hitpoints -= @damage
+		else
 			puts "Monster dead."
-			puts "#{@@your_hitpoints}" 
 		end
-	end
-	ans = gets.chomp
-	if ans == 'kill a Ghoul'
-		hiting
+		puts "#{@your_hitpoints}" 
+		end
 	end
 end

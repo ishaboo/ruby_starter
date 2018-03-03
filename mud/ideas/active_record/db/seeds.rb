@@ -4,6 +4,7 @@ Character.create(name: "Donder", race: "Human", hitpoints: 22, strength: 9, x_co
 Character.create(name: "Glimli", race: "Dwarf", hitpoints: 30, strength: 11, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Ormir", race: "Orc", hitpoints: 32, strength: 12, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Moulinea", race: "Quickling", hitpoints: 32, strength: 14, x_coord: 4, y_coord: -20, alive: true)
+Character.create(name: "Frealtion", race: "Loneling", hitpoints: 70, strength: 20, x_coord: 4, y_coord: -20, alive: true)
 
 one = InventoryItem.new(name: "Dagger", amount: 1)
 one.character = Character.find(1)
@@ -29,12 +30,21 @@ Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord
 Pet.create(name: "Phil", kind: "Dog", description: "A cute little Dog", x_coord: 2, y_coord: -1, alive: true)
 
 Bot.create(name: "Zorb", race: "Goblin", hitpoints: 24, strength: 8, x_coord: 0, y_coord: 1, alive: true)
+seven = InventoryItem.new(name: "Long Sword", amount: 1)
+seven.character = Bot.find(1)
+seven.save
 Bot.create(name: "Gibble", race: "Quickling", hitpoints: 13, strength: 10, x_coord: 1, y_coord: 1, alive: true)
 Bot.create(name: "Vindy", race: "Human", hitpoints: 20, strength: 9, x_coord: 2, y_coord: 1, alive: true)
 Bot.create(name: "Molnir", race: "Dwarf", hitpoints: 27, strength: 10, x_coord: 2, y_coord: -2, alive: true)
 Bot.create(name: "Logola", race: "Human", hitpoints: 17, strength: 6, x_coord: 3, y_coord: 2, alive: true)
+firteenm = InventoryItem.new(name: "the Book of Logolas Creation", amount: 1)
+firteenm.character = Bot.find(5)
+firteenm.save
 Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1, y_coord: -2, alive: true)
 Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3, alive: true)
+eight = InventoryItem.new(name: "the Diamond of all Creatures", amount: 1)
+eight.character = Bot.find(7)
+eight.save
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
