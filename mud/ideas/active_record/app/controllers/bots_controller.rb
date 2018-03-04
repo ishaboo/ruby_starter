@@ -24,5 +24,11 @@ class BotsController
       end
     end
 
+    private
+    def find_char(char, bot)
+      if char.x_coord == bot.x_coord && char.y_coord == bot.y_coord
+        return true
+      end
+    end
   end
 end
