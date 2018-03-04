@@ -13,7 +13,7 @@ class ShopController
   def list_items(char)
     tile = find_tile(char)
      if tile.shop
-      binding.pry
+      # binding.pry
       puts "This shop has the following items:"
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
