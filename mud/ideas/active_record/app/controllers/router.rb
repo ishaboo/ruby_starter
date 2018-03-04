@@ -10,6 +10,9 @@ class Router
     @view = CharactersView.new
     @character = 0
     @running = true
+    # Just for testing purposes as of now
+    @bot_controller = BotsController.new
+    @bot = Bot.first
   end
 
   def run
@@ -50,6 +53,9 @@ class Router
     when action == 'help' then @view.commands
       # FOR DEBUGGING PURPOSES:
     when action == 'pry' then binding.pry
+      # Just to test fight mode right now
+    when action == 'fight' then @bot_controller.fight(@character, @bot)
+      ###
     when action == 'stop' || action == 'exit' then stop
     else
       puts "Please enter a valid command (you can enter 'help' for a list of commands)"
