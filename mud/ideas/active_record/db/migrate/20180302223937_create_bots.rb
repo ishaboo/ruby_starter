@@ -3,6 +3,8 @@ class CreateBots < ActiveRecord::Migration[5.0]
     create_table :bots do |t|
       t.string :name
       t.string :race
+      t.integer :hitpoints
+      t.integer :strength
       t.integer :x_coord
       t.integer :y_coord
       t.timestamps
