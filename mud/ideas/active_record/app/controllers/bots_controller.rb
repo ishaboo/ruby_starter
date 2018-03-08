@@ -18,7 +18,10 @@ class BotsController
         puts "#{char.name} hits #{bot.name} for
         #{damage} hitpoints"
         bot.update(hitpoints: bot.hitpoints - damage)
+        sleep 1
         if bot.hitpoints <= 0
+          puts "#{bot.name} makes a last gurgling sound..."
+          sleep 1
           puts "#{bot.name} has died."
         end
         unless bot.hitpoints < 0
@@ -26,6 +29,7 @@ class BotsController
           #{counter} hitpoints"
           char.update(hitpoints: char.hitpoints - counter)
           if char.hitpoints <= 0
+            sleep 1
             puts "#{char.name} has died."
           end
         end
