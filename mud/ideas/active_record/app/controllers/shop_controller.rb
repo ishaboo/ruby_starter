@@ -46,7 +46,7 @@ class ShopController
             if item.name == wants && item.amount > 0
               print "#{item.name} costs #{item.value}\nWould you like to buy #{item.name}?(Y/n)\n> "
               ans = gets.chomp
-              if ans[0].downcase == 'y'
+              unless ans == 'no'
                 if item.value <= mon
                   coins = char.inventory_items.find_by(name: "Coins")
                   coins.update(amount: coins.amount - item.value)
@@ -55,6 +55,7 @@ class ShopController
                   item.update(amount: item.amount - 1)
                   x = InventoryItem.new(name: item.name, amount: 1, value: item.value)
                   char.inventory_items << x # we could move line 54 here and drop x
+                  puts "You bought #{item.name}"
                 else
                   puts "You don't have enough money to buy #{item.name}"
                 end
