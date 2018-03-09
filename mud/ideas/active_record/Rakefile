@@ -1,5 +1,5 @@
 require 'rspec/core/rake_task'
-require_relative 'config/run'
+require_relative 'config/application'
 
 task :default do
   ruby "config/run.rb"
