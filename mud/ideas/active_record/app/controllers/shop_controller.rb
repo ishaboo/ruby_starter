@@ -73,6 +73,7 @@ class ShopController
     else
       puts "You cannot buy anything here..."
     end
+    char.reload
   end
 
   private
