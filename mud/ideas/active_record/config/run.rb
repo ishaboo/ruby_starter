@@ -15,15 +15,9 @@ logger.formatter = proc do |_severity, _datetime, _progname, msg|
 end
 ActiveRecord::Base.logger = logger
 
-# Doing the requires seperately only to be able to manipulate them better if needed
-# Load models
-Dir["#{__dir__}/../app/models/*.rb"].each { |file| require file }
 
-# Load controllers and router
-Dir["#{__dir__}/../app/controllers/*.rb"].each { |file| require file }
-
-# Load views
-Dir["#{__dir__}/../app/views/*.rb"].each { |file| require file }
+# # Doing the requires seperately only to be able to manipulate them better if needed
+Dir["#{__dir__}/../app/*/*.rb"].each { |file| require file }
 
 # Disable/SQL logging
 ActiveRecord::Base.logger = nil
