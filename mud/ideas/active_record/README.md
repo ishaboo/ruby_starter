@@ -49,4 +49,8 @@ RSpecs as of now do not really make that much sense, how and when could they be 
 
 Ideas to build bots...
 
-Bots still need to find characters on the map...
+Would be nice to make pets more available, also talking to bots and giving weapons some kind of additional damage bonus would be good.
+
+Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
+
+Adding a alive true or bad column to the bot, pet and character models sounds like a good idea too.
