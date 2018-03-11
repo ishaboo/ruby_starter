@@ -7,7 +7,7 @@ class Router
     @map_controller = MapController.new
     @shop_controller = ShopController.new
     @pet_controller = PetController.new
-    @view = CharactersView.new
+    @view = View.new
     @character = 0
     @running = true
     # Just for testing purposes as of now
