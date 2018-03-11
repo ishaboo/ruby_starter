@@ -29,16 +29,8 @@ six.character = Character.find(5)
 six.save
 
 Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0)
-Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord: 2, y_coord: 1)
-Pet.create(name: "Phil", kind: "Dog", description: "A cute little Dog", x_coord: 2, y_coord: -1)
 
 Bot.create(name: "Zorb", race: "Goblin", hitpoints: 24, strength: 8, x_coord: 0, y_coord: 1)
-Bot.create(name: "Gibble", race: "Quickling", hitpoints: 13, strength: 10, x_coord: 1, y_coord: 1)
-Bot.create(name: "Vindy", race: "Human", hitpoints: 20, strength: 9, x_coord: 2, y_coord: 1)
-Bot.create(name: "Molnir", race: "Dwarf", hitpoints: 27, strength: 10, x_coord: 2, y_coord: -2)
-Bot.create(name: "Logola", race: "Human", hitpoints: 17, strength: 6, x_coord: 3, y_coord: 2)
-Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1, y_coord: -2)
-Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3)
 
 x = MapTile.new(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 x.save
@@ -46,8 +38,8 @@ y = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_co
 y.save
 z = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: -1)
 z.save
-ot = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 2)
-ot.save
+o = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 2)
+o.save
 q = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: -2)
 q.save
 r = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 1, y_coord: 0)
@@ -66,50 +58,8 @@ m = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_co
 m.save
 n = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 2, y_coord: -1)
 n.save
-o = MapTile.new(name: "City of Necromancers", description: "A dark big City", x_coord: 3, y_coord: -3)
-o.save
 xy = Shop.new(name: "Dusty Shop", description: "Get your gear here")
 xy.save
-xyz = Shop.new(name: "Vindys Roller's Shop", description: "Buy some fun stuff here")
-xyz.save
-bookshop = Shop.new(name: "Logolas Bookstore", description: "Buy some Books here")
-bookshop.save
-books = InventoryItem.new(name: "Book of prayers", amount: 1, value: 10)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of prophecy", amount: 1, value: 11)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of the Earth", amount: 1, value: 5)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of Kooking", amount: 2, value: 9)
-books.shop = Shop.find(3)
-books.save
-
-morestuff = InventoryItem.new(name: "Candy", amount: 2, value: 10)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Tablet", amount: 1, value: 43)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Phone", amount: 1, value: 40)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Beehive filled with Honey", amount: 1, value: 4)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Stars of Freedom", amount: 2, value: 5)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Donut", amount: 1, value: 3)
-morestuff.shop = Shop.find(2)
-morestuff.save
-
-kyz = MapTile.new(name: "Fun Store", description: "Vindys's Shop", x_coord: 2, y_coord: 3)
-kyz.shop = Shop.find(2)
-kyz.save
-
 money = two = InventoryItem.new(name: "Coins", amount: 0)
 money.shop = Shop.find(1)
 money.save
@@ -136,10 +86,8 @@ j = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 3, y_co
 j.save
 g = MapTile.new(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: -1)
 g.save
-
-store = MapTile.new(name: "Book Store", description: "Logolas's Shop", x_coord: 3, y_coord: 2)
-store.shop = Shop.find(3)
-store.save
-
+h = MapTile.new(name: "Bookstore", description: "Logolas bookstore", x_coord: 3, y_coord: 2)
+h.save
 f = MapTile.new(name: "Library", description: "The town's public library", x_coord: 3, y_coord: -2)
 f.save
+
