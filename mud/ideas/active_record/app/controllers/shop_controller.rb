@@ -58,6 +58,7 @@ class ShopController
                   puts "You bought #{item.name}"
                 else
                   puts "You don't have enough money to buy #{item.name}"
+                  char.save
                 end
               else
                 puts "...bye"
