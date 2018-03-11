@@ -86,6 +86,9 @@ books.save
 books = InventoryItem.new(name: "Book of Kooking", amount: 2, value: 9)
 books.shop = Shop.find(3)
 books.save
+books = InventoryItem.new(name: "Coins", amount: 0)
+books.shop = Shop.find(3)
+books.save
 
 morestuff = InventoryItem.new(name: "Candy", amount: 2, value: 10)
 morestuff.shop = Shop.find(2)
@@ -103,6 +106,9 @@ morestuff = InventoryItem.new(name: "Stars of Freedom", amount: 2, value: 5)
 morestuff.shop = Shop.find(2)
 morestuff.save
 morestuff = InventoryItem.new(name: "Donut", amount: 1, value: 3)
+morestuff.shop = Shop.find(2)
+morestuff.save
+morestuff = InventoryItem.new(name: "Coins", amount: 0)
 morestuff.shop = Shop.find(2)
 morestuff.save
 
