@@ -2,14 +2,27 @@ require "pry-byebug"
 
 class BotsController
   def announce(char, bots)
-    @bot = find_bot(char, bots)
+    @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    # binding.pry
+    if @bot.count == 0
+      @bot = nil
+    else
+      @bot = @bot.first
+    end
     if @bot
       puts "You see a #{@bot.race}."
     end
   end
 
   def fight(char, bots)
-    @bot = find_bot(char, bots)
+    @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    
+    if @bot.count == 0
+      @bot = nil
+    else
+      @bot = @bot.first
+    end
+
     if @bot
     # binding.pry
     # A fight between to nearly equally strong characters
@@ -41,17 +54,17 @@ class BotsController
 
   private
 
-  def find_bot(char, bots)
-    bots.each do |bot|
-      if char.x_coord == bot.x_coord && char.y_coord == bot.y_coord
-        return bot
-      end
-    end
-  end
-
-  def find_char(char, bot)
-    if char.x_coord == bot.x_coord && char.y_coord == bot.y_coord
-      return true
-    end
-  end
+  # def find_bot(char, bots)
+  #   bots.each do |bot|
+  #     if char.x_coord == bot.x_coord && char.y_coord == bot.y_coord
+  #       return bot
+  #     end
+  #   end
+  # end
+  #
+  # def find_char(char, bot)
+  #   if char.x_coord == bot.x_coord && char.y_coord == bot.y_coord
+  #     return true
+  #   end
+  # end
 end
