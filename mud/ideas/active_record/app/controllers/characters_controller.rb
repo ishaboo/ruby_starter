@@ -2,7 +2,7 @@ require "pry-byebug"
 
 class CharactersController
   def initialize
-    @view = CharactersView.new
+    @view = CharView.new
   end
 
   def index
