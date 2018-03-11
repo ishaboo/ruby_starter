@@ -18,28 +18,7 @@ Check out some other MUDs to see how shops and NPCs are handled there.
 
 Buying method is sorta working, needs adjustments.
 
-The commands help list is growing too large, it would be good to break up.
 Also gonna add a shopkeeper...
-
-### Ideas for the Help menu
-
-character help options:
-
-- character:
-
-new, load, update, delete, inv, drop, grab, list, save
-
-- map:
-
-look, inspect, look more, pos, shop
-
-- shop:
-
-shop, list items, buy
-
-- general:
-
-help, stop
 
 ### RSpecs
 
@@ -54,3 +33,9 @@ Would be nice to make pets more available, also talking to bots and giving weapo
 Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
 
 Adding a alive true or bad column to the bot, pet and character models sounds like a good idea too.
+
+### Achievements
+
+Got the help menues cleaned, now it would be nice to move other output from controllers to views.
+
+Still need a shopkeeper...
