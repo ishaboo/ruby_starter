@@ -17,6 +17,7 @@ class CharView
   def view
     puts "Your character can do the following things:\n
     list    --> gives you a list of all the available characters,\n
+    stats   --> gives you your stats,\n
     new     --> will create a character,\n
     update  --> will edit an existing character,\n
     load    --> will load a character,\n

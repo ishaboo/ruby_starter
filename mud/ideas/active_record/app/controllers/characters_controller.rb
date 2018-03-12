@@ -59,5 +59,13 @@ class CharactersController
   def show_pos(char)
     puts "You are at: #{char.x_coord} and #{char.y_coord}"
   end
+
+  def show_stats(char)
+    puts "Your character's statistics:\n
+    Name: #{char.name}\n
+    Race: #{char.race}\n
+    HitPoints: #{char.hitpoints}\n
+    Strength: #{char.strength}"
+  end
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
 end
