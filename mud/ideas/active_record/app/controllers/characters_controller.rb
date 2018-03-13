@@ -7,7 +7,7 @@ class CharactersController
 
   def index
     # list all characters ... just for debugging purposes
-    list = Character.all
+    list = Character.where(alive: true)
     @view.list_all(list)
   end
 
@@ -15,6 +15,11 @@ class CharactersController
     id = @view.ask_for("your character's id:")
     begin
       character = Character.find(id)
+      if character.alive
+        character
+      else
+        puts "sorry that character is dead"
+      end
     rescue
       puts "Sorry, we cannot find that Character"
     end
