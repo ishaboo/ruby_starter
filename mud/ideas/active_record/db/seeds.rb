@@ -1,4 +1,4 @@
-Character.create(name: "Mygdin", race: "Elf", hitpoints: 28, strength: 7, x_coord: 2, y_coord: 2, alive: true)
+Character.create(name: "Mygdin", race: "Elf", hitpoints: 28, strength: 7, x_coord: 1, y_coord: -2, alive: true)
 Character.create(name: "Govin", race: "Elf", hitpoints: 26, strength: 6, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Donder", race: "Human", hitpoints: 22, strength: 9, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Glimli", race: "Dwarf", hitpoints: 30, strength: 11, x_coord: 0, y_coord: 0, alive: true)
