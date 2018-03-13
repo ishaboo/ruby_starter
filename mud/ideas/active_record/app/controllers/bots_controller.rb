@@ -27,6 +27,7 @@ class BotsController
           puts "#{@bot.name} makes a last gurgling sound..."
           sleep 1
           puts "#{@bot.race} has died."
+          @bot.update(alive: false)
         end
         unless @bot.hitpoints <= 0
           puts "#{@bot.name} hits #{char.name} for
@@ -35,6 +36,7 @@ class BotsController
           if char.hitpoints <= 0
             sleep 1
             puts "#{char.name} has died."
+            char.update(alive: false)
           end
         end
       end
@@ -52,5 +54,5 @@ class BotsController
       return @bot = @bot.first
     end
   end
-  
+
 end
