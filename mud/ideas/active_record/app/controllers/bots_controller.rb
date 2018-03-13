@@ -48,7 +48,8 @@ class BotsController
   def find_bot(char, bots)
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
 
-    if @bot.count == 0
+    # This needs to change if we want to have more than one bot in a tile
+    if @bot.count == 0 || @bot.first.alive == false
       return @bot = nil
     else
       return @bot = @bot.first
