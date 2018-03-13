@@ -19,7 +19,7 @@ class Router
     @view.start_game
 
     while @running
-      if @character == 0 || @character.nil?
+      if @character == 0 || @character.nil? || @character.alive == false
         start_with_character
       else
         display_tasks
