@@ -6,6 +6,7 @@ class CreatePets < ActiveRecord::Migration[5.0]
       t.string :description
       t.integer :x_coord
       t.integer :y_coord
+      t.boolean :alive
       t.timestamps
     end
   end
