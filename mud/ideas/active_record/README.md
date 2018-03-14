@@ -13,7 +13,7 @@ This is a database backed MVC based small MUD that needs needs a lot of work.
   so it should look like this:
 
 ```
-# require 'rspec/core/rake_task
+# require 'rspec/core/rake_task'
 ```
 
 - setup the db with:
