@@ -1,41 +1,35 @@
-## Here we are
+## MUD in Ruby
+
 # MVC, SQLite3 and ActiveRecord
 
 This is a database backed MVC based small MUD that needs needs a lot of work.
 
-### List of remaining tasks:
+### Setup instructions
 
-* [ ] A map in ASCII
-* [ ] A way to drop items on the map and retrieve them
-* [ ] A store to buy items
-* [ ] A bot to interact with
-* [ ] Fighting stats and capabilities
+- Clone Repo
 
+- edit rekefile and comment out ```require 'rspec/core/rake_task'```
 
-### Deal with adding a shop and shopkeepers
+  so it should look like this:
 
-Check out some other MUDs to see how shops and NPCs are handled there.
+```
+# require 'rspec/core/rake_task
+```
 
-Buying method is sorta working, needs adjustments.
+- setup the db with:
 
-Also gonna add a shopkeeper...
+```
+user@host:~$ rake db:setup
+```
 
-### RSpecs
+...sorry, no Gemfile yet, will work on adding one at some point...
 
-RSpecs as of now do not really make that much sense, how and when could they be helpful for this project?
+### Run the Game
 
-### Bots
+In order to run the game just type:
 
-Ideas to build bots...
+```
+user@host:~$ rake
+```
 
-Would be nice to make pets more available, also talking to bots and giving weapons some kind of additional damage bonus would be good.
-
-Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
-
-Adding a alive true or bad column to the bot, pet and character models sounds like a good idea too.
-
-### Achievements
-
-Got the help menues cleaned, now it would be nice to move other output from controllers to views.
-
-Still need a shopkeeper...
+There are several in game commands, which can be viewed by typing ```help```
