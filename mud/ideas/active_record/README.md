@@ -33,3 +33,5 @@ user@host:~$ rake
 ```
 
 There are several in game commands, which can be viewed by typing ```help```
+
+To exit the game just type ```exit``` or ```quit```.
