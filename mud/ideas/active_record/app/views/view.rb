@@ -1,5 +1,6 @@
 class View
   def initialize
+    @map_pic = Map.new
     @char = CharView.new
     @map = MapView.new
     @shop = ShopView.new
@@ -11,6 +12,10 @@ class View
     banner = Banner.new
     puts banner.greeting
     puts "Welcome"
+  end
+
+  def map
+    @map_pic.draw_map
   end
 
   def display_tasks
