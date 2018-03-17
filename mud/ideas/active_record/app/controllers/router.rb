@@ -52,6 +52,7 @@ class Router
     when action == 'save' then @character.save
     when action == 'stats' then @char_controller.show_stats(@character)
     when action == 'help' then @view.commands
+    when action == 'map' then @view.map
       # FOR DEBUGGING PURPOSES:
     when action == 'pry' then binding.pry
       # Just to test fight mode right now
