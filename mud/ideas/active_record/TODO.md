@@ -32,3 +32,7 @@ Adding a alive true or bad column to the bot, pet and character models sounds li
 Got the help menues cleaned, now it would be nice to move other output from controllers to views.
 
 Still need a shopkeeper...
+
+### Need a method or some way to get money
+
+Maybe add some coins to Bots, or a way to earn it...
