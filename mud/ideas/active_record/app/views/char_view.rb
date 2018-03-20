@@ -10,7 +10,7 @@ class CharView
 
   def list_all(list)
     list.each do |char|
-      puts "#{char.id}: #{char.name}, #{char.race}"
+      puts Rainbow("#{char.id}: #{char.name}, #{char.race}").magenta.bright
     end
   end
 
