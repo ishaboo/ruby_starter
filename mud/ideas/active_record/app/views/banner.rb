@@ -1,6 +1,6 @@
 class Banner
   def greeting
-    puts "
+    puts Rainbow("
                                                             ?=:,....,:=I
                                                      7,.......................I
                                                  ?......................=7
@@ -55,12 +55,12 @@ class Banner
                            .
                             ~
                              :
-                                                                          "
-    puts "
+                                                                          ").blue
+    puts Rainbow("
           oooo     oooo ooooo  oooo ooooooooo      oo        ooooooo
            8888o   888   888    88   888    88o  o888      o888  o888o
            88 888o8 88   888    88   888    888   888      888  8  888
            88  888  88   888    88   888    888   888  ooo 888o8  o888
-          o88o  8  o88o   888oo88   o888ooo88    o888o 888   88ooo88   "
+          o88o  8  o88o   888oo88   o888ooo88    o888o 888   88ooo88   ").red.bright
   end
 end
