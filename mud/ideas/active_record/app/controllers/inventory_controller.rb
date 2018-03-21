@@ -20,7 +20,7 @@ class InventoryController
 
   def show_inventory(character)
     character.inventory_items.each do |item|
-      puts "You have #{item.amount} #{item.name}"
+      puts "You have #{item.amount} " + Rainbow("#{item.name}").brown.bright
     end
   end
 

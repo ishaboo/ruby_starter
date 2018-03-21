@@ -62,7 +62,7 @@ class CharactersController
   end
 
   def show_pos(char)
-    puts "You are at: #{char.x_coord} and #{char.y_coord}"
+    puts Rainbow("You are at: #{char.x_coord} and #{char.y_coord}").yellow.bright
   end
 
   def show_stats(char)
