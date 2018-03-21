@@ -36,3 +36,7 @@ Still need a shopkeeper...
 ### Need a method or some way to get money
 
 Maybe add some coins to Bots, or a way to earn it...
+
+Another idea would be a massive map expansion with places that hide things and coins
+
+A sell option within a shop would also be good
