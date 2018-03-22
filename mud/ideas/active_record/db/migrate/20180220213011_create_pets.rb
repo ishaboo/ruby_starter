@@ -8,6 +8,8 @@ class CreatePets < ActiveRecord::Migration[5.0]
       t.integer :y_coord
       t.boolean :alive
       t.timestamps
+
+      t.references  :character, index: true, foreign_key: true
     end
   end
 end
