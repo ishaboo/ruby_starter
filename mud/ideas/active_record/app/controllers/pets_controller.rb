@@ -1,7 +1,10 @@
+require "pry-byebug"
+
 class PetController
   def initialize
     # Let's try this with one single Pet
     @pet = Pet.first
+    @pets = Pet.all
   end
 
   def moves
@@ -19,8 +22,10 @@ class PetController
   end
 
   def announce(character)
-    if @pet.x_coord == character.x_coord && @pet.y_coord ==character.y_coord
-      puts "You see... #{@pet.description}"
+    @pets.each do |pet|
+      if pet.x_coord == character.x_coord && pet.y_coord == character.y_coord
+        puts "You see... #{pet.description}"
+      end
     end
   end
 
