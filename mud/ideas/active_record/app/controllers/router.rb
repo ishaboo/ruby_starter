@@ -42,7 +42,7 @@ class Router
     when action == 'drop' then @inv_controller.drop_item(@character)
     when action == 'grab' then @inv_controller.grab_item(@character)
     when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
-    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) && @bot_controller.announce(@character, @bots)
+    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character, @bots)
     when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
     when action == 'shop' then @shop_controller.check(@character)
     when action == 'list items' then @shop_controller.list_items(@character)
