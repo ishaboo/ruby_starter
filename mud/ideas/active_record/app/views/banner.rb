@@ -55,7 +55,7 @@ class Banner
                            .
                             ~
                              :
-                                                                          ").blue
+                                                                          ").blue.bright
     puts Rainbow("
           oooo     oooo ooooo  oooo ooooooooo      oo        ooooooo
            8888o   888   888    88   888    88o  o888      o888  o888o

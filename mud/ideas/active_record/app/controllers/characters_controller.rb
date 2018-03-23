@@ -1,4 +1,5 @@
 require "pry-byebug"
+require 'rainbow'
 
 class CharactersController
   def initialize
@@ -18,7 +19,7 @@ class CharactersController
       if character.alive
         character
       else
-        puts "sorry that character is dead"
+        puts Rainbow("Sorry,").blue.underline.bright + Rainbow(" but thet Character is").green + Rainbow(" Dead").red     
       end
     rescue
       puts "Sorry, we cannot find that Character"

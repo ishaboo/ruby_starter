@@ -15,7 +15,9 @@ class View
   end
 
   def map
+    puts "You start Starring at the Map..."
     @map_pic.draw_map
+    @map_pic.map_names
   end
 
   def display_tasks

@@ -1,6 +1,6 @@
 class Map
   def draw_map
-    puts "
+    puts "Map:
                                Fun
                               Store
                                 ||
@@ -32,5 +32,9 @@ class Map
                                     City of
                                   Necromancers
     "
+  end
+
+  def map_names
+    puts "Town Center, Roads, Town Square, Temple,\nBar and Tavern, Arena, Library, Genral Store, Fun Store\nCity of Necromancers, Book Store."
   end
 end
