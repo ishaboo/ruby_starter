@@ -4,25 +4,13 @@ Character.create(name: "Donder", race: "Human", hitpoints: 22, strength: 9, x_co
 Character.create(name: "Glimli", race: "Dwarf", hitpoints: 30, strength: 11, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Ormir", race: "Orc", hitpoints: 32, strength: 12, x_coord: 0, y_coord: 0, alive: true)
 
-
-one = InventoryItem.new(name: "Dagger", amount: 1)
-one.character = Character.find(1)
-one.save
-two = InventoryItem.new(name: "Coins", amount: 24)
-two.character = Character.find(1)
-two.save
-three = InventoryItem.new(name: "Sword", amount: 1)
-three.character = Character.find(2)
-three.save
-four = InventoryItem.new(name: "Apple", amount: 3)
-four.character = Character.find(3)
-four.save
-five = InventoryItem.new(name: "Axe", amount: 1)
-five.character = Character.find(4)
-five.save
-six = InventoryItem.new(name: "Axe", amount: 2)
-six.character = Character.find(5)
-six.save
+# Character's items
+Character.find(1).inventory_items.create(name: "Dagger", amount: 1)
+Character.find(1).inventory_items.create(name: "Coins", amount: 24)
+Character.find(2).inventory_items.create(name: "Sword", amount: 1)
+Character.find(3).inventory_items.create(name: "Apple", amount: 3)
+Character.find(4).inventory_items.create(name: "Axe", amount: 1)
+Character.find(5).inventory_items.create(name: "Axe", amount: 2)
 
 Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0, alive: true)
 Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord: 2, y_coord: 1, alive: true)
@@ -35,9 +23,9 @@ Bot.create(name: "Molnir", race: "Dwarf", hitpoints: 27, strength: 10, x_coord: 
 Bot.create(name: "Logola", race: "Human", hitpoints: 17, strength: 6, x_coord: 3, y_coord: 2, alive: true)
 Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1, y_coord: -2, alive: true)
 Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3, alive: true)
-variable = InventoryItem.new(name: "Axe", amount: 1)
-variable.bot = Bot.find(4)
-variable.save
+
+# Bots items
+Bot.find(4).inventory_items.create(name: "Axe", amount: 1)
 Bot.find(4).inventory_items.create(name: "Sword", amount: 1, value: 20)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
