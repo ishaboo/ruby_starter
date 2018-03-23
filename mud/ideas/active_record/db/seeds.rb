@@ -35,6 +35,10 @@ Bot.create(name: "Molnir", race: "Dwarf", hitpoints: 27, strength: 10, x_coord: 
 Bot.create(name: "Logola", race: "Human", hitpoints: 17, strength: 6, x_coord: 3, y_coord: 2, alive: true)
 Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1, y_coord: -2, alive: true)
 Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3, alive: true)
+variable = InventoryItem.new(name: "Axe", amount: 1)
+variable.bot = Bot.find(4)
+variable.save
+Bot.find(4).inventory_items.create(name: "Sword", amount: 1, value: 20)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
