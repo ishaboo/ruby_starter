@@ -35,8 +35,8 @@ class PetController
 
   def call(char)
     if char.pet
-
-
+      char.pet.update(x_coord: char.x_coord)
+      char.pet.update(y_coord: char.y_coord)
     end
   end
 end
