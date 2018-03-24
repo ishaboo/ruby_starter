@@ -27,6 +27,8 @@ Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_co
 # Bots items
 Bot.find(4).inventory_items.create(name: "Axe", amount: 1)
 Bot.find(4).inventory_items.create(name: "Sword", amount: 1, value: 20)
+Bot.find(1).inventory_items.create(name: "Club", amount: 1, value: 3)
+Bot.find(1).inventory_items.create(name: "Coins", amount: 7)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
@@ -53,71 +55,34 @@ Shop.create(name: "Vindys Roller's Shop", description: "Buy some fun stuff here"
 Shop.create(name: "Logolas Bookstore", description: "Buy some Books here")
 
 # Inventory of the first shop
-money = InventoryItem.new(name: "Coins", amount: 0)
-money.shop = Shop.find(1)
-money.save
-stuff = InventoryItem.new(name: "Bread", amount: 3, value: 5)
-stuff.shop = Shop.find(1)
-stuff.save
-some = InventoryItem.new(name: "Staff", amount: 1, value: 25)
-some.shop = Shop.find(1)
-some.save
-more = InventoryItem.new(name: "Bow", amount: 1, value: 35)
-more.shop = Shop.find(1)
-more.save
-things = InventoryItem.new(name: "Arrows", amount: 23, value: 5)
-things.shop = Shop.find(1)
-things.save
+Shop.find(1).inventory_items.create(name: "Coins", amount: 0)
+Shop.find(1).inventory_items.create(name: "Bread", amount: 3, value: 5)
+Shop.find(1).inventory_items.create(name: "Staff", amount: 1, value: 25)
+Shop.find(1).inventory_items.create(name: "Bow", amount: 1, value: 35)
+Shop.find(1).inventory_items.create(name: "Arrows", amount: 23, value: 5)
 
 # Inventory of the second shop
-morestuff = InventoryItem.new(name: "Candy", amount: 2, value: 10)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Tablet", amount: 1, value: 43)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Phone", amount: 1, value: 40)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Beehive filled with Honey", amount: 1, value: 4)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Stars of Freedom", amount: 2, value: 5)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Donut", amount: 1, value: 3)
-morestuff.shop = Shop.find(2)
-morestuff.save
-morestuff = InventoryItem.new(name: "Coins", amount: 0)
-morestuff.shop = Shop.find(2)
-morestuff.save
+Shop.find(2).inventory_items.create(name: "Candy", amount: 2, value: 10)
+Shop.find(2).inventory_items.create(name: "Tablet", amount: 1, value: 43)
+Shop.find(2).inventory_items.create(name: "Phone", amount: 1, value: 40)
+Shop.find(2).inventory_items.create(name: "Beehive filled with Honey", amount: 1, value: 4)
+Shop.find(2).inventory_items.create(name: "Stars of Freedom", amount: 2, value: 5)
+Shop.find(2).inventory_items.create(name: "Donut", amount: 1, value: 3)
+Shop.find(2).inventory_items.create(name: "Coins", amount: 0)
 
 # Inventory of the third shop
-books = InventoryItem.new(name: "Book of prayers", amount: 1, value: 10)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of prophecy", amount: 1, value: 11)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of the Earth", amount: 1, value: 5)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Book of Kooking", amount: 2, value: 9)
-books.shop = Shop.find(3)
-books.save
-books = InventoryItem.new(name: "Coins", amount: 0)
-books.shop = Shop.find(3)
-books.save
+Shop.find(3).inventory_items.create(name: "Book of prayers", amount: 1, value: 10)
+Shop.find(3).inventory_items.create(name: "Book of prophecy", amount: 1, value: 11)
+Shop.find(3).inventory_items.create(name: "Book of the Earth", amount: 1, value: 5)
+Shop.find(3).inventory_items.create(name: "Book of Kooking", amount: 2, value: 9)
+Shop.find(3).inventory_items.create(name: "Coins", amount: 0)
 
 # Adding Shops to the Map
-k = MapTile.new(name: "General Store", description: "Dusty's Shoppe", x_coord: 2, y_coord: 2)
-k.shop = Shop.find(1)
-k.save
+MapTile.create(name: "General Store", description: "Dusty's Shoppe", x_coord: 2, y_coord: 2)
+MapTile.find(20).update(shop: Shop.find(1))
 
-kyz = MapTile.new(name: "Fun Store", description: "Vindys's Shop", x_coord: 2, y_coord: 3)
-kyz.shop = Shop.find(2)
-kyz.save
+MapTile.create(name: "Fun Store", description: "Vindys's Shop", x_coord: 2, y_coord: 3)
+MapTile.find(21).update(shop: Shop.find(2))
 
-store = MapTile.new(name: "Book Store", description: "Logolas's Shop", x_coord: 3, y_coord: 2)
-store.shop = Shop.find(3)
-store.save
+MapTile.create(name: "Book Store", description: "Logolas's Shop", x_coord: 3, y_coord: 2)
+MapTile.find(22).update(shop: Shop.find(3))
