@@ -32,4 +32,11 @@ class PetController
   def returns_home
     @pet.update_attributes(y_coord: 0, x_coord: 0)
   end
+
+  def call(char)
+    if char.pet
+
+
+    end
+  end
 end
