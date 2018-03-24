@@ -2,7 +2,7 @@
 
 ### List of remaining tasks:
 
-* [ ] A map in ASCII
+* [ ] A map in ASCII --> Done
 * [ ] A bot to interact with
 
 ### Deal with adding a shop and shopkeepers
@@ -40,3 +40,5 @@ Maybe add some coins to Bots, or a way to earn it...
 Another idea would be a massive map expansion with places that hide things and coins
 
 A sell option within a shop would also be good
+
+* Now Bots have items and money, create a method, or add to the grab command a way to pick up dead Bots stuff... maybe steal it if thief is a skill...
