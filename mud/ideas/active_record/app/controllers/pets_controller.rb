@@ -23,6 +23,7 @@ class PetController
 
   def announce(character)
     @pets.each do |pet|
+      pet.reload
       if pet.x_coord == character.x_coord && pet.y_coord == character.y_coord
         puts "You see... #{pet.description}"
       end
@@ -37,6 +38,8 @@ class PetController
     if char.pet
       char.pet.update(x_coord: char.x_coord)
       char.pet.update(y_coord: char.y_coord)
+      # This is really fuck and not necessary... read up on this
+      char.pet.reload
     end
   end
 end
