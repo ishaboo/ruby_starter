@@ -38,7 +38,7 @@ class PetController
     if char.pet
       char.pet.update(x_coord: char.x_coord)
       char.pet.update(y_coord: char.y_coord)
-      # This is really fuck and not necessary... read up on this
+      # This is really fucky and not necessary... read up on this
       char.pet.reload
     end
   end

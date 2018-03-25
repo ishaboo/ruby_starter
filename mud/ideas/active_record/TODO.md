@@ -44,3 +44,7 @@ A sell option within a shop would also be good
 * Now Bots have items and money, create a method, or add to the grab command a way to pick up dead Bots stuff... maybe steal it if thief is a skill...
 
 Add pets...
+
+### Methods that are needed!!!
+
+A helper method to find if two models are on the same maptile... something general, like 'same_tile'
