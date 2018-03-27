@@ -2,6 +2,7 @@ class View
   def initialize
     @map_pic = Map.new
     @char = CharView.new
+    @pet = PetView.new
     @map = MapView.new
     @shop = ShopView.new
     @fight = FightView.new
@@ -25,11 +26,12 @@ class View
 
   def commands
     puts "These are the available topics:"
-    puts "character, map, shop, fight, general"
+    puts "character, pets, map, shop, fight, general"
     print "Which topic do you need help with?\n> "
     ans = gets.chomp
     case
     when ans == "character" then @char.view
+    when ans == "pets" then @pet.view
     when ans == "map" then @map.view
     when ans == "shop" then @shop.view
     when ans == "fight" then @fight.view
