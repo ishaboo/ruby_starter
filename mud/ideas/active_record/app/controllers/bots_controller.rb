@@ -9,6 +9,20 @@ class BotsController
     end
   end
 
+  def search_corpse(char)
+    corpse = find_corpse(char)
+    if corpse
+      puts "You are searching a dead #{corpse.race}..."
+      if corpse.inventory_items
+        corpse.inventory_items.each do |item|
+          puts "You find #{item.name}"
+        end
+      else
+        puts "#{corpse.race} has nothing..."
+      end
+    end
+  end
+
   def fight(char, bots)
     find_bot(char, bots)
 
@@ -44,6 +58,14 @@ class BotsController
   end
 
   private
+
+  def find_corpse(char)
+    bots = Bot.all
+    @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    unless @bot.count == 0 || @bot.first.alive == true
+      return @bot.first
+    end
+  end
 
   def find_bot(char, bots)
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
