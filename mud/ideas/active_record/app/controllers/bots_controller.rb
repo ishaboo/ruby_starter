@@ -3,7 +3,6 @@ require "pry-byebug"
 class BotsController
   def announce(char, bots)
     find_bot(char, bots)
-
     if @bot
       puts "You see a #{@bot.race}."
     end
@@ -19,6 +18,29 @@ class BotsController
         end
       else
         puts "#{corpse.race} has nothing..."
+      end
+    end
+  end
+
+  def get_item(char)
+    search_corpse(char)
+    # real shitty to do this twice... gotta write a method to shorten this!!!
+    corpse = find_corpse(char)
+    if corpse.inventory_items
+      print "Which item do you want to grab?\n> "
+      item_name = gets.chomp
+      if corpse.inventory_items
+        corpse.inventory_items.each do |item|
+          if item.name == item_name
+            char.inventory_items << item
+            item.character_id = char.id
+            item.bot_id = nil
+            item.save
+          end
+        end
+        char.save
+        puts "Your position has been saved!"
+        char.reload
       end
     end
   end
