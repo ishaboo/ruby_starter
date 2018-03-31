@@ -49,4 +49,6 @@ Add pets...
 
 A helper method to find if two models are on the same maptile... something general, like 'same_tile'
 
-A method to grab items from dead bots...
+A method to grab items from dead bots... --> got a method to grab stuff, need a route now.
+
+Routes need to be cleaned.
