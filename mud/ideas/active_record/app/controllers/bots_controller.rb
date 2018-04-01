@@ -3,8 +3,13 @@ require "pry-byebug"
 class BotsController
   def announce(char, bots)
     find_bot(char, bots)
+    # ugly temporary solution screaming for a good ol refactoring
     if @bot
-      puts "You see a #{@bot.race}."
+      if @bot.alive?
+        puts "You see a #{@bot.race}."
+      elsif @bot.alive == false
+        puts "You see a dead #{@bot.race}."
+      end
     end
   end
 
@@ -93,7 +98,7 @@ class BotsController
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
 
     # This needs to change if we want to have more than one bot in a tile
-    if @bot.count == 0 || @bot.first.alive == false
+    if @bot.count == 0
       return @bot = nil
     else
       return @bot = @bot.first
