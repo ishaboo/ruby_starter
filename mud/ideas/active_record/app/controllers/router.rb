@@ -45,6 +45,7 @@ class Router
     when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character, @bots)
     when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
     when action == 'search corpse' then @bot_controller.search_corpse(@character)
+    when action == 'grab item' then @bot_controller.get_item(@character)
     when action == 'shop' then @shop_controller.check(@character)
     when action == 'list items' then @shop_controller.list_items(@character)
     when action == 'buy' then @shop_controller.buy(@character)
