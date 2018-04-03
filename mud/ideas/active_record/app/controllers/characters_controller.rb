@@ -68,7 +68,12 @@ class CharactersController
   def show_stats(char)
     puts "Your character's statistics:\n
     Name: #{char.name}\n
-    Race: #{char.race}\n
+    Race: #{char.race}\n"
+    if char.discipline
+      puts "
+    Discipline: #{char.discipline.capitalize}\n"
+    end
+    puts "
     HitPoints: #{char.hitpoints}\n
     Strength: #{char.strength}"
   end
