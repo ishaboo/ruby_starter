@@ -2,6 +2,7 @@ class CreateInventoryItems < ActiveRecord::Migration[5.0]
   def change
     create_table :inventory_items do |t|
       t.string :name
+      t.boolean :weapon
       t.integer :amount
       t.integer :value
       t.timestamps
