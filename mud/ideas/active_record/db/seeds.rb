@@ -5,12 +5,12 @@ Character.create(name: "Glimli", race: "Dwarf", discipline: "warrior", hitpoints
 Character.create(name: "Ormir", race: "Orc", hitpoints: 32, strength: 12, x_coord: 0, y_coord: 0, alive: true)
 
 # Character's items
-Character.find(1).inventory_items.create(name: "Dagger", amount: 1)
-Character.find(1).inventory_items.create(name: "Coins", amount: 24)
-Character.find(2).inventory_items.create(name: "Sword", amount: 1)
-Character.find(3).inventory_items.create(name: "Apple", amount: 3)
-Character.find(4).inventory_items.create(name: "Axe", amount: 1)
-Character.find(5).inventory_items.create(name: "Axe", amount: 2)
+Character.find(1).inventory_items.create(name: "Dagger", weapon: true, amount: 1)
+Character.find(1).inventory_items.create(name: "Coins", weapon: false, amount: 24)
+Character.find(2).inventory_items.create(name: "Sword", weapon: true, amount: 1)
+Character.find(3).inventory_items.create(name: "Apple", weapon: false, amount: 3)
+Character.find(4).inventory_items.create(name: "Axe", weapon: true, amount: 1)
+Character.find(5).inventory_items.create(name: "Axe", weapon: true, amount: 2)
 
 Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0, alive: true)
 Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord: 2, y_coord: 1, alive: true)
@@ -25,10 +25,10 @@ Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1,
 Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3, alive: true)
 
 # Bots items
-Bot.find(4).inventory_items.create(name: "Axe", amount: 1)
-Bot.find(4).inventory_items.create(name: "Sword", amount: 1, value: 20)
-Bot.find(1).inventory_items.create(name: "Club", amount: 1, value: 3)
-Bot.find(1).inventory_items.create(name: "Coins", amount: 7)
+Bot.find(4).inventory_items.create(name: "Axe", weapon: true, amount: 1)
+Bot.find(4).inventory_items.create(name: "Sword", weapon: true, amount: 1, value: 20)
+Bot.find(1).inventory_items.create(name: "Club", weapon: true, amount: 1, value: 3)
+Bot.find(1).inventory_items.create(name: "Coins", weapon: false, amount: 7)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
@@ -57,9 +57,9 @@ Shop.create(name: "Logolas Bookstore", description: "Buy some Books here")
 # Inventory of the first shop
 Shop.find(1).inventory_items.create(name: "Coins", amount: 0)
 Shop.find(1).inventory_items.create(name: "Bread", amount: 3, value: 5)
-Shop.find(1).inventory_items.create(name: "Staff", amount: 1, value: 25)
-Shop.find(1).inventory_items.create(name: "Bow", amount: 1, value: 35)
-Shop.find(1).inventory_items.create(name: "Arrows", amount: 23, value: 5)
+Shop.find(1).inventory_items.create(name: "Staff", weapon: true, amount: 1, value: 25)
+Shop.find(1).inventory_items.create(name: "Bow", weapon: true, amount: 1, value: 35)
+Shop.find(1).inventory_items.create(name: "Arrows", weapon: true, amount: 23, value: 5)
 
 # Inventory of the second shop
 Shop.find(2).inventory_items.create(name: "Candy", amount: 2, value: 10)
