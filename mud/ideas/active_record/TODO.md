@@ -52,3 +52,10 @@ A helper method to find if two models are on the same maptile... something gener
 A method to grab items from dead bots... --> got a method to grab stuff, need a route now.
 
 Routes need to be cleaned.
+
+
+### Seed adjustments
+
+Need to create an inventory and add items, weapons and coins to it.
+
+Weapons have damage which should be taken into account when fighting, in addition to special skills.
