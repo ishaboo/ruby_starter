@@ -59,3 +59,10 @@ Routes need to be cleaned.
 Need to create an inventory and add items, weapons and coins to it.
 
 Weapons have damage which should be taken into account when fighting, in addition to special skills.
+
+
+### Ideas to manage skills
+
+When discipline warrior is chosen weapon damage is upped by 10 percent per point on that discipline.
+
+Disciplines can have points from 1 through 10
