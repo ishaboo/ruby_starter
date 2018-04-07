@@ -66,3 +66,9 @@ Weapons have damage which should be taken into account when fighting, in additio
 When discipline warrior is chosen weapon damage is upped by 10 percent per point on that discipline.
 
 Disciplines can have points from 1 through 10
+
+### Inventory and Map models
+
+Inventory items could belong to an inventory and map_tiles to a map... how would that look?
+
+Maybe map this out on paper, or a visual db tool...
