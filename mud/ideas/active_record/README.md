@@ -22,7 +22,14 @@ This is a database backed MVC based small MUD that needs needs a lot of work.
 user@host:~$ rake db:setup
 ```
 
-...sorry, no Gemfile yet, will work on adding one at some point...
+- install the required gems with:
+
+```
+user@host:~$ bundle install
+```
+...make sure you have bundler installed before running that command
+
+Bundler can be installed with ```gem install bundler``` if it is missing.
 
 ### Run the Game
 
