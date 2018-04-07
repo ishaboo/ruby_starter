@@ -35,7 +35,7 @@ Still need a shopkeeper...
 
 ### Need a method or some way to get money
 
-Maybe add some coins to Bots, or a way to earn it...
+Maybe add some coins to Bots, or a way to earn it... --> Done
 
 Another idea would be a massive map expansion with places that hide things and coins
 
@@ -43,7 +43,7 @@ A sell option within a shop would also be good
 
 * Now Bots have items and money, create a method, or add to the grab command a way to pick up dead Bots stuff... maybe steal it if thief is a skill...
 
-Add pets...
+Add pets... --> Done but lacking functionality
 
 ### Methods that are needed!!!
 
