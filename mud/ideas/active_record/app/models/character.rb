@@ -1,5 +1,6 @@
 class Character < ActiveRecord::Base
   has_many :inventory_items
+  has_many :weapons
   has_one :pet
 
   disciplines = ["thief", "mage", "warrior"]
