@@ -19,8 +19,15 @@ class InventoryController
   end
 
   def show_inventory(character)
+    puts Rainbow("These are your items:").blue.bright
     character.inventory_items.each do |item|
-      puts "You have #{item.amount} " + Rainbow("#{item.name}").brown.bright
+      puts "--> #{item.amount} " + Rainbow("#{item.name}").yellow.bright
+    end
+    if character.weapons
+      puts Rainbow("and your weapons:").blue.bright
+      character.weapons.each do |weapon|
+        puts "--> #{weapon.amount} " + Rainbow("#{weapon.name}").crimson.bright
+      end
     end
   end
 
