@@ -72,3 +72,7 @@ Disciplines can have points from 1 through 10
 Inventory items could belong to an inventory and map_tiles to a map... how would that look?
 
 Maybe map this out on paper, or a visual db tool...
+
+Inventory Creation works as of April 9th 2018, should check out the current DB schema and rename inventory_items to items (branch is called 'inventory-creation')
+
+Now we need to make adjustments in all the relating views and other parts of the logic that might be effected by this major db change... shop buy_items method, grab and drop methods ....
