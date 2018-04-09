@@ -1,29 +1,34 @@
+# Characters
 Character.create(name: "Mygdin", race: "Elf", discipline: "thief", hitpoints: 28, strength: 7, x_coord: 1, y_coord: -2, alive: true)
 Character.create(name: "Govin", race: "Elf", hitpoints: 26, strength: 6, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Donder", race: "Human", hitpoints: 22, strength: 9, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Glimli", race: "Dwarf", discipline: "warrior", hitpoints: 30, strength: 11, x_coord: 0, y_coord: 0, alive: true)
 Character.create(name: "Ormir", race: "Orc", hitpoints: 32, strength: 12, x_coord: 0, y_coord: 0, alive: true)
 
+# All inventories
+12.times do Inventory.create(name: "Satchel") end
+
 # Character's inventories
-5.times do Inventory.create(name: "Satchel") end
 Inventory.find(1).update(character_id: 1)
 Inventory.find(2).update(character_id: 2)
 Inventory.find(3).update(character_id: 3)
 Inventory.find(4).update(character_id: 4)
 Inventory.find(5).update(character_id: 5)
 
-# Weapons
-Inventory.where(character_id: 1).weapons.create(name: "Dagger", damage: 2, amount: 1)
-Inventory.where(character_id: 1).inventory_items.create(name: "Coins", amount: 24)
-Inventory.where(character_id: 2).weapons.create(name: "Sword", damage: 4, amount: 1)
-Inventory.where(character_id: 3).inventory_items.create(name: "Apple", amount: 1)
-Inventory.where(character_id: 4).weapons.create(name: "Axe", damage: 3, amount: 1)
-Inventory.where(character_id: 5).weapons.create(name: "Axe", damage: 3, amount: 2)
+# Character's weapons and items
+Inventory.where(character_id: 1).first.weapons.create(name: "Dagger", damage: 2, amount: 1)
+Inventory.where(character_id: 1).first.inventory_items.create(name: "Coins", amount: 24)
+Inventory.where(character_id: 2).first.weapons.create(name: "Sword", damage: 4, amount: 1)
+Inventory.where(character_id: 3).first.inventory_items.create(name: "Apple", amount: 1)
+Inventory.where(character_id: 4).first.weapons.create(name: "Axe", damage: 3, amount: 1)
+Inventory.where(character_id: 5).first.weapons.create(name: "Axe", damage: 3, amount: 2)
 
+# Pets
 Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0, alive: true)
 Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord: 2, y_coord: 1, alive: true)
 Pet.create(name: "Phil", kind: "Dog", description: "A cute little Dog", x_coord: 2, y_coord: -1, alive: true)
 
+# Bots
 Bot.create(name: "Zorb", race: "Goblin", hitpoints: 24, strength: 8, x_coord: 0, y_coord: 1, alive: true)
 Bot.create(name: "Gibble", race: "Quickling", hitpoints: 13, strength: 10, x_coord: 1, y_coord: 1, alive: true)
 Bot.create(name: "Vindy", race: "Human", hitpoints: 20, strength: 9, x_coord: 2, y_coord: 1, alive: true)
@@ -33,16 +38,19 @@ Bot.create(name: "Hummal", race: "God", hitpoints: 100, strength: 3, x_coord: 1,
 Bot.create(name: "Chark", race: "Necromancer", hitpoints: 50, strength: 11, x_coord: 3, y_coord: -3, alive: true)
 
 # Bots inventories
-Bot.find(4).find(1).inventory.create(name: "Satchel")
-Bot.find(4).find(1).inventory.create(name: "Satchel")
-Bot.find(1).find(1).inventory.create(name: "Satchel")
-Bot.find(1).find(1).inventory.create(name: "Satchel")
+Inventory.find(6).update(bot_id: 1)
+Inventory.find(7).update(bot_id: 2)
+Inventory.find(8).update(bot_id: 3)
+Inventory.find(9).update(bot_id: 4)
+Inventory.find(10).update(bot_id: 5)
+Inventory.find(11).update(bot_id: 6)
+Inventory.find(12).update(bot_id: 7)
 
 # Bot's weapons
-Inventory.where(bot_id: 4).weapons.create(name: "Axe", damage: 3, amount: 1)
-Inventory.where(bot_id: 4).weapons.create(name: "Sword", damage: 4, amount: 1, value: 20)
-Inventory.where(bot_id: 1).weapons.create(name: "Club", damage: 2, amount: 1, value: 3)
-Inventory.where(bot_id: 1).inventory_items.create(name: "Coins", amount: 7)
+Inventory.where(bot_id: 4).first.weapons.create(name: "Axe", damage: 3, amount: 1)
+Inventory.where(bot_id: 4).first.weapons.create(name: "Sword", damage: 4, amount: 1, value: 20)
+Inventory.where(bot_id: 1).first.weapons.create(name: "Club", damage: 2, amount: 1, value: 3)
+Inventory.where(bot_id: 1).first.inventory_items.create(name: "Coins", amount: 7)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
