@@ -17,8 +17,8 @@ class BotsController
     corpse = find_corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
-      if corpse.inventory_items
-        corpse.inventory_items.each do |item|
+      unless corpse.inventory.inventory_items.empty?
+        corpse.inventory.inventory_items.each do |item|
           puts "You find #{item.name}"
         end
       else
@@ -31,11 +31,11 @@ class BotsController
     search_corpse(char)
     # real shitty to do this twice... gotta write a method to shorten this!!!
     corpse = find_corpse(char)
-    if corpse.inventory_items
+    if corpse.inventory.inventory_items
       print "Which item do you want to grab?\n> "
       item_name = gets.chomp
-      if corpse.inventory_items
-        corpse.inventory_items.each do |item|
+      if corpse.inventory.inventory_items
+        corpse.inventory.inventory_items.each do |item|
           if item.name == item_name
             char.inventory_items << item
             item.character_id = char.id
