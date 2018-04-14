@@ -81,3 +81,10 @@ Now we need to make adjustments in all the relating views and other parts of the
 ### Schema
 
 Try to look at some other schemas, as it does not seem to make sense to add an Inventory to a MapTile
+
+
+### Change/Adjust ShopController
+
+In general controllers can be refactored as some methods are too long and duplicate code exists.
+
+When adding inventory as a model though we need to adjust the shop controller so that the buy method still works.
