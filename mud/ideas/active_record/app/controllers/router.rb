@@ -51,7 +51,7 @@ class Router
     when action == 'buy' then @shop_controller.buy(@character)
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
-    when action == 'save' then @character.save
+    when action == 'save' then @character.save and puts "Your position has been saved"
     when action == 'stats' then @char_controller.show_stats(@character)
     when action == 'help' then @view.commands
     when action == 'map' then @view.map
