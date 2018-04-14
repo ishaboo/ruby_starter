@@ -32,7 +32,7 @@ class ShopController
   def buy(char)
     tile = find_tile(char)
     mon = 0
-    char.inventory_items.each do |item|
+    char.inventory.inventory_items.each do |item|
       if item.name == "Coins"
         mon = item.amount
       end
@@ -48,13 +48,13 @@ class ShopController
               ans = gets.chomp
               unless ans == 'no'
                 if item.value <= mon
-                  coins = char.inventory_items.find_by(name: "Coins")
+                  coins = char.inventory.inventory_items.find_by(name: "Coins")
                   coins.update(amount: coins.amount - item.value)
                   register = tile.shop.inventory_items.find_by(name: "Coins")
                   register.update(amount: register.amount + item.value)
                   item.update(amount: item.amount - 1)
                   x = InventoryItem.new(name: item.name, amount: 1, value: item.value)
-                  char.inventory_items << x # we could move line 54 here and drop x
+                  char.inventory.inventory_items << x # we could move line 54 here and drop x
                   puts "You bought #{item.name}"
                 else
                   puts "You don't have enough money to buy #{item.name}"
@@ -69,11 +69,13 @@ class ShopController
           end
         else
           puts "This item is not available."
+          char.save
         end
       end
     else
       puts "You cannot buy anything here..."
     end
+    char.save
     char.reload
   end
 
