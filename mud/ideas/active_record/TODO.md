@@ -88,3 +88,10 @@ Try to look at some other schemas, as it does not seem to make sense to add an I
 In general controllers can be refactored as some methods are too long and duplicate code exists.
 
 When adding inventory as a model though we need to adjust the shop controller so that the buy method still works.
+
+
+### Before merging inventory-creation
+
+Main things to keep in mind:
+
+- look at the changes in the bot_controller, inventory_controller, and shop_controller, and keep in mind that weapons is not working yet, as additional inventory item, as weapons are attached to inventory
