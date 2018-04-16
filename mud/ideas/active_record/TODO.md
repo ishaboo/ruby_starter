@@ -95,3 +95,7 @@ When adding inventory as a model though we need to adjust the shop controller so
 Main things to keep in mind:
 
 - look at the changes in the bot_controller, inventory_controller, and shop_controller, and keep in mind that weapons is not working yet, as additional inventory item, as weapons are attached to inventory
+
+### Refactor:
+
+All the controllers can be re-factored. Think about moving method outputs into views and shortening methods, also move methods to private when split up.
