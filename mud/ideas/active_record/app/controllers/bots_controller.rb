@@ -2,15 +2,7 @@ require "pry-byebug"
 
 class BotsController
   def announce(char, bots)
-    find_bot(char, bots)
-    # ugly temporary solution screaming for a good ol refactoring
-    if @bot
-      if @bot.alive?
-        puts "You see a #{@bot.race}."
-      elsif @bot.alive == false
-        puts "You see a dead #{@bot.race}."
-      end
-    end
+    announce_bot(find_bot(char, bots))
   end
 
   def search_corpse(char)
@@ -87,6 +79,7 @@ class BotsController
   private
 
   def find_corpse(char)
+    # Line 83 is deprecated?
     bots = Bot.all
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
     unless @bot.count == 0 || @bot.first.alive == true
@@ -102,6 +95,16 @@ class BotsController
       return @bot = nil
     else
       return @bot = @bot.first
+    end
+  end
+
+  def announce_bot(bot)
+    if bot.nil?
+      puts '...'
+    elsif bot.alive?
+      puts "You see a #{bot.race}."
+    elsif bot.alive == false
+      puts "You see a dead #{bot.race}."
     end
   end
 
