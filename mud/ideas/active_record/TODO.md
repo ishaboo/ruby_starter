@@ -99,3 +99,5 @@ Main things to keep in mind:
 ### Refactor:
 
 All the controllers can be re-factored. Think about moving method outputs into views and shortening methods, also move methods to private when split up.
+
+Refactored the announce method in the bots controller today, looking good but might be possible to reduce it even further.
