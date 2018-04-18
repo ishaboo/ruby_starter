@@ -1,8 +1,8 @@
 require "pry-byebug"
 
 class BotsController
-  def announce(char, bots)
-    announce_bot(find_bot(char, bots))
+  def announce(char)
+    announce_bot(find_bot(char))
   end
 
   def search_corpse(char)
@@ -42,10 +42,11 @@ class BotsController
     end
   end
 
-  def fight(char, bots)
-    find_bot(char, bots)
+  def fight(char)
+    find_bot(char)
 
     if @bot
+      @bot = @bot.first
 
     # A fight between to nearly equally strong characters
     # should last around 4 rounds ...
@@ -80,21 +81,20 @@ class BotsController
 
   def find_corpse(char)
     # Line 83 is deprecated?
-    bots = Bot.all
-    @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
-    unless @bot.count == 0 || @bot.first.alive == true
-      return @bot.first
+    bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    unless bot.count == 0 || bot.first.alive == true
+      return bot.first
     end
   end
 
-  def find_bot(char, bots)
+  def find_bot(char)
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
 
     # This needs to change if we want to have more than one bot in a tile
     if @bot.count == 0
-      return @bot = nil
+      return nil
     else
-      return @bot = @bot.first
+      return @bot.first
     end
   end
 
