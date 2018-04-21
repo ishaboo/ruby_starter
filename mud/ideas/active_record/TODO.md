@@ -105,3 +105,5 @@ Refactored the announce method in the bots controller today, looking good but mi
 ### April 20th
 
 partial refactor looks good, but need some tesiting, especially when implementing the new inventory model
+
+--> What is definitely missing is a method to buy and drop/grab weapons as of right now only inventory_items will be recognized
