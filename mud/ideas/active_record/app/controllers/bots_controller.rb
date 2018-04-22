@@ -9,8 +9,11 @@ class BotsController
     corpse = find_corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
-      unless corpse.inventory.inventory_items.empty?
+      unless corpse.inventory.inventory_items.empty? && corpse.inventory.weapons.empty?
         corpse.inventory.inventory_items.each do |item|
+          puts "You find #{item.name}"
+        end
+        corpse.inventory.weapons.each do |item|
           puts "You find #{item.name}"
         end
       else
@@ -23,22 +26,31 @@ class BotsController
     search_corpse(char)
     # real shitty to do this twice... gotta write a method to shorten this!!!
     corpse = find_corpse(char)
-    if corpse.inventory.inventory_items
-      print "Which item do you want to grab?\n> "
+    if corpse.inventory.inventory_items || corpse.inventory.weapons
+      print "What do you want to grab?\n> "
       item_name = gets.chomp
-      if corpse.inventory.inventory_items
-        corpse.inventory.inventory_items.each do |item|
-          if item.name == item_name
-            char.inventory_items << item
-            item.character_id = char.id
-            item.bot_id = nil
-            item.save
-          end
+
+      corpse.inventory.inventory_items.each do |item|
+        if item.name == item_name
+          char.inventory.inventory_items << item
+          item.inventory_id = char.inventory.id
+          item.inventory.bot_id = nil
+          item.save
         end
-        char.save
-        puts "Your position has been saved!"
-        char.reload
       end
+      corpse.inventory.weapons.each do |item|
+        if item.name == item_name
+          char.inventory.weapons << item
+          item.inventory_id = char.inventory.id
+          item.inventory.bot_id = nil
+          item.save
+        end
+      end
+
+      char.save
+      puts "Your position has been saved!"
+      char.reload
+
     end
   end
 
