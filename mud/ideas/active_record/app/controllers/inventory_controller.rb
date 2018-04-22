@@ -43,6 +43,15 @@ class InventoryController
         item.save
       end
     end
+    character.inventory.weapons.each do |item|
+      if item.name == item_name
+        tile = find_tile(character)
+        tile.weapons << item
+        item.inventory_id = nil
+        item.map_tile_id = tile.id
+        item.save
+      end
+    end
     character.save
     puts "Your position has been saved!"
     character.reload
@@ -55,6 +64,14 @@ class InventoryController
     tile.inventory_items.each do |item|
       if item.name == item_name
         character.inventory.inventory_items << item
+        item.inventory_id = character.inventory.id
+        item.map_tile_id = nil
+        item.save
+      end
+    end
+    tile.weapons.each do |item|
+      if item.name == item_name
+        character.inventory.weapons << item
         item.inventory_id = character.inventory.id
         item.map_tile_id = nil
         item.save
