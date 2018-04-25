@@ -118,3 +118,5 @@ inventory-creation branch looks good so far, could use some testing but otherwis
 would like to write some tests that cover retrieving inventory items from the db and printing them to the terminal
 
 also some tests for grabbing items from dead bots and buying them in a store would be nice
+
+need to make sure item counts are utilized
