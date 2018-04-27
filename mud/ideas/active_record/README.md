@@ -42,3 +42,13 @@ user@host:~$ rake
 There are several in game commands, which can be viewed by typing ```help```
 
 To exit the game just type ```exit``` or ```quit```.
+
+### Additional DB options
+
+The Rakefile also allows to create, destroy and migrate. 
+
+```
+user@host:~$ rake db:create
+user@host:~$ rake db:drop
+user@host:~$ rake db:migrate
+```
