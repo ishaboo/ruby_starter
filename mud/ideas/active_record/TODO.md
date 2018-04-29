@@ -120,3 +120,11 @@ would like to write some tests that cover retrieving inventory items from the db
 also some tests for grabbing items from dead bots and buying them in a store would be nice
 
 need to make sure item counts are utilized
+
+list of where this is important:
+
+- grabing and droping into map
+
+- grabing from corpses
+
+- buying from shops  
