@@ -1,4 +1,5 @@
 require "pry-byebug"
+require "rainbow"
 
 require_relative "../spec_helper"
 begin
@@ -16,11 +17,11 @@ describe "InventoryController" do
 
   let(:inv_controller) { InventoryController.new }
   let(:char) { Character.new(name: "Jo", race: "Elf", y_coord: 0) }
-  let(:item) { InventoryItem.new(name: "Shovel", amount: 1, value: 0) }
+  let(:item) { Weapon.new(name: "Axe", amount: 1, value: 0) }
 
   it "should show chararcter's items" do
     # binding.pry
-    char.inventory_items << item
+    char.weapons << item
     expect(inv_controller.show_inventory(char)).to eq([item])
   end
 

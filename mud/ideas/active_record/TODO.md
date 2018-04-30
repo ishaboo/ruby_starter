@@ -72,3 +72,59 @@ Disciplines can have points from 1 through 10
 Inventory items could belong to an inventory and map_tiles to a map... how would that look?
 
 Maybe map this out on paper, or a visual db tool...
+
+Inventory Creation works as of April 9th 2018, should check out the current DB schema and rename inventory_items to items (branch is called 'inventory-creation')
+
+Now we need to make adjustments in all the relating views and other parts of the logic that might be effected by this major db change... shop buy_items method, grab and drop methods ....
+
+
+### Schema
+
+Try to look at some other schemas, as it does not seem to make sense to add an Inventory to a MapTile
+
+
+### Change/Adjust ShopController
+
+In general controllers can be refactored as some methods are too long and duplicate code exists.
+
+When adding inventory as a model though we need to adjust the shop controller so that the buy method still works.
+
+
+### Before merging inventory-creation
+
+Main things to keep in mind:
+
+- look at the changes in the bot_controller, inventory_controller, and shop_controller, and keep in mind that weapons is not working yet, as additional inventory item, as weapons are attached to inventory
+
+### Refactor:
+
+All the controllers can be re-factored. Think about moving method outputs into views and shortening methods, also move methods to private when split up.
+
+Refactored the announce method in the bots controller today, looking good but might be possible to reduce it even further.
+
+### April 20th
+
+partial refactor looks good, but need some tesiting, especially when implementing the new inventory model
+
+--> What is definitely missing is a method to buy and drop/grab weapons as of right now only inventory_items will be recognized
+
+
+### April 23rd
+
+inventory-creation branch looks good so far, could use some testing but otherwise ready for merge
+
+### Testing
+
+would like to write some tests that cover retrieving inventory items from the db and printing them to the terminal
+
+also some tests for grabbing items from dead bots and buying them in a store would be nice
+
+need to make sure item counts are utilized
+
+list of where this is important:
+
+- grabing and droping into map
+
+- grabing from corpses
+
+- buying from shops  
