@@ -42,7 +42,7 @@ class Router
     when action == 'drop' then @inv_controller.drop_item(@character)
     when action == 'grab' then @inv_controller.grab_item(@character)
     when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
-    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character, @bots)
+    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character)
     when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
     when action == 'search corpse' then @bot_controller.search_corpse(@character)
     when action == 'grab item' then @bot_controller.get_item(@character)
@@ -51,7 +51,7 @@ class Router
     when action == 'buy' then @shop_controller.buy(@character)
     when action == 'pos' then @char_controller.show_pos(@character)
     when action == 'list' then @char_controller.index
-    when action == 'save' then @character.save
+    when action == 'save' then @character.save and puts "Your position has been saved"
     when action == 'stats' then @char_controller.show_stats(@character)
     when action == 'help' then @view.commands
     when action == 'map' then @view.map
@@ -59,7 +59,7 @@ class Router
       # FOR DEBUGGING PURPOSES:
     when action == 'pry' then binding.pry
       # Just to test fight mode right now
-    when action == 'fight' then @bot_controller.fight(@character, @bots)
+    when action == 'fight' then @bot_controller.fight(@character)
       ###
     when action == 'stop' || action == 'exit' then stop
     else

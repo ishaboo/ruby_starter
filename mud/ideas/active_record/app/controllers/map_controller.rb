@@ -31,6 +31,12 @@ class MapController
           tile.inventory_items.each do |item|
             puts "#{item.amount} #{item.name}"
           end
+        elsif tile.weapons != []
+          # binding.pry
+          puts "You see..."
+          tile.weapons.each do |item|
+            puts "#{item.amount} #{item.name}"
+          end
         else
           puts "Nothing interesting here..."
         end

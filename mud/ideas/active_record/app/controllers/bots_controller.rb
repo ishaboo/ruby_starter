@@ -1,24 +1,19 @@
 require "pry-byebug"
 
 class BotsController
-  def announce(char, bots)
-    find_bot(char, bots)
-    # ugly temporary solution screaming for a good ol refactoring
-    if @bot
-      if @bot.alive?
-        puts "You see a #{@bot.race}."
-      elsif @bot.alive == false
-        puts "You see a dead #{@bot.race}."
-      end
-    end
+  def announce(char)
+    announce_bot(find_bot(char))
   end
 
   def search_corpse(char)
     corpse = find_corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
-      if corpse.inventory_items
-        corpse.inventory_items.each do |item|
+      unless corpse.inventory.inventory_items.empty? && corpse.inventory.weapons.empty?
+        corpse.inventory.inventory_items.each do |item|
+          puts "You find #{item.name}"
+        end
+        corpse.inventory.weapons.each do |item|
           puts "You find #{item.name}"
         end
       else
@@ -31,29 +26,39 @@ class BotsController
     search_corpse(char)
     # real shitty to do this twice... gotta write a method to shorten this!!!
     corpse = find_corpse(char)
-    if corpse.inventory_items
-      print "Which item do you want to grab?\n> "
+    if corpse.inventory.inventory_items || corpse.inventory.weapons
+      print "What do you want to grab?\n> "
       item_name = gets.chomp
-      if corpse.inventory_items
-        corpse.inventory_items.each do |item|
-          if item.name == item_name
-            char.inventory_items << item
-            item.character_id = char.id
-            item.bot_id = nil
-            item.save
-          end
+
+      corpse.inventory.inventory_items.each do |item|
+        if item.name == item_name
+          char.inventory.inventory_items << item
+          item.inventory_id = char.inventory.id
+          item.inventory.bot_id = nil
+          item.save
         end
-        char.save
-        puts "Your position has been saved!"
-        char.reload
       end
+      corpse.inventory.weapons.each do |item|
+        if item.name == item_name
+          char.inventory.weapons << item
+          item.inventory_id = char.inventory.id
+          item.inventory.bot_id = nil
+          item.save
+        end
+      end
+
+      char.save
+      puts "Your position has been saved!"
+      char.reload
+
     end
   end
 
-  def fight(char, bots)
-    find_bot(char, bots)
+  def fight(char)
+    find_bot(char)
 
     if @bot
+      @bot = @bot.first
 
     # A fight between to nearly equally strong characters
     # should last around 4 rounds ...
@@ -87,21 +92,31 @@ class BotsController
   private
 
   def find_corpse(char)
-    bots = Bot.all
-    @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
-    unless @bot.count == 0 || @bot.first.alive == true
-      return @bot.first
+    # Line 83 is deprecated?
+    bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    unless bot.count == 0 || bot.first.alive == true
+      return bot.first
     end
   end
 
-  def find_bot(char, bots)
+  def find_bot(char)
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
 
     # This needs to change if we want to have more than one bot in a tile
     if @bot.count == 0
-      return @bot = nil
+      return nil
     else
-      return @bot = @bot.first
+      return @bot.first
+    end
+  end
+
+  def announce_bot(bot)
+    if bot.nil?
+      puts '...'
+    elsif bot.alive?
+      puts "You see a #{bot.race}."
+    elsif bot.alive == false
+      puts "You see a dead #{bot.race}."
     end
   end
 
