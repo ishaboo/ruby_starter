@@ -108,6 +108,7 @@ partial refactor looks good, but need some tesiting, especially when implementin
 
 --> What is definitely missing is a method to buy and drop/grab weapons as of right now only inventory_items will be recognized
 
+*** this should work as of yesterday april 30th ***
 
 ### April 23rd
 
