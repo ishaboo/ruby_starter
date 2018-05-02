@@ -17,11 +17,12 @@ describe "InventoryController" do
 
   let(:inv_controller) { InventoryController.new }
   let(:char) { Character.new(name: "Jo", race: "Elf", y_coord: 0) }
+  let(:inv) { Inventory.new(name: "Bag") }
   let(:item) { Weapon.new(name: "Axe", amount: 1, value: 0) }
 
   it "should show chararcter's items" do
-    # binding.pry
-    char.weapons << item
+    char.inventory = inv
+    char.inventory.weapons << item
     expect(inv_controller.show_inventory(char)).to eq([item])
   end
 
