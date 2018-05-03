@@ -1,21 +1,10 @@
 ## To Do list
 
-### List of remaining tasks:
-
-* [ ] A map in ASCII --> Done
-* [ ] A bot to interact with
-
-### Deal with adding a shop and shopkeepers
+### Deal with adding some shopkeepers to shops
 
 Check out some other MUDs to see how shops and NPCs are handled there.
 
 Buying method is sorta working, needs adjustments.
-
-Also gonna add a shopkeeper...
-
-### RSpecs
-
-RSpecs as of now do not really make that much sense, how and when could they be helpful for this project?
 
 ### Bots
 
@@ -24,8 +13,6 @@ Ideas to build bots...
 Would be nice to make pets more available, also talking to bots and giving weapons some kind of additional damage bonus would be good.
 
 Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
-
-Adding a alive true or bad column to the bot, pet and character models sounds like a good idea too.
 
 ### Achievements
 
@@ -67,21 +54,13 @@ When discipline warrior is chosen weapon damage is upped by 10 percent per point
 
 Disciplines can have points from 1 through 10
 
-### Inventory and Map models
+### Map model
 
-Inventory items could belong to an inventory and map_tiles to a map... how would that look?
+Map_tiles could be part of a map... how would that look?
 
 Maybe map this out on paper, or a visual db tool...
 
-Inventory Creation works as of April 9th 2018, should check out the current DB schema and rename inventory_items to items (branch is called 'inventory-creation')
-
-Now we need to make adjustments in all the relating views and other parts of the logic that might be effected by this major db change... shop buy_items method, grab and drop methods ....
-
-
 ### Schema
-
-Try to look at some other schemas, as it does not seem to make sense to add an Inventory to a MapTile
-
 
 ### Change/Adjust ShopController
 
@@ -89,30 +68,11 @@ In general controllers can be refactored as some methods are too long and duplic
 
 When adding inventory as a model though we need to adjust the shop controller so that the buy method still works.
 
-
-### Before merging inventory-creation
-
-Main things to keep in mind:
-
-- look at the changes in the bot_controller, inventory_controller, and shop_controller, and keep in mind that weapons is not working yet, as additional inventory item, as weapons are attached to inventory
-
 ### Refactor:
 
 All the controllers can be re-factored. Think about moving method outputs into views and shortening methods, also move methods to private when split up.
 
 Refactored the announce method in the bots controller today, looking good but might be possible to reduce it even further.
-
-### April 20th
-
-partial refactor looks good, but need some tesiting, especially when implementing the new inventory model
-
---> What is definitely missing is a method to buy and drop/grab weapons as of right now only inventory_items will be recognized --> works
-
-*** this should work as of yesterday april 30th ***
-
-### April 23rd
-
-inventory-creation branch looks good so far, could use some testing but otherwise ready for merge
 
 ### Testing
 
