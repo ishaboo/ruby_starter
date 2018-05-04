@@ -19,7 +19,7 @@ class CharView
     list    --> gives you a list of all the available characters,\n
     stats   --> gives you your stats,\n
     new     --> will create a character,\n
-    update  --> will edit an existing character,\n
+    update  --> will edit your current character,\n
     load    --> will load a character,\n
     save    --> will save your current position and inventory,\n
     delete  --> will delete an existing character,\n
