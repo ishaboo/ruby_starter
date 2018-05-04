@@ -1,6 +1,6 @@
 class Character < ActiveRecord::Base
-  has_one :inventory
-  has_one :pet
+  has_one :inventory, dependent: :destroy
+  has_one :pet, dependent: :destroy
 
   disciplines = ["thief", "mage", "warrior"]
 
