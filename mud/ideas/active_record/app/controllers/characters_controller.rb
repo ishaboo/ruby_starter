@@ -43,9 +43,13 @@ class CharactersController
 
   def destroy
     id = @view.ask_for("id").to_i
-    character = Character.find(id)
-    character.destroy
-    @view.give_msg("You just destroyed that ID!!!")
+    begin
+      character = Character.find(id)
+      character.destroy
+      @view.give_msg("You just destroyed that ID!!!")
+    rescue
+      puts "No character with that ID... : ("
+    end
   end
 
   def move_char(char, direction)
