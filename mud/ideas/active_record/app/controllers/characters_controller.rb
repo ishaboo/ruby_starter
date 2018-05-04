@@ -29,6 +29,7 @@ class CharactersController
     name = @view.ask_for("name")
     race = @view.ask_for("race")
     character = Character.new(name: name, race: race, y_coord: 0, x_coord: 0)
+    character.alive = true
     character.save
   end
 
