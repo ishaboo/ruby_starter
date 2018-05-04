@@ -1,5 +1,5 @@
 class Shop < ActiveRecord::Base
   belongs_to :map_tile
-  has_many :inventory_items
-  has_many :weapons
+  has_many :inventory_items, dependent: :destroy
+  has_many :weapons, dependent: :destroy
 end
