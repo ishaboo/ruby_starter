@@ -72,9 +72,13 @@ MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coo
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: 1)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: -1)
 
-Shop.create(name: "Dusty Shop", description: "Get your gear here")
-Shop.create(name: "Vindys Roller's Shop", description: "Buy some fun stuff here")
-Shop.create(name: "Logolas Bookstore", description: "Buy some Books here")
+Shop.create(name: "Dusty's Shop", description: "Get your gear here")
+Shop.create(name: "Vindy's Roller Shop", description: "Buy some fun stuff here")
+Shop.create(name: "Logola's Bookstore", description: "Buy some Books here")
+
+Shopkeeper.create(shop_id: 1, name: "Dusty", greeting: "Hi, and welcome to my humble establishment, please take a look around.")
+Shopkeeper.create(shop_id: 2, name: "Vindy", greeting: "Hi there and welcome to Vindy's fun store. What can I do you for?")
+Shopkeeper.create(shop_id: 3, name: "Logola", greeting: "Hi there and welcome to the wonderful world of mystic books.")
 
 # Inventory of the first shop
 Shop.find(1).inventory_items.create(name: "Coins", amount: 0)
