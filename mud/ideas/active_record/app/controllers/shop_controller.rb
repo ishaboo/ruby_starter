@@ -82,11 +82,12 @@ class ShopController
   private
 
   def find_tile(char)
-    tiles = MapTile.all
-    tiles.each do |tile|
-      if tile.x_coord == char.x_coord && tile.y_coord == char.y_coord
-        return tile
-      end
-    end
+    tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+    # tiles = MapTile.all
+    # tiles.each do |tile|
+    #   if tile.x_coord == char.x_coord && tile.y_coord == char.y_coord
+    #     return tile
+    #   end
+    # end
   end
 end
