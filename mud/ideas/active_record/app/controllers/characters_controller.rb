@@ -64,6 +64,10 @@ class CharactersController
       char.x_coord -= 1
     end
     # Need a method to do 'look'
+    tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+    if tile.shop
+      puts tile.shop.shopkeeper.greeting
+    end
   end
 
   def show_pos(char)
