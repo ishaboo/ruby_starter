@@ -53,20 +53,25 @@ class CharactersController
   end
 
   def move_char(char, direction)
-    case
-    when direction == 'n'
-      char.y_coord += 1
-    when direction == 's'
-      char.y_coord -= 1
-    when direction == 'e'
-      char.x_coord += 1
-    when direction == 'w'
-      char.x_coord -= 1
-    end
+    move(char, direction)
     # Need a method to do 'look'
-    tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
-    if tile.shop
-      puts tile.shop.shopkeeper.greeting
+    begin
+      tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+      if tile.shop
+        puts tile.shop.shopkeeper.greeting
+      end
+    rescue
+      puts "... you cannot go there..."
+      case
+      when direction == 'n'
+        move(char, 's')
+      when direction == 's'
+        move(char, 'n')
+      when direction == 'e'
+        move(char, 'w')
+      when direction == 'w'
+        move(char, 'e')
+      end
     end
   end
 
@@ -87,4 +92,19 @@ class CharactersController
     Strength: #{char.strength}"
   end
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
+
+  private
+
+  def move(char, direction)
+    case
+    when direction == 'n'
+      char.y_coord += 1
+    when direction == 's'
+      char.y_coord -= 1
+    when direction == 'e'
+      char.x_coord += 1
+    when direction == 'w'
+      char.x_coord -= 1
+    end
+  end
 end
