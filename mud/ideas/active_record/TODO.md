@@ -94,6 +94,4 @@ list of where this is important:
 
 MapTiles could go into a map... what would that accomplish and how would that  be beneficial?
 
-Wen not hitting a MapTile (walking 'out of bounds') it would be nice to get an error, have some permissions that prevent that ...etc.
-
 Also it would be nice to be able to only walk alleys and not across the board.
