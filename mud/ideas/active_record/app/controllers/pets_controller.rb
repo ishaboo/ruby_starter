@@ -32,7 +32,7 @@ class PetController
 
   def returns_home
     @pet.update_attributes(y_coord: 0, x_coord: 0)
-    puts "Pet reurned home (0, 0)."
+    puts "Pet returned home (0, 0)."
   end
 
   def call(char)
@@ -41,7 +41,7 @@ class PetController
       char.pet.update(y_coord: char.y_coord)
       # This is really fucky and not necessary... read up on this
       char.pet.reload
-      puts "Pet is here..."
+      puts "#{char.pet.name} is here..."
     end
   end
 end
