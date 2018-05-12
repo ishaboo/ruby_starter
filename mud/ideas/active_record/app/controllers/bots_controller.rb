@@ -65,22 +65,23 @@ class BotsController
       while char.hitpoints > 0 && @bot.hitpoints > 0
         damage = rand(char.strength)
         counter = rand(@bot.strength)
-        puts "#{char.name} hits #{@bot.name} for
-        #{damage} hitpoints"
+        puts Rainbow("#{char.name} hits #{@bot.name} for
+        #{damage} hitpoints").red
         @bot.update(hitpoints: @bot.hitpoints - damage)
         sleep 1
         if @bot.hitpoints <= 0
-          puts "#{@bot.name} makes a last gurgling sound..."
+          puts Rainbow("#{@bot.name} makes a last gurgling sound...").red
           sleep 1
           puts "#{@bot.race} has died."
           @bot.update(alive: false)
         end
         unless @bot.hitpoints <= 0
-          puts "#{@bot.name} hits #{char.name} for
-          #{counter} hitpoints"
+          puts Rainbow("#{@bot.name} hits #{char.name} for
+          #{counter} hitpoints").red
           char.update(hitpoints: char.hitpoints - counter)
           if char.hitpoints <= 0
             sleep 1
+            puts Rainbow("#{char.name} makes a loud scream...").red
             puts "#{char.name} has died."
             char.update(alive: false)
           end
@@ -116,7 +117,7 @@ class BotsController
     elsif bot.alive?
       puts "You see a #{bot.race}."
     elsif bot.alive == false
-      puts "You see a dead #{bot.race}."
+      puts Rainbow("You see a dead #{bot.race}.").red
     end
   end
 

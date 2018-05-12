@@ -53,7 +53,7 @@ class InventoryController
       end
     end
     character.save
-    puts "Your position has been saved!"
+    puts Rainbow("Your position has been saved!").cyan
     character.reload
   end
 
@@ -78,7 +78,7 @@ class InventoryController
       end
     end
     character.save
-    puts "Your position has been saved!"
+    puts Rainbow("Your position has been saved!").cyan
     character.reload
   end
 

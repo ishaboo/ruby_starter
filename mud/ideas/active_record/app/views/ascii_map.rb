@@ -1,6 +1,6 @@
 class Map
   def draw_map
-    puts "
+    puts Rainbow("
                                Fun
                               Store
                                 ||
@@ -30,7 +30,6 @@ class Map
                                        ||
                                        ||
                                     City of
-                                  Necromancers
-    "
+                                  Necromancers").yellow
   end
 end

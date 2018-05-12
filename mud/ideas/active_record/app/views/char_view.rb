@@ -1,6 +1,6 @@
 class CharView
   def ask_for(word)
-    puts "Please enter #{word}:"
+    puts Rainbow("Please enter #{word}:").blue
     input = gets.chomp
   end
 

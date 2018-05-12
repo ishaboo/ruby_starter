@@ -24,6 +24,32 @@ class View
     print "Enter your command:\n> "
   end
 
+  def dance(char)
+    puts "#{char.name} starts dancing..."
+  end
+
+  def fart
+    puts Rainbow("Yuck! Thats a Stinky one!").olive
+  end
+
+  def cry
+    puts Rainbow("Whuuaaa...").blanchedalmond
+  end
+
+  def laugh(char)
+    puts Rainbow("#{char.name} starts laughin loud!")
+  end
+
+  def disable
+    Rainbow.enabled = false
+    puts "color Disabled"
+  end
+
+  def enable
+    Rainbow.enabled = true
+    puts "color Enabled"
+  end
+
   def commands
     puts "These are the available topics:"
     puts "character, pets, map, shop, fight, general"
@@ -37,7 +63,7 @@ class View
     when ans == "fight" then @fight.view
     when ans == "general" then @general.view
     else
-      puts "Please choose a valid option."
+      puts Rainbow("Please choose a valid option.").darkorchid.bright
     end
   end
 end

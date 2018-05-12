@@ -56,6 +56,13 @@ class Router
     when action == 'help' then @view.commands
     when action == 'map' then @view.map
     when action == 'call pet' then @pet_controller.call(@character)
+    when action == 'dance' then @view.dance(@character)
+    when action == 'disable' then @view.disable
+    when action == 'enable' then @view.enable
+    when action == 'fart' then @view.fart
+    when action == 'laugh' then @view.laugh(@character)
+    # when action == 'sing' then @view.sing(@character)
+    when action == 'cry' then @view.cry
       # FOR DEBUGGING PURPOSES:
     when action == 'pry' then binding.pry
       # Just to test fight mode right now

@@ -29,13 +29,13 @@ class MapController
           # binding.pry
           puts "You see..."
           tile.inventory_items.each do |item|
-            puts "#{item.amount} #{item.name}"
+            puts Rainbow("#{item.amount} #{item.name}").yellow
           end
         elsif tile.weapons != []
           # binding.pry
           puts "You see..."
           tile.weapons.each do |item|
-            puts "#{item.amount} #{item.name}"
+            puts Rainbow("#{item.amount} #{item.name}").yellow
           end
         else
           puts "Nothing interesting here..."
