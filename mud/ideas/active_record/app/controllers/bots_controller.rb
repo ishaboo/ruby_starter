@@ -64,9 +64,14 @@ class BotsController
     # should last around 4 rounds ...
       while char.hitpoints > 0 && @bot.hitpoints > 0
         damage = rand(char.strength)
+        if char.pet
+          bites = rand(char.pet.strength)
+        end
         counter = rand(@bot.strength)
-        puts "#{char.name} hits #{@bot.name} for
-        #{damage} hitpoints"
+        puts "#{char.name} hits #{@bot.name} for #{damage} hitpoints"
+        if char.pet
+          puts "#{char.pet.name} hits #{@bot.name} for #{bites} hitpoints"
+        end
         @bot.update(hitpoints: @bot.hitpoints - damage)
         sleep 1
         if @bot.hitpoints <= 0
@@ -76,8 +81,7 @@ class BotsController
           @bot.update(alive: false)
         end
         unless @bot.hitpoints <= 0
-          puts "#{@bot.name} hits #{char.name} for
-          #{counter} hitpoints"
+          puts "#{@bot.name} hits #{char.name} for #{counter} hitpoints"
           char.update(hitpoints: char.hitpoints - counter)
           if char.hitpoints <= 0
             sleep 1
