@@ -4,6 +4,7 @@ class CreatePets < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :kind
       t.string :description
+      t.integer :strength
       t.integer :x_coord
       t.integer :y_coord
       t.boolean :alive
