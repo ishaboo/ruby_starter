@@ -24,9 +24,9 @@ Inventory.where(character_id: 4).first.weapons.create(name: "Axe", damage: 3, am
 Inventory.where(character_id: 5).first.weapons.create(name: "Axe", damage: 3, amount: 2)
 
 # Pets
-Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", x_coord: 0, y_coord: 0, alive: true)
-Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", x_coord: 2, y_coord: 1, alive: true)
-Pet.create(name: "Phil", kind: "Dog", description: "A cute little Dog", x_coord: 2, y_coord: -1, alive: true)
+Pet.create(name: "Smitty", kind: "Racoon", description: "A shaggy looking rodent", strength:4, x_coord: 0, y_coord: 0, alive: true)
+Pet.create(name: "Ruffy", kind: "Cat", description: "A cute little Cat", strength: 3, x_coord: 2, y_coord: 1, alive: true)
+Pet.create(name: "Phil", kind: "Dog", description: "A cute little Dog", strength: 3, x_coord: 2, y_coord: -1, alive: true)
 
 # Bots
 Bot.create(name: "Zorb", race: "Goblin", hitpoints: 24, strength: 8, x_coord: 0, y_coord: 1, alive: true)
