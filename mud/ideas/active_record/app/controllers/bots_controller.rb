@@ -70,7 +70,7 @@ class BotsController
         counter = rand(@bot.strength)
         puts "#{char.name} hits #{@bot.name} for #{damage} hitpoints"
         if char.pet
-          puts "#{char.pet.name} hits #{@bot.name} for #{bites} hitpoints"
+          puts Rainbow("#{char.pet.name} hits #{@bot.name} for #{bites} hitpoints").orange.bright
         end
         @bot.update(hitpoints: @bot.hitpoints - damage)
         sleep 1
