@@ -90,8 +90,14 @@ class CharactersController
       puts "
     Discipline: #{char.discipline.capitalize}\n"
     end
+    if char.hitpoints < 5
+      puts Rainbow("
+    HitPoints: #{char.hitpoints}").red.bright
+    else
+      puts "
+    HitPoints: #{char.hitpoints}\n"
+    end
     puts "
-    HitPoints: #{char.hitpoints}\n
     Strength: #{char.strength}"
   end
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
