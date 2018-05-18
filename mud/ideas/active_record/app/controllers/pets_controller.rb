@@ -34,12 +34,30 @@ class PetController
     @pet.update_attributes(y_coord: 0, x_coord: 0)
   end
 
+  def tame(char)
+    pet = find(char)
+    if pet
+      pet.character = char
+      pet.save
+    end
+  end
+
   def call(char)
     if char.pet
       char.pet.update(x_coord: char.x_coord)
       char.pet.update(y_coord: char.y_coord)
       # This is really fucky and not necessary... read up on this
       char.pet.reload
+    end
+  end
+
+  private
+
+  def find(char)
+    begin
+      pet = Pet.where(x_coord: char.x_coord, y_coord: char.y_coord ).first
+    rescue
+      puts "There is no pet here..."
     end
   end
 end
