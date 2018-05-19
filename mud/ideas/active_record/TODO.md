@@ -95,3 +95,7 @@ list of where this is important:
 MapTiles could go into a map... what would that accomplish and how would that  be beneficial?
 
 Also it would be nice to be able to only walk alleys and not across the board.
+
+### Pet
+
+Taming and calling a pet works, also letting the pet fight alongside of a character works. Now we need a method to replace the call pet method that maked the pet follow automatically and also give some feedback in form of output...
