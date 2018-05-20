@@ -3,6 +3,7 @@ require "pry-byebug"
 class CharactersController
   def initialize
     @view = CharView.new
+    @pet = PetController.new
   end
 
   def index
@@ -75,6 +76,11 @@ class CharactersController
       when direction == 'w'
         move(char, 'e')
       end
+    end
+    if char.pet
+      char.pet.x_coord = char.x_coord
+      char.pet.y_coord = char.y_coord
+      char.pet.save
     end
   end
 
