@@ -102,4 +102,4 @@ Taming and calling a pet works, also letting the pet fight alongside of a charac
 
 The pet follows now automatically, but can still be called.
 
-The tame method needs some routing.
+Taming a pet would be nice to have some feedback..something like 'you just tamed a #{pet.description}'
