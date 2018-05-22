@@ -56,6 +56,7 @@ class Router
     when action == 'help' then @view.commands
     when action == 'map' then @view.map
     when action == 'call pet' then @pet_controller.call(@character)
+    when action == 'tame pet' then @pet_controller.tame(@character)
       # FOR DEBUGGING PURPOSES:
     when action == 'pry' then binding.pry
       # Just to test fight mode right now
