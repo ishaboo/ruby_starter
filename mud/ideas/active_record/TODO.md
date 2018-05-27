@@ -103,3 +103,7 @@ Taming and calling a pet works, also letting the pet fight alongside of a charac
 The pet follows now automatically, but can still be called.
 
 Taming now gives feedback, but it would also be nice to add a "tame" ability to characters, that would be required to tame pets, perhaps with a score that gives probability of success, according to the individual pets difficulty of being tamed.
+
+### Earn Experience
+
+Exp is now a field of the character model, but there are no rules to earn experience and level up.
