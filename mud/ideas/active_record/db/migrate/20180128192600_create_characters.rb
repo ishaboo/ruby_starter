@@ -6,6 +6,7 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.string :discipline
       t.integer :hitpoints
       t.integer :strength
+      t.integer :level
       t.integer :exp
       t.integer :x_coord
       t.integer :y_coord
