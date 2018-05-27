@@ -104,7 +104,9 @@ class CharactersController
     HitPoints: #{char.hitpoints}\n"
     end
     puts "
-    Strength: #{char.strength}"
+    Strength: #{char.strength}\n
+    Level: #{char.level}\n
+    Experience: #{char.exp}"
   end
   # NEED --> show_char_stats, read_map_info, show_inventory, save_char_stats, drop_item
 
