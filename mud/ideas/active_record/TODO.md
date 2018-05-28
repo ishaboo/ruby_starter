@@ -107,3 +107,5 @@ Taming now gives feedback, but it would also be nice to add a "tame" ability to 
 ### Earn Experience
 
 Exp is now a field of the character model, but there are no rules to earn experience and level up.
+
+An idea to earn experience would be to have a default experience point amount to gain after beating a bot, depending on bot strength and own level.
