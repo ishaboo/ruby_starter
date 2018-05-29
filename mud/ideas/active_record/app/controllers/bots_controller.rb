@@ -79,6 +79,7 @@ class BotsController
           sleep 1
           puts "#{@bot.race} has died."
           @bot.update(alive: false)
+          gain_exp(char, @bot)
         end
         unless @bot.hitpoints <= 0
           puts "#{@bot.name} hits #{char.name} for #{counter} hitpoints"
@@ -122,6 +123,15 @@ class BotsController
     elsif bot.alive == false
       puts "You see a dead #{bot.race}."
     end
+  end
+
+  def gain_exp(char, bot)
+    if bot.strength > char.strength
+      char.exp += bot.strength * 5
+    else
+      char.exp += bot.strength * 3
+    end
+    char.save
   end
 
 end
