@@ -110,10 +110,9 @@ Exp is now a field of the character model, but there are no rules to earn experi
 
 An idea to earn experience would be to have a default experience point amount to gain after beating a bot, depending on bot strength and own level. --> done
 
-Now we need to level up, perhaps some default levels would be good. 
+Now we need to level up, perhaps some default levels would be good. --> done
 
 level 1 --> 0 - 500 exp
 level 2 --> 501 - 1100 exp
 level 3 --> 1101 - 1800 exp
 
-Once a character levels up, you should be allowed to add 3 points to stats.
