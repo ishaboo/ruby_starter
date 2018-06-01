@@ -6,8 +6,11 @@ class Level
   def level_up(char)
     if char.exp > 500
       char.level = 2
+      puts "You leveled up"
     elsif char.exp > 1100
       char.level = 3
+      puts "Congrats, you are now at level 3"
     end
+    char.save
   end
 end
