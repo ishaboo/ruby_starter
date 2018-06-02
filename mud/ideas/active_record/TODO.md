@@ -116,3 +116,11 @@ level 1 --> 0 - 500 exp
 level 2 --> 501 - 1100 exp
 level 3 --> 1101 - 1800 exp
 
+### Growing the app
+
+Now that leveling works it would be nice to grow the map also add monsters and bots and maybe add some quests.
+
+### Quests
+
+Would this be a now object model? Or could this be something added to existing models...
+
