@@ -124,3 +124,9 @@ Now that leveling works it would be nice to grow the map also add monsters and b
 
 Would this be a now object model? Or could this be something added to existing models...
 
+What would be the parts of a quest?
+
+  - Questmaster
+  - Quest goals --> How could this be triggered/completed
+
+How do other MUDs handle this?
