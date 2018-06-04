@@ -128,5 +128,6 @@ What would be the parts of a quest?
 
   - Questmaster
   - Quest goals --> How could this be triggered/completed
+  - Additional/specifc quest bots?
 
 How do other MUDs handle this?
