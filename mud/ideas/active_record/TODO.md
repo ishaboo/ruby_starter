@@ -135,3 +135,5 @@ What would be the parts of a quest?
 How do other MUDs handle this?
 
 Probably going to make this a new model with a questmaster attached to it. --> should be done in a new branch for testing
+
+Fields for quest model: name, length_in_minutes, reward_in_exp...
