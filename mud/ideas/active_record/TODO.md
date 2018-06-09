@@ -136,4 +136,9 @@ How do other MUDs handle this?
 
 Probably going to make this a new model with a questmaster attached to it. --> should be done in a new branch for testing
 
-Fields for quest model: name, length_in_minutes, reward_in_exp...
+Fields for quest model: name, length_in_minutes, reward_in_exp, goal --> this should be a descriptive string
+Quests should belond to a Questmaster, which is basically a special bot that is bound to a certain maptile.
+
+### Thoughts on refactoring as of June 2018
+
+Inheritance could be an interesting topic when refatoring, to shorten code
