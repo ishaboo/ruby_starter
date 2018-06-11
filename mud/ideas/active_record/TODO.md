@@ -140,6 +140,7 @@ Fields for quest model: name, length_in_minutes, reward_in_exp, goal --> this sh
 Quests should belond to a Questmaster, which is basically a special bot that is bound to a certain maptile.
 
 Checked out a new branch called 'quests'
+Added quest and questmaster models plus migrations as of June 11th 2018, just need testing and merge now.
 
 ### Thoughts on refactoring as of June 2018
 
