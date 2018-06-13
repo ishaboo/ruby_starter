@@ -147,3 +147,5 @@ Should quests be created in the seed or should they have a seperate place to be 
 ### Thoughts on refactoring as of June 2018
 
 Inheritance could be an interesting topic when refatoring, to shorten code
+
+Just adding a line today...
