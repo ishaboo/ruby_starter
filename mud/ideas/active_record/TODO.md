@@ -140,7 +140,7 @@ Fields for quest model: name, length_in_minutes, reward_in_exp, goal --> this sh
 Quests should belond to a Questmaster, which is basically a special bot that is bound to a certain maptile.
 
 Checked out a new branch called 'quests'
-Added quest and questmaster models plus migrations as of June 11th 2018, just need testing and merge now.
+Added quest and questmaster models plus migrations as of June 11th 2018, just need testing and merge now. --> merged as of June 14th
 
 Should quests be created in the seed or should they have a seperate place to be defined in?
 
