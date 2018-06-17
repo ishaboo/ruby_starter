@@ -30,6 +30,15 @@ class PetController
     end
   end
 
+  def stats(char)
+    if char.pet
+      puts Rainbow("#{char.pet.name}'s stats are:\n
+      Type of animal: #{char.pet.kind}\n
+      Description: #{char.pet.description}\n
+      Strength: #{char.pet.strength}").blue.bright
+    end
+  end
+
   def returns_home
     @pet.update_attributes(y_coord: 0, x_coord: 0)
   end
