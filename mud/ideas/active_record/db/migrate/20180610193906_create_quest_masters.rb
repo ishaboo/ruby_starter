@@ -5,6 +5,8 @@ class CreateQuestMasters < ActiveRecord::Migration[5.0]
       t.string :race
       t.boolean :alive
       t.timestamps
+
+      t.references  :quest, index: true, foreign_key: true
     end
   end
 end
