@@ -105,7 +105,11 @@ class BotsController
   end
 
   def find_bot(char)
+    # binding.pry
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    if @bot.empty?
+      @bot = QuestMaster.where(x_coord: char.x_coord, y_coord: char.y_coord)
+    end
 
     # This needs to change if we want to have more than one bot in a tile
     if @bot.count == 0
