@@ -57,37 +57,41 @@ class BotsController
   def fight(char)
     find_bot(char)
 
-    if @bot
-      @bot = @bot.first
+    if @bot.first.has_attribute? 'quest_id'
+      puts Rainbow("... you cannot fight a questmaster.").red
+    else
+      if @bot
+        @bot = @bot.first
 
-    # A fight between to nearly equally strong characters
-    # should last around 4 rounds ...
-      while char.hitpoints > 0 && @bot.hitpoints > 0
-        damage = rand(char.strength)
-        if char.pet
-          bites = rand(char.pet.strength)
-        end
-        counter = rand(@bot.strength)
-        puts "#{char.name} hits #{@bot.name} for #{damage} hitpoints"
-        if char.pet
-          puts Rainbow("#{char.pet.name} hits #{@bot.name} for #{bites} hitpoints").orange.bright
-        end
-        @bot.update(hitpoints: @bot.hitpoints - damage)
-        sleep 1
-        if @bot.hitpoints <= 0
-          puts "#{@bot.name} makes a last gurgling sound..."
+      # A fight between to nearly equally strong characters
+      # should last around 4 rounds ...
+        while char.hitpoints > 0 && @bot.hitpoints > 0
+          damage = rand(char.strength)
+          if char.pet
+            bites = rand(char.pet.strength)
+          end
+          counter = rand(@bot.strength)
+          puts "#{char.name} hits #{@bot.name} for #{damage} hitpoints"
+          if char.pet
+            puts Rainbow("#{char.pet.name} hits #{@bot.name} for #{bites} hitpoints").orange.bright
+          end
+          @bot.update(hitpoints: @bot.hitpoints - damage)
           sleep 1
-          puts "#{@bot.race} has died."
-          @bot.update(alive: false)
-          gain_exp(char, @bot)
-        end
-        unless @bot.hitpoints <= 0
-          puts "#{@bot.name} hits #{char.name} for #{counter} hitpoints"
-          char.update(hitpoints: char.hitpoints - counter)
-          if char.hitpoints <= 0
+          if @bot.hitpoints <= 0
+            puts "#{@bot.name} makes a last gurgling sound..."
             sleep 1
-            puts "#{char.name} has died."
-            char.update(alive: false)
+            puts "#{@bot.race} has died."
+            @bot.update(alive: false)
+            gain_exp(char, @bot)
+          end
+          unless @bot.hitpoints <= 0
+            puts "#{@bot.name} hits #{char.name} for #{counter} hitpoints"
+            char.update(hitpoints: char.hitpoints - counter)
+            if char.hitpoints <= 0
+              sleep 1
+              puts "#{char.name} has died."
+              char.update(alive: false)
+            end
           end
         end
       end
@@ -109,6 +113,10 @@ class BotsController
     @bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
     if @bot.empty?
       @bot = QuestMaster.where(x_coord: char.x_coord, y_coord: char.y_coord)
+      unless @bot.empty?
+        # binding.pry
+        puts "A... Questmaster"
+      end
     end
 
     # This needs to change if we want to have more than one bot in a tile
