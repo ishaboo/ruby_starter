@@ -26,7 +26,10 @@ describe "InventoryController" do
     expect(inv_controller.show_inventory(char)).to eq([item])
   end
 
-  it "should allow to look at an inventory item" do
+  it "should allow to drop an inventory item" do
     # Needs another test?
+    char.inventory = inv
+    char.inventory.weapons << item
+    expect(inv_controller.drop_item(char)).to eq(char)
   end
 end
