@@ -90,6 +90,8 @@ list of where this is important:
 
 - buying from shops
 
+Some tests have been fixed as of June 21st, but more tests would be nice.
+
 ### Map
 
 MapTiles could go into a map... what would that accomplish and how would that  be beneficial?
