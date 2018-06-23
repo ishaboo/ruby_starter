@@ -157,3 +157,8 @@ Inheritance could be an interesting topic when refatoring, to shorten code
 The following methods are duplicated:
 
 find_map_tile,
+
+### Building Monsters
+
+A Monster could be a new model that just sits on a maptile and automatically attacks given a certain chance.
+It would need a name, description, strength, coordinates and hitpoints.
