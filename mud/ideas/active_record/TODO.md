@@ -162,3 +162,6 @@ find_map_tile,
 
 A Monster could be a new model that just sits on a maptile and automatically attacks given a certain chance.
 It would need a name, description, strength, coordinates and hitpoints.
+
+Monsters need a model, a controller and a migration
+Monsters do not belong to any other model, nor do they have inventories or anything else complex as of now
