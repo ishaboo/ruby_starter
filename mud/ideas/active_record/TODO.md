@@ -14,24 +14,6 @@ Would be nice to make pets more available, also talking to bots and giving weapo
 
 Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
 
-### Achievements
-
-Got the help menues cleaned, now it would be nice to move other output from controllers to views.
-
-Still need a shopkeeper...
-
-### Need a method or some way to get money
-
-Maybe add some coins to Bots, or a way to earn it... --> Done
-
-Another idea would be a massive map expansion with places that hide things and coins
-
-A sell option within a shop would also be good ---> needs to be done
-
-* Now Bots have items and money, create a method, or add to the grab command a way to pick up dead Bots stuff... maybe steal it if thief is a skill...
-
-Add pets... --> Done but lacking functionality
-
 ### Methods that are needed!!!
 
 A helper method to find if two models are on the same maptile... something general, like 'same_tile'
@@ -39,14 +21,6 @@ A helper method to find if two models are on the same maptile... something gener
 A method to grab items from dead bots... --> got a method to grab stuff, need a route now.
 
 Routes need to be cleaned.
-
-
-### Seed adjustments
-
-Need to create an inventory and add items, weapons and coins to it.
-
-Weapons have damage which should be taken into account when fighting, in addition to special skills.
-
 
 ### Ideas to manage skills
 
@@ -165,3 +139,7 @@ It would need a name, description, strength, coordinates and hitpoints.
 
 Monsters need a model, a controller and a migration
 Monsters do not belong to any other model, nor do they have inventories or anything else complex as of now
+
+### Do not forget:
+
+Weapons damage... make shopkeepers interact,
