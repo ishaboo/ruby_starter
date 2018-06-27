@@ -59,10 +59,14 @@ class CharactersController
     begin
       tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
       pet = Pet.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+      monster = Monster.where(x_coord: char.x_coord, y_coord: char.y_coord).first
       if tile.shop
         puts tile.shop.shopkeeper.greeting
       elsif pet
         puts Rainbow("...you spot a #{pet.kind.downcase}...").purple.bright
+      end
+      if monster
+        puts Rainbow("***WATCH OUT***\nYOU SPOT A #{monster.name.upcase}").red.bright
       end
     rescue
       puts "... you cannot go there..."
