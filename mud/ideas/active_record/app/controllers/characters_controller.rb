@@ -4,6 +4,7 @@ class CharactersController
   def initialize
     @view = CharView.new
     @pet = PetController.new
+    @monster = MonstersController.new
   end
 
   def index
@@ -56,8 +57,11 @@ class CharactersController
   def move_char(char, direction)
     move(char, direction)
     # Need a method to do 'look'
-    begin
-      tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+
+    tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
+
+    if tile
+
       pet = Pet.where(x_coord: char.x_coord, y_coord: char.y_coord).first
       monster = Monster.where(x_coord: char.x_coord, y_coord: char.y_coord).first
       if tile.shop
@@ -65,10 +69,12 @@ class CharactersController
       elsif pet
         puts Rainbow("...you spot a #{pet.kind.downcase}...").purple.bright
       end
-      if monster
+      if monster && monster.alive
+        # binding.pry
         puts Rainbow("***WATCH OUT***\nYOU SPOT A #{monster.name.upcase}").red.bright
+        @monster.check_attack(char)
       end
-    rescue
+    else
       puts "... you cannot go there..."
       case
       when direction == 'n'
@@ -81,6 +87,7 @@ class CharactersController
         move(char, 'e')
       end
     end
+
     if char.pet
       char.pet.x_coord = char.x_coord
       char.pet.y_coord = char.y_coord
