@@ -138,7 +138,7 @@ class BotsController
   end
 
   def gain_exp(char, bot)
-    check_level = Level.new
+    # check_level = Level.new
     if bot.strength > char.strength
       ex = bot.strength * 5
       char.exp += ex
@@ -148,7 +148,7 @@ class BotsController
     end
     char.save
     puts Rainbow("You earned #{ex} experience points").yellow
-    check_level.level_up(char)
+    # check_level.level_up(char)
   end
 
 end
