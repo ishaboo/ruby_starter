@@ -33,14 +33,16 @@ class Router
   private
 
   def level_up(char)
-    experience = char.exp
-    if experience > 500
-      level =  char.level
-      new_level = level += 1 
-      char.update(level: new_level)
-      puts "Congratulations #{char.name} has reached level #{char.level}."
-      char.update(exp: 0)
-    end
+    # experience = char.exp
+    # if experience > 500
+    #   level =  char.level
+    #   new_level = level += 1
+    #   char.update(level: new_level)
+    #   puts "Congratulations #{char.name} has reached level #{char.level}."
+    #   char.update(exp: 0)
+    # end
+    check_level = Level.new
+    check_level.level_up(char)
   end
 
   def route(action)
