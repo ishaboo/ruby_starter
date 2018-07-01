@@ -145,3 +145,11 @@ ADDED monsters_controller and view, still need some methods and a route to them
 ### Do not forget:
 
 Weapons damage... make shopkeepers interact,
+
+### Issues with experience gain and leveling up
+
+We need to level up in one place, the Level model seems like a good way to deal with it, but checking with every turn if we need to level up seems unnecessary. We should only check to level up whenever gaining some experience.
+
+At this point refactoring becomes interesting again, as the question of inheritance and shortening code is always a hot topic.
+
+We could either inherit all the locate bot, monster, store and all that, or have a dedicated class for locating stuff, updating models, etc.
