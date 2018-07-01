@@ -25,11 +25,23 @@ class Router
         display_tasks
         action = gets.chomp
         route(action)
+        level_up(@character)
       end
     end
   end
 
   private
+
+  def level_up(char)
+    experience = char.exp
+    if experience > 500
+      level =  char.level
+      new_level = level += 1 
+      char.update(level: new_level)
+      puts "Congratulations #{char.name} has reached level #{char.level}."
+      char.update(exp: 0)
+    end
+  end
 
   def route(action)
     case

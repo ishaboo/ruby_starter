@@ -1,3 +1,4 @@
+# require "pry-byebug"
 class MonstersController
   def initialize
     @view = MonsterView.new
@@ -39,10 +40,13 @@ class MonstersController
         mon.update(hitpoints: mon.hitpoints - damage)
 
         if mon.hitpoints <= 0
+          new_exp =+ rand(300)
           sleep 1
           puts "#{mon.name} has died."
           mon.update(alive: false)
-          puts "You should get some exp for this"
+          puts "You earned #{new_exp} experience points."
+          char.exp = char.exp + new_exp
+          char.save
         end
       end
     end
