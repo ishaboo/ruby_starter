@@ -153,3 +153,4 @@ We need to level up in one place, the Level model seems like a good way to deal 
 At this point refactoring becomes interesting again, as the question of inheritance and shortening code is always a hot topic.
 
 We could either inherit all the locate bot, monster, store and all that, or have a dedicated class for locating stuff, updating models, etc.
+
