@@ -154,3 +154,12 @@ At this point refactoring becomes interesting again, as the question of inherita
 
 We could either inherit all the locate bot, monster, store and all that, or have a dedicated class for locating stuff, updating models, etc.
 
+### New Models:
+
+Locate Model --> locate store, items on maptiles, bots, pets, monsters
+
+Gain Experience Model
+
+Fight Model --> fight bots and monsters
+
+...etc
