@@ -162,4 +162,6 @@ Gain Experience Model
 
 Fight Model --> fight bots and monsters
 
+Routing Model ---> what about throwing all routes in here?
+
 ...etc
