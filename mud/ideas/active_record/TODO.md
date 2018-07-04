@@ -164,4 +164,10 @@ Fight Model --> fight bots and monsters
 
 Routing Model ---> what about throwing all routes in here?
 
+Maybe an Item and a Shop Model
+
+A Search Model
+
+What could be in a Pet Model?
+
 ...etc
