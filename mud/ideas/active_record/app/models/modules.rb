@@ -2,6 +2,10 @@ module Locate
   def Locate.test(stuff)
     puts "#{stuff} always works!"
   end
+
+  def Locate.show_coords(model)
+    Rainbow("#{model.name} is at: #{model.x_coord} and #{model.y_coord}").yellow.bright
+  end
 end
 
 module Fight
