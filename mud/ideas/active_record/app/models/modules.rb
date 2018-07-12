@@ -19,3 +19,30 @@ module Route
     puts "#{stuff} should route all your stuff!"
   end
 end
+
+module Item
+  def search_corpse(char)
+
+  end
+
+  def find_corpse(char)
+
+  end
+
+  def find_items(char)
+
+  end
+
+  # this method should only deal with adding the actual item to character model
+  def get_item(char, items={})
+    weapons = []
+    items = []
+    items.each do |item, type|
+      if type == 'weapon'
+        char.inventory.weapons << item
+      elsif type == 'item'
+        char.inventory.items << item
+      end
+    end
+  end
+end
