@@ -51,6 +51,7 @@ Inventory.where(bot_id: 4).first.weapons.create(name: "Axe", damage: 3, amount: 
 Inventory.where(bot_id: 4).first.weapons.create(name: "Sword", damage: 4, amount: 1, value: 20)
 Inventory.where(bot_id: 1).first.weapons.create(name: "Club", damage: 2, amount: 1, value: 3)
 Inventory.where(bot_id: 1).first.inventory_items.create(name: "Coins", amount: 7)
+Inventory.where(bot_id: 6).first.weapons.create(name: "Thunder Hammer", damage: 4, amount: 1, value: 20)
 
 MapTile.create(name: "Town Center", description: "The busy town's center", x_coord: 0, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 0, y_coord: 1)
