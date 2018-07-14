@@ -41,10 +41,10 @@ module Item
 
   # this method should only deal with adding the actual item to character model
   def Item.get_item(char, inventory)
-    inventory.each do |item, type|
-      if type == 'weapon'
+    inventory.each do |item|
+      if item.first.class == Weapon.new.class
         char.inventory.weapons << item
-      elsif type == 'item'
+      elsif item.first.class == Weapon.new.class
         char.inventory.inventory_items << item
       end
     end
