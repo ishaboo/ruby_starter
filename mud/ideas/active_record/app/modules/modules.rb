@@ -21,27 +21,25 @@ module Route
 end
 
 module Item
-  def search_corpse(char)
+  def Item.search_corpse(char)
 
   end
 
-  def find_corpse(char)
+  def Item.find_corpse(char)
 
   end
 
-  def find_items(char)
+  def Item.find_items(char)
 
   end
 
   # this method should only deal with adding the actual item to character model
-  def get_item(char, items={})
-    weapons = []
-    items = []
+  def Item.get_item(char, items={})
     items.each do |item, type|
       if type == 'weapon'
         char.inventory.weapons << item
       elsif type == 'item'
-        char.inventory.items << item
+        char.inventory.inventory_items << item
       end
     end
   end
