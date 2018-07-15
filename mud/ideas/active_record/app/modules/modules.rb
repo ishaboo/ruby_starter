@@ -40,8 +40,8 @@ module Item
   end
 
   # this method should only deal with adding the actual item to character model
-  def Item.get_item(char, inventory)
-    inventory.each do |item|
+  def Item.get_item(char, stuff)
+    stuff.each do |item|
       if item.first.class == Weapon.new.class
         char.inventory.weapons << item
       elsif item.first.class == Weapon.new.class
