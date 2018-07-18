@@ -57,7 +57,7 @@ module Item
     stuff.each do |item|
       if item.first.class == Weapon.new.class
         char.inventory.weapons << item
-      elsif item.first.class == Weapon.new.class
+      elsif item.first.class == InventoryItem.new.class
         char.inventory.inventory_items << item
       end
     end
