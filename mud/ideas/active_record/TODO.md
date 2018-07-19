@@ -179,4 +179,4 @@ What could be in a Pet Model?
 
 Instead of a bunch of new classes, maybe a module might be a better solution here...?
 
-When writing modules find out what the convention says, one large modules file with several classes and mothods, or multiple seperate modules that group the required methods.
+When writing modules find out what the convention says, one large modules file with several classes and mothods, or multiple seperate modules that group the required methods...
