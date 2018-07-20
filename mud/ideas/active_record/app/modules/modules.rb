@@ -3,6 +3,10 @@ module Locate
     puts "#{stuff} always works!"
   end
 
+  def Locate.corpse
+    # we could move the whole locate corpse method here
+  end
+
   def Locate.show_coords(model)
     Rainbow("#{model.name} is at: #{model.x_coord} and #{model.y_coord}").yellow.bright
   end
