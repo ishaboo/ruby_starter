@@ -1,10 +1,13 @@
 module Locate
-  def Locate.test(stuff)
-    puts "#{stuff} always works!"
+  def Locate.bot(char)
+    bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
   end
 
-  def Locate.corpse
-    # we could move the whole locate corpse method here
+  def Locate.corpse(char)
+    bot = Locate.bot(char)
+    unless bot.count == 0 || bot.first.alive == true
+      return bot.first
+    end
   end
 
   def Locate.show_coords(model)
@@ -26,26 +29,19 @@ end
 
 module Item
   def Item.search_corpse(char)
-    corpse = Item.find_corpse(char)
+    corpse = Locate.corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
       unless corpse.inventory.inventory_items.empty? && corpse.inventory.weapons.empty?
         corpse.inventory.inventory_items.each do |item|
           puts "You find #{item.name}"
         end
-        corpse.inventory.weapons.each do |item|
-          puts "You find #{item.name}"
+        corpse.inventory.weapons.each do |weapon|
+          puts "You find #{weapon.name}"
         end
       else
         puts "#{corpse.race} has nothing..."
       end
-    end
-  end
-
-  def Item.find_corpse(char)
-    bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
-    unless bot.count == 0 || bot.first.alive == true
-      return bot.first
     end
   end
 
