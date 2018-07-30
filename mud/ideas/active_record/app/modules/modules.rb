@@ -25,6 +25,10 @@ module Route
   def Route.test(stuff)
     puts "#{stuff} should route all your stuff!"
   end
+
+  def choice
+    gets.chomp
+  end
 end
 
 module Item
