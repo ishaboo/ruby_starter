@@ -6,7 +6,7 @@ class BotsController
   end
 
   def search_corpse(char)
-    corpse = find_corpse(char)
+    corpse = Locate.corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
       unless corpse.inventory.inventory_items.empty? && corpse.inventory.weapons.empty?
