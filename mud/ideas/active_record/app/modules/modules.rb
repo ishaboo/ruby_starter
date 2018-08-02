@@ -26,7 +26,7 @@ module Route
     puts "#{stuff} should route all your stuff!"
   end
 
-  def choice
+  def Route.choice
     gets.chomp
   end
 end
