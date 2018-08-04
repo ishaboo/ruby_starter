@@ -23,7 +23,7 @@ class Router
         start_with_character
       else
         display_tasks
-        action = gets.chomp
+        action = Route.choice
         route(action)
       end
     end
