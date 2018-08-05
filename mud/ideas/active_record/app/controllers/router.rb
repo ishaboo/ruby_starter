@@ -49,7 +49,7 @@ class Router
     when action == 'shop' then @shop_controller.check(@character)
     when action == 'list items' then @shop_controller.list_items(@character)
     when action == 'buy' then @shop_controller.buy(@character)
-    when action == 'pos' then @char_controller.show_pos(@character)
+    when action == 'pos' then Locate.show_coords(@character)
     when action == 'list' then @char_controller.index
     when action == 'save' then @character.save and puts "Your position has been saved"
     when action == 'stats' then @char_controller.show_stats(@character)
