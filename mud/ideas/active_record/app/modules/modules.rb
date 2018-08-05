@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 module Locate
   def Locate.bot(char)
     bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
@@ -11,7 +13,7 @@ module Locate
   end
 
   def Locate.show_coords(model)
-    Rainbow("#{model.name} is at: #{model.x_coord} and #{model.y_coord}").yellow.bright
+    puts Rainbow("#{model.name} is at: #{model.x_coord} and #{model.y_coord}").yellow.bright
   end
 end
 
