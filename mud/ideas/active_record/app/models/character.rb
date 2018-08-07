@@ -7,4 +7,8 @@ class Character < ActiveRecord::Base
   def has_discipline
     # Internal method that determines special skills and abilities
   end
+
+  def belongs_to_class
+    # classes could be warrior, thief, paladin, necromancer, mage
+  end
 end
