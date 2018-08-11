@@ -197,3 +197,5 @@ need to maybe be seperated in files?!
 ### Implementing yaml files to define objects, bots and quests instead of seed file?
 
 It might be more convenient to implement yaml files to maintain model creation.
+
+Look into other projects to figure out implementation.
