@@ -37,6 +37,8 @@ namespace :db do
   desc 'populate the database with sample data'
   task :seed do
     require "#{__dir__}/db/seeds.rb"
+    require "#{__dir__}/db/quest_seed.rb"
+    require "#{__dir__}/db/monster_seed.rb"
   end
 
   desc 'Gives you a timestamp for your migration file name'
