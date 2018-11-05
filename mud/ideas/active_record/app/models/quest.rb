@@ -1,3 +1,5 @@
 class Quest < ActiveRecord::Base
-  has_one :quest_master
+  belongs_to :quest_master
+  belongs_to :character
+  has_one  :quest_master
 end
