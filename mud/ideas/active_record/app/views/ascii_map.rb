@@ -25,7 +25,7 @@ class Map
             ||         ||       ||     ||
             ||         ||       ||     ||
                        ||       ||     ||
-                     Temple    Arena  Library
+                     Temple   Arena | Library
                                        ||
                                        ||
                                        ||
