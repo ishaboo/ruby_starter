@@ -32,38 +32,38 @@ class Router
   private
 
   def route(action)
-    case
-    when action.length == 1 then @char_controller.move_char(@character, action)
-    when action == 'new' then @char_controller.create
-    when action == 'update' then @char_controller.update(@character)
-    when action == 'load' then @character = @char_controller.load
-    when action == 'delete' then @char_controller.destroy
-    when action == 'inv' then @inv_controller.show_inventory(@character)
-    when action == 'drop' then @inv_controller.drop_item(@character)
-    when action == 'grab' then @inv_controller.grab_item(@character)
-    when action == 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
-    when action == 'look again' || action == 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character)
-    when action == 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
-    when action == 'search corpse' then @bot_controller.search_corpse(@character)
-    when action == 'grab item' then @bot_controller.get_item(@character)
-    when action == 'shop' then @shop_controller.check(@character)
-    when action == 'list items' then @shop_controller.list_items(@character)
-    when action == 'buy' then @shop_controller.buy(@character)
-    when action == 'pos' then Locate.show_coords(@character)
-    when action == 'list' then @char_controller.index
-    when action == 'save' then @character.save and puts "Your position has been saved"
-    when action == 'stats' then @char_controller.show_stats(@character)
-    when action == 'help' then @view.commands
-    when action == 'map' then @view.map
-    when action == 'call pet' then @pet_controller.call(@character)
-    when action == 'tame pet' then @pet_controller.tame(@character)
-    when action == 'pet stats' then @pet_controller.stats(@character)
+    case action
+    when 's', 'n', 'e', 'w' then @char_controller.move_char(@character, action)
+    when 'new' then @char_controller.create
+    when 'update' then @char_controller.update(@character)
+    when 'load' then @character = @char_controller.load
+    when 'delete' then @char_controller.destroy
+    when 'inv' then @inv_controller.show_inventory(@character)
+    when 'drop' then @inv_controller.drop_item(@character)
+    when 'grab' then @inv_controller.grab_item(@character)
+    when 'look' then @map_controller.read_title(@character.x_coord, @character.y_coord)
+    when 'look again', 'look more' then @map_controller.read_description(@character.x_coord, @character.y_coord) and @pet_controller.announce(@character) and @bot_controller.announce(@character)
+    when 'inspect' then @map_controller.search_tile(@character.x_coord, @character.y_coord)
+    when 'search corpse' then @bot_controller.search_corpse(@character)
+    when 'grab item' then @bot_controller.get_item(@character)
+    when 'shop' then @shop_controller.check(@character)
+    when 'list items' then @shop_controller.list_items(@character)
+    when 'buy' then @shop_controller.buy(@character)
+    when 'pos' then Locate.show_coords(@character)
+    when 'list' then @char_controller.index
+    when 'save' then @character.save and puts "Your position has been saved"
+    when 'stats' then @char_controller.show_stats(@character)
+    when 'help' then @view.commands
+    when 'map' then @view.map
+    when 'call pet' then @pet_controller.call(@character)
+    when 'tame pet' then @pet_controller.tame(@character)
+    when 'pet stats' then @pet_controller.stats(@character)
       # FOR DEBUGGING PURPOSES:
-    when action == 'pry' then binding.pry
+    when 'pry' then binding.pry
       # Just to test fight mode right now
-    when action == 'fight' then @bot_controller.fight(@character)
+    when 'fight' then @bot_controller.fight(@character)
       ###
-    when action == 'stop' || action == 'exit' then stop
+    when 'stop', 'exit' then stop
     else
       puts "Please enter a valid command (you can enter 'help' for a list of commands)"
     end
