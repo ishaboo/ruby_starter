@@ -13,7 +13,6 @@ class ShopController
   def list_items(char)
     tile = find_tile(char)
      if tile.shop
-      # binding.pry
       puts "This shop has the following items:"
       if tile.shop.inventory_items
         tile.shop.inventory_items.each do |item|
@@ -83,11 +82,5 @@ class ShopController
 
   def find_tile(char)
     tile = MapTile.where(x_coord: char.x_coord, y_coord: char.y_coord).first
-    # tiles = MapTile.all
-    # tiles.each do |tile|
-    #   if tile.x_coord == char.x_coord && tile.y_coord == char.y_coord
-    #     return tile
-    #   end
-    # end
   end
 end
