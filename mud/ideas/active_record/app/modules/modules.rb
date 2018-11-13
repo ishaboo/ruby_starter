@@ -1,40 +1,40 @@
 require "pry-byebug"
 
 module Locate
-  def Locate.bot(char)
+  def self.bot(char)
     bot = Bot.where(x_coord: char.x_coord, y_coord: char.y_coord)
   end
 
-  def Locate.corpse(char)
+  def self.corpse(char)
     bot = Locate.bot(char)
     unless bot.count == 0 || bot.first.alive == true
       return bot.first
     end
   end
 
-  def Locate.show_coords(model)
+  def self.show_coords(model)
     puts Rainbow("#{model.name} is at: #{model.x_coord} and #{model.y_coord}").yellow.bright
   end
 end
 
 module Fight
-  def Fight.test(stuff)
+  def self.test(stuff)
     puts "#{stuff.upcase} gives you a fight!"
   end
 end
 
 module Route
-  def Route.test(stuff)
+  def self.test(stuff)
     puts "#{stuff} should route all your stuff!"
   end
 
-  def Route.choice
+  def self.choice
     gets.chomp
   end
 end
 
 module Item
-  def Item.search_corpse(char)
+  def self.search_corpse(char)
     corpse = Locate.corpse(char)
     if corpse
       puts "You are searching a dead #{corpse.race}..."
@@ -51,7 +51,7 @@ module Item
     end
   end
 
-  def Item.find_items(char)
+  def self.find_items(char)
     stuff = []
     corpse = Item.find_corpse(char)
     stuff << items = corpse.inventory.inventory_items
@@ -59,7 +59,7 @@ module Item
   end
 
   # this method should only deal with adding the actual item to character model
-  def Item.get_item(char, stuff)
+  def self.get_item(char, stuff)
     stuff.each do |item|
       if item.first.class == Weapon.new.class
         char.inventory.weapons << item
