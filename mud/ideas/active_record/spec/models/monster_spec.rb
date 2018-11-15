@@ -25,4 +25,14 @@ describe "Monster" do
       raise "Fix the first test before paying attention to this one"
     end
   end
+
+  it "should allow to create monster" do
+    monster = Monster.create(name: "Monster Test")
+    expect { monster.name = "Monster Test" }.not_to raise_error
+  end
+
+  it "should allow to delete monster" do
+    monster = Monster.create(name: "Monster Test")
+    expect { monster.delete }.not_to raise_error
+  end
 end
