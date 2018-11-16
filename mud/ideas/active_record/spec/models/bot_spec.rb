@@ -41,6 +41,6 @@ describe "Bot" do
   it "should allow to a bot to have an inventory" do
     bot = Bot.create(name: "Test")
     bot.inventory = inv
-    expect(bot.inventory.name).to eq("Bag")
+    expect(bot.inventory.name).to eq(inv.name)
   end
 end
