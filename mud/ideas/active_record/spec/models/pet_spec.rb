@@ -12,6 +12,9 @@ describe "Pet" do
 
   after(:each) { drop_db }
 
+  let(:char) { Character.new(name: "Jo", race: "Elf", y_coord: 0) }
+  let(:pet) { Pet.new(name: "Smo", kind: "Cat", y_coord: 0) }
+
   it "class should exist. If not, you haven't defined your model class yet" do
     expect(defined?(Pet)).to eq "constant"
   end
@@ -24,5 +27,10 @@ describe "Pet" do
     else
       raise "Fix the first test before paying attention to this one"
     end
+  end
+
+  it "should allow to let a character have a pet" do
+    char.pet = pet
+    expect(char.pet.name).to eq pet.name
   end
 end
