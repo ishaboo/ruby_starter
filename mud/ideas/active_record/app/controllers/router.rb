@@ -13,6 +13,7 @@ class Router
     # Just for testing purposes as of now
     @bot_controller = BotsController.new
     @bots = Bot.all
+    @banner = BannerTwo.new
   end
 
   def run
@@ -58,6 +59,7 @@ class Router
     when 'call pet' then @pet_controller.call(@character)
     when 'tame pet' then @pet_controller.tame(@character)
     when 'pet stats' then @pet_controller.stats(@character)
+    when 'banner' then @banner.greeting
       # FOR DEBUGGING PURPOSES:
     when 'pry' then binding.pry
       # Just to test fight mode right now
