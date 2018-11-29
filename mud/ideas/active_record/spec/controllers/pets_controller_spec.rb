@@ -19,7 +19,7 @@ describe "PetController" do
   let(:pet) { Pet.new(name: "Fluffy", x_coord: 0, y_coord: 0) }
   let(:pet_controller) { PetController.new }
 
-  it "should show a pet that belongs to a character be called" do
+  it "should allow a pet that belongs to a character to be called" do
     char.pet = pet
     expect(pet_controller.call(char)).to eq(pet)
   end
