@@ -13,6 +13,7 @@ describe "Bot" do
   after(:each) { drop_db }
 
   let(:inv) { Inventory.new(name: "Bag") }
+  let(:bot) { Bot.create(name: "Test Bot") }
 
   it "class should exist. If not, you haven't defined your model class yet" do
     expect(defined?(Bot)).to eq "constant"
@@ -29,17 +30,14 @@ describe "Bot" do
   end
 
   it "should allow to create a bot" do
-    bot = Bot.create(name: "Test Bot")
     expect { bot.name = "Test Bot" }.not_to raise_error
   end
 
   it "should allow to delete a bot" do
-    bot = Bot.create(name: "Test")
     expect { bot.delete }.not_to raise_error
   end
 
   it "should allow to a bot to have an inventory" do
-    bot = Bot.create(name: "Test")
     bot.inventory = inv
     expect(bot.inventory.name).to eq(inv.name)
   end
