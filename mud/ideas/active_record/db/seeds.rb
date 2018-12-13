@@ -75,6 +75,9 @@ MapTile.create(name: "Fighting Arena", description: "Molnir's Arena", x_coord: 2
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: 0)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: 1)
 MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 3, y_coord: -1)
+MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 4, y_coord: 0)
+MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 4, y_coord: 1)
+MapTile.create(name: "Road", description: "Just a dusty road", x_coord: 4, y_coord: -1)
 
 Shop.create(name: "Dusty's Shop", description: "Get your gear here")
 Shop.create(name: "Vindy's Roller Shop", description: "Buy some fun stuff here")
