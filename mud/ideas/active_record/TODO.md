@@ -6,14 +6,6 @@ Check out some other MUDs to see how shops and NPCs are handled there.
 
 Buying method is sorta working, needs adjustments.
 
-### Bots
-
-Ideas to build bots...
-
-Would be nice to make pets more available, also talking to bots and giving weapons some kind of additional damage bonus would be good.
-
-Adding maptiles into a single map and inventory_items into a single inventory is also an idea.
-
 ### Methods that are needed!!!
 
 A helper method to find if two models are on the same maptile... something general, like 'same_tile'
@@ -21,8 +13,6 @@ A helper method to find if two models are on the same maptile... something gener
 * Modules have been written for some of these, they just have to be used everywhere
 
 A method to grab items from dead bots... --> got a method to grab stuff, need a route now.
-
-Routes need to be cleaned.
 
 ### Ideas to manage skills
 
