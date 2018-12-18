@@ -48,9 +48,4 @@ class MonstersController
     end
   end
 
-  private
-
-  def locate_monster
-
-  end
 end
