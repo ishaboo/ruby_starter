@@ -15,3 +15,16 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
     end
   end
 end
+
+# in order to make use of the discipline field we need at least the following:
+
+# stealth --> for thieves
+# psi/magic
+# rage --> for warriors
+# agility
+# defense
+# perception ???
+# constitution --> defense against magic
+
+# class:
+# classes could be warrior, thief, paladin, necromancer, mage (see character model)
