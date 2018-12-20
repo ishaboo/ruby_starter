@@ -6,6 +6,18 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.string :discipline
       t.integer :hitpoints
       t.integer :strength
+
+      t.integer :stealth, :default => 0
+      t.integer :psionics, :default => 0
+      t.integer :rage, :default => 0
+      t.integer :agility, :default => 0
+      t.integer :defense, :default => 0
+      t.integer :perception, :default => 0
+      t.integer :constitution, :default => 0
+
+      # the name class has been reserved by ActiveRecord, we need another name
+      # t.string :class
+
       t.integer :level
       t.integer :exp
       t.integer :x_coord
