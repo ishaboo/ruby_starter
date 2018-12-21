@@ -5,9 +5,9 @@ class CreateMonsters < ActiveRecord::Migration[5.0]
       t.string :description
       t.integer :hitpoints
       t.integer :strength
-      t.integer :x_coord
-      t.integer :y_coord
-      t.boolean :alive
+      t.integer :x_coord, :default => 0
+      t.integer :y_coord, :default => 0
+      t.boolean :alive, :default => true
       t.timestamps
     end
   end
