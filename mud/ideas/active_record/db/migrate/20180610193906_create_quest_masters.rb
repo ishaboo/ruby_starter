@@ -3,9 +3,9 @@ class CreateQuestMasters < ActiveRecord::Migration[5.0]
     create_table :quest_masters do |t|
       t.string :name
       t.string :race
-      t.integer :x_coord
-      t.integer :y_coord
-      t.boolean :alive
+      t.integer :x_coord, :default => 0
+      t.integer :y_coord, :default => 0
+      t.boolean :alive, :default => true
       t.timestamps
 
       t.references  :quest, index: true, foreign_key: true
