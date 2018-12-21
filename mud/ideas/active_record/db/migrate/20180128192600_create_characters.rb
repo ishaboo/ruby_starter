@@ -18,11 +18,11 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       # the name class has been reserved by ActiveRecord, we need another name
       # t.string :class
 
-      t.integer :level
-      t.integer :exp
-      t.integer :x_coord
-      t.integer :y_coord
-      t.boolean :alive
+      t.integer :level, :default => 0
+      t.integer :exp, :default => 0
+      t.integer :x_coord, :default => 0
+      t.integer :y_coord, :default => 0
+      t.boolean :alive, :default => true
       t.timestamps
     end
   end
