@@ -7,13 +7,15 @@ class Character < ActiveRecord::Base
   def use_discipline
     # Internal method that determines special skills and abilities
     case self.discipline
-    when 'thief'
-      # we need to add stealth or movement here to give an advantage to
-    when 'mage'
-      # need some kinda magic ability
-    when 'warrior'
-      # maybe a more fighting orientated skill would be better
-      self.strength += 2
+      when 'thief'
+        # we need to add stealth or movement here to give an advantage to
+        self.stealth += rand(6)
+      when 'mage'
+        # need some kinda magic ability
+        self.psionics += rand(6)
+      when 'warrior'
+        # maybe a more fighting orientated skill would be better
+        self.strength += rand(6)
     end
   end
 
