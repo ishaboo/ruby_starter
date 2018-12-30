@@ -10,11 +10,11 @@ class AvatarCreationController
   end
 
   def give_attributes
-    puts "Give your character a name:\n> "
+    print "Give your character a name:\n> "
     @char.name = Route.choice
-    puts "What race is your character [Elf, Dwarf, Human, Orc]:\n> "
+    print "What race is your character [Elf, Dwarf, Human, Orc]:\n> "
     @char.race = Route.choice
-    puts "Does your character have a discipline [thief, mage, warrior]?:\n> "
+    print "Does your character have a discipline [thief, mage, warrior]?:\n> "
     @char.discipline = Route.choice
     @char.alive = true
     @char.hitpoints = 25
@@ -23,9 +23,10 @@ class AvatarCreationController
       #{@char.name}\n
       #{@char.race}\n
       #{@char.discipline}\n
-      #{@char.hitpoints}\n
-      #{@char.strength}\n
-      Do you want to save this character?"
+      Hitpoints: #{@char.hitpoints}\n
+      Strength: #{@char.strength}\n"
+
+    print "Do you want to save this character?\n> "
     ans = Route.choice
     if ans == "yes"
       @char.save
