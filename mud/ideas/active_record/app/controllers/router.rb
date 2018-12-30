@@ -80,8 +80,8 @@ class Router
   end
 
   def start_with_character
-    puts "You must load a Character first or create a new one:"
-    puts "Do you want a list of characters?[Y/n] or type 'new' to create one"
+    puts "You must load a Character first or create a new one"
+    print "Do you want a list of characters?[Y/n] or type 'new' to create one\n> "
     ans = gets.chomp
 
     case
@@ -94,6 +94,7 @@ class Router
       char = AvatarCreationController.new
       char.create_char
       char.give_attributes
+      @character = char.char
     else
       puts "please answer 'y', 'no' or 'new'"
     end
