@@ -80,18 +80,22 @@ class Router
   end
 
   def start_with_character
-    puts "You must load a Character first:"
-    puts "Do you want a list of characters?[Y/n]"
+    puts "You must load a Character first or create a new one:"
+    puts "Do you want a list of characters?[Y/n] or type 'new' to create one"
     ans = gets.chomp
 
     case
     when ans == '' || ans[0].downcase == 'y'
       route("list")
       route("load")
-    when ans[0].downcase == 'n'
+    when ans == 'no'
       route("load")
+    when ans == "new"
+      char = AvatarCreationController.new
+      char.create_char
+      char.give_attributes
     else
-      puts "please answer 'y' or 'n'"
+      puts "please answer 'y', 'no' or 'new'"
     end
   end
 end
