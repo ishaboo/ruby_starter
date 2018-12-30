@@ -1,4 +1,6 @@
 class AvatarCreationController
+  attr_reader :char
+
   def intro
     puts "
       Welcome to this awesome MUD.\n
