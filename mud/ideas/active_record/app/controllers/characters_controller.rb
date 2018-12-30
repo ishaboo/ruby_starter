@@ -14,7 +14,7 @@ class CharactersController
   end
 
   def load
-    id = @view.ask_for("your character's id:")
+    id = @view.ask_for("your character's id")
     begin
       character = Character.find(id)
       if character.alive
