@@ -116,6 +116,10 @@ class CharactersController
     end
     puts "
     Strength: #{char.strength}\n
+    Stealth: #{char.stealth}\n
+    Psionics: #{char.psionics}\n
+    Rage: #{char.rage}\n
+    Agility: #{char.agility}\n
     Level: #{char.level}\n
     Experience: #{char.exp}"
   end
