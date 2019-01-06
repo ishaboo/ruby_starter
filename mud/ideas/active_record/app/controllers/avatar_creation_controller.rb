@@ -36,4 +36,8 @@ class AvatarCreationController
       puts "You just wasted your time..."
     end
   end
+
+  def apply_skill
+    # some method to apply skill points
+  end
 end
