@@ -6,4 +6,8 @@ class AttributeSelectionController
   def ask_discipline
     # need a method to give skill points
   end
+
+  def measure_discipline
+    # just a template
+  end
 end
