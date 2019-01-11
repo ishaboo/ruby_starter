@@ -190,3 +190,7 @@ It might be more convenient to implement yaml files to maintain model creation.
 Look into other projects to figure out implementation.
 
 An interesting example is an existing GitHub project that puts classes, commands and races into yaml files. Instead of MapTiles it uses 'are' files.
+
+### Character creation and Story
+
+We need a more robust character creation and a solid story line.
