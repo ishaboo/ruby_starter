@@ -194,3 +194,5 @@ An interesting example is an existing GitHub project that puts classes, commands
 ### Character creation and Story
 
 We need a more robust character creation and a solid story line.
+
+Should focus on how different skills affect the character.
